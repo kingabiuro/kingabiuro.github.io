@@ -45,9 +45,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
 .nav-cta{background:var(--teal)!important;color:#fff!important;padding:.42rem 1.1rem;border-radius:3px}
 .nav-dropdown{position:relative}
 .nav-dropdown>a{display:flex;align-items:center;gap:.3rem}
-.nav-dropdown>a::after{content:'';display:inline-block;width:6px;height:6px;border-right:1.5px solid rgba(255,255,255,.6);border-bottom:1.5px solid rgba(255,255,255,.6);transform:rotate(45deg);margin-top:-2px;transition:transform .2s}
+.nav-dropdown>a::after{content:'';display:inline-block;width:6px;height:6px;border-right:1.5px solid rgba(255,255,255,.6);border-bottom:1.5px solid rgba(255,255,255,.6);transform:rotate(45deg);margin-top:-2px;transition:transform .2s;flex-shrink:0}
 .nav-dropdown:hover>a::after{transform:rotate(-135deg);margin-top:2px}
-.dropdown-menu{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:rgba(12,42,38,0.98);backdrop-filter:blur(14px);border:1px solid rgba(45,170,143,.2);border-radius:4px;min-width:190px;padding:.5rem 0;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,.25)}
+.dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:rgba(12,42,38,0.98);backdrop-filter:blur(14px);border:1px solid rgba(45,170,143,.2);border-radius:4px;min-width:190px;padding:.5rem 0;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,.25);margin-top:4px}
+.dropdown-menu::before{content:'';position:absolute;top:-8px;left:0;right:0;height:8px;background:transparent}
 .nav-dropdown:hover .dropdown-menu{display:block}
 .dropdown-menu a{display:block;padding:.65rem 1.25rem;color:rgba(255,255,255,.7);font-size:.8rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;transition:color .2s,background .2s;white-space:nowrap}
 .dropdown-menu a:hover{color:var(--teal-lt);background:rgba(45,170,143,.08)}
@@ -297,9 +298,9 @@ footer{background:var(--dark);color:rgba(178,224,216,.45);padding:2.5rem 8vw;dis
     <li class="nav-dropdown">
       <a href="#">Wiedza</a>
       <div class="dropdown-menu">
-        <a href="kalkulatory.html">🧮 Kalkulatory</a>
-        <a href="aktualnosci.html">📰 Aktualności</a>
-        <a href="baza-wiedzy.html">📚 Baza wiedzy</a>
+        <a href="kalkulatory.html">Kalkulatory</a>
+        <a href="aktualnosci.html">Aktualności</a>
+        <a href="baza-wiedzy.html">Baza wiedzy</a>
       </div>
     </li>
     <li><a href="#kontakt" class="nav-cta">Umów konsultację</a></li>
@@ -316,9 +317,9 @@ footer{background:var(--dark);color:rgba(178,224,216,.45);padding:2.5rem 8vw;dis
   <a href="#kontakt" onclick="closeMenu()">Kontakt</a>
   <a href="dla-kogo.html" onclick="closeMenu()">Dla kogo</a>
   <a style="opacity:.5;font-size:.72rem;padding:.5rem 0;border-bottom:none;pointer-events:none">— Wiedza —</a>
-  <a href="kalkulatory.html" onclick="closeMenu()" style="padding-left:1rem">🧮 Kalkulatory</a>
-  <a href="aktualnosci.html" onclick="closeMenu()" style="padding-left:1rem">📰 Aktualności</a>
-  <a href="baza-wiedzy.html" onclick="closeMenu()" style="padding-left:1rem">📚 Baza wiedzy</a>
+  <a href="kalkulatory.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulatory</a>
+  <a href="aktualnosci.html" onclick="closeMenu()" style="padding-left:1rem">Aktualności</a>
+  <a href="baza-wiedzy.html" onclick="closeMenu()" style="padding-left:1rem">Baza wiedzy</a>
   <a href="#kontakt" onclick="closeMenu()">Umów konsultację</a>
 </div>
 
