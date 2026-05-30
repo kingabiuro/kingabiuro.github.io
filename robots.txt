@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /CNAME
+
+Sitemap: https://kingabiuro.pl/sitemap.xml
