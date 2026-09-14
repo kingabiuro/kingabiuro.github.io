@@ -9,8 +9,8 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MYC73T19W3');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<title>Kalkulator kosztów zatrudnienia 2026 – Kinga Biuro Rachunkowe</title>
+<title>Kalkulator stawek ryczałtu 2026 – Kinga Biuro Rachunkowe</title>
+<meta name="description" content="Kalkulator stawek ryczałtu ewidencjonowanego 2026. Sprawdź, jaka stawka ryczałtu dotyczy Twojej działalności i ile wyniesie podatek od przychodu.">
 <meta name="description" content="Kalkulator kosztów zatrudnienia 2026. Oblicz ile kosztuje pracownik na umowę o pracę, zlecenie i dzieło — wynagrodzenie netto i całkowity koszt pracodawcy.">
 <style>
 
@@ -110,6 +110,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
 .form-group input,.form-group select{font-family:var(--sans);font-size:.9rem;padding:.65rem .9rem;background:var(--cream);border:1px solid rgba(20,90,78,.18);border-radius:3px;color:var(--dark);outline:none;transition:border-color .2s}
 .form-group input:focus,.form-group select:focus{border-color:var(--teal)}
 .form-group .hint{font-size:.72rem;color:var(--forest);opacity:.6;margin-top:.15rem}
+.pkd-search-results{display:none;position:relative;margin-top:.4rem;border:1px solid rgba(20,90,78,.15);border-radius:4px;background:#fff;max-height:280px;overflow-y:auto;box-shadow:0 4px 14px rgba(12,42,38,.08)}
+.pkd-search-results.show{display:block}
+.pkd-search-item{padding:.7rem .9rem;font-size:.85rem;color:var(--dark);cursor:pointer;border-bottom:1px solid rgba(20,90,78,.08);transition:background .15s}
+.pkd-search-item:last-child{border-bottom:none}
+.pkd-search-item:hover{background:var(--cream)}
+.pkd-search-item-top{display:flex;justify-content:space-between;align-items:center;gap:.6rem}
+.pkd-search-item-top strong{color:var(--forest)}
+.pkd-search-item-desc{text-align:center;margin-top:.25rem;color:var(--dark);opacity:.85}
+.pkd-search-rate{font-size:.72rem;font-weight:600;color:var(--teal);white-space:nowrap;flex-shrink:0}
+.pkd-search-empty{padding:.8rem .9rem;font-size:.82rem;color:var(--forest);opacity:.75}
+.pkd-warning-badge{margin-top:.7rem;padding:.6rem .85rem;background:rgba(255,138,138,.14);border:1px solid rgba(255,138,138,.4);border-radius:4px;font-size:.78rem;font-weight:600;color:#c0392b}
 .calc-btn{background:var(--teal);color:#fff;border:none;padding:.85rem 2rem;font-family:var(--sans);font-size:.82rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;border-radius:3px;cursor:pointer;transition:background .2s;margin-top:.5rem}
 .calc-btn:hover{background:var(--forest)}
 
@@ -217,7 +228,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
   <span class="subnav-sep">›</span>
   <a href="kalkulatory.html" class="subnav-item ">Kalkulatory</a>
   <span class="subnav-sep">›</span>
-  <a href="kalkulator-zatrudnienia.html" class="subnav-item active">Zatrudnienie</a>
+  <a href="kalkulator-zatrudnienia.html" class="subnav-item ">Zatrudnienie</a>
   <span class="subnav-sep">›</span>
   <a href="kalkulator-wynagrodzen.html" class="subnav-item ">Wynagrodzenia</a>
   <span class="subnav-sep">›</span>
@@ -225,7 +236,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
   <span class="subnav-sep">›</span>
   <a href="kalkulator-vat.html" class="subnav-item ">VAT</a>
   <span class="subnav-sep">›</span>
-  <a href="kalkulator-ryczaltu.html" class="subnav-item ">Ryczałt</a>
+  <a href="kalkulator-ryczaltu.html" class="subnav-item active">Ryczałt</a>
   <span class="subnav-sep">›</span>
   <a href="kalkulator-chorobowy.html" class="subnav-item ">Chorobowe</a>
   <span class="subnav-sep">›</span>
@@ -243,371 +254,1620 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
 </div>
 <div class="hero">
   <p class="hero-label">Narzędzia</p>
-  <h1>Kalkulator kosztów zatrudnienia 2026</h1>
-  <p class="hero-sub">Sprawdź ile naprawdę kosztuje pracownik — oblicz wynagrodzenie netto i całkowity koszt pracodawcy dla umowy o pracę, zlecenie i dzieło.</p>
+  <h1>Kalkulator stawek ryczałtu 2026</h1>
+  <p class="hero-sub">Sprawdź, jaka stawka ryczałtu ewidencjonowanego dotyczy Twojej działalności i ile realnie wyniesie podatek od przychodu.</p>
 </div>
 <div class="content">
 
   <div class="section">
-    <p class="section-label">Porównanie form zatrudnienia</p>
-    <h2>Która umowa jest najtańsza?</h2>
+    <p class="section-label">Ryczałt ewidencjonowany</p>
+    <h2>Ile podatku zapłacisz na ryczałcie?</h2>
+    <p>Ryczałt od przychodów ewidencjonowanych to uproszczona forma opodatkowania — podatek liczony jest od przychodu, bez pomniejszania o koszty uzyskania. Stawka zależy od rodzaju wykonywanej działalności (kodu PKD) i wynosi od 2% do 17%.</p>
     <div class="info-grid">
       <div class="info-box">
-        <strong>Umowa o pracę</strong>
-        <span>Najwyższy koszt dla pracodawcy — pełne składki ZUS, FP, FGŚP (ok. +20,48% ponad brutto). Pełna ochrona pracownicza: urlop, L4, ochrona przed zwolnieniem.</span>
+        <strong>Brak kosztów uzyskania</strong>
+        <span>Podatek liczony jest od całego przychodu — nie odliczysz wydatków firmowych, dlatego forma ta opłaca się głównie przy niskich kosztach działalności.</span>
       </div>
       <div class="info-box">
-        <strong>Umowa zlecenie</strong>
-        <span>Koszt zależy od sytuacji zleceniobiorcy. Student do 26 lat — zero składek. Pełne ZUS — koszt zbliżony do UoP, ale brak FGŚP i urlopu.</span>
+        <strong>Stawka zależna od PKD</strong>
+        <span>Różne rodzaje działalności mają różne stawki — od 2% (np. niektóre dostawy) do 17% (wolne zawody i usługi o wysokiej marży).</span>
       </div>
       <div class="info-box">
-        <strong>Umowa o dzieło</strong>
-        <span>Najtańsza — brak składek ZUS. Pracodawca płaci tylko brutto. Ograniczone zastosowanie: tylko przy konkretnym, mierzalnym dziele.</span>
+        <strong>Osobno składka zdrowotna</strong>
+        <span>Poniższe wyliczenie nie uwzględnia obowiązkowej składki zdrowotnej ZUS, która na ryczałcie zależy od rocznego przychodu i liczona jest odrębnie.</span>
       </div>
     </div>
   </div>
 
   <div class="section">
-    <h2>Oblicz koszty zatrudnienia</h2>
-
-    <div class="calc-tabs">
-      <button class="calc-tab active" onclick="showTab('uop',this)">Umowa o pracę</button>
-      <button class="calc-tab" onclick="showTab('zlecenie',this)">Umowa zlecenie</button>
-      <button class="calc-tab" onclick="showTab('dzielo',this)">Umowa o dzieło</button>
-    </div>
-
-    <!-- UMOWA O PRACĘ -->
-    <div class="calc-panel active" id="panel-uop">
-      <div class="calc-box">
-        <h3>Umowa o pracę — pełna kalkulacja 2026</h3>
-        <p class="desc">Składki pracodawcy: emerytalna 9,76% + rentowa 6,50% + wypadkowa 1,67% + FP 2,45% + FGŚP 0,10% = łącznie <strong>20,48%</strong> ponad brutto (bez PPK). Minimalne wynagrodzenie 2026: <strong>4 806 zł brutto</strong>.</p>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Wynagrodzenie brutto (zł)</label>
-            <input type="number" id="uop-brutto" placeholder="np. 6000" min="4806">
-            <span class="hint">Minimum: 4 806 zł (płaca minimalna 2026)</span>
-          </div>
-          <div class="form-group">
-            <label>Koszty uzyskania przychodu</label>
-            <select id="uop-kup">
-              <option value="zwykl">Zwykłe — 250 zł (miejscowość zamieszkania = praca)</option>
-              <option value="podw">Podwyższone — 300 zł (dojazd do innej miejscowości)</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>PPK (Pracownicze Plany Kapitałowe)</label>
-            <select id="uop-ppk">
-              <option value="nie">Nie (pracownik zrezygnował)</option>
-              <option value="tak">Tak (pracodawca 1,5% + pracownik 2%)</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Wiek pracownika</label>
-            <select id="uop-mlodc">
-              <option value="nie">26 lat lub więcej</option>
-              <option value="tak">Do 26 lat (zerowy PIT — ulga dla młodych)</option>
-            </select>
-          </div>
-        </div>
-        <button class="calc-btn" onclick="obliczUoP()">Oblicz</button>
-        <div class="result-wrap" id="result-uop">
-          <div class="result-panel" id="res-uop-pracownik"></div>
-          <div class="result-panel" id="res-uop-pracodawca"></div>
-          <div class="result-panel full" id="res-uop-suma"></div>
-        </div>
+    <h2>Sprawdź stawkę ryczałtu</h2>
+    <div class="calc-box">
+      <h3>Wyszukiwarka stawki ryczałtu</h3>
+      <p class="desc">Wpisz numer kodu PKD (np. 62.01) albo słowo kluczowe opisujące Twoją działalność (np. sklep internetowy, fryzjer, budowa) — lista podpowiedzi pojawi się od razu w trakcie pisania.</p>
+      <div class="form-group">
+        <label>Kod PKD lub opis działalności</label>
+        <input type="text" id="pkd-search-input" placeholder="np. 62.01 albo sklep internetowy" autocomplete="off" oninput="onPkdSearchInput()">
+        <div id="pkd-search-results" class="pkd-search-results"></div>
       </div>
-      <div class="tip-box">
-        <strong>Składki pracodawcy przy umowie o pracę 2026:</strong> emerytalna 9,76% + rentowa 6,50% + wypadkowa 1,67% + Fundusz Pracy 2,45% + FGŚP 0,10% = <strong>20,48% ponad wynagrodzenie brutto</strong>. Przy minimalnym wynagrodzeniu 4 806 zł całkowity koszt pracodawcy wynosi ok. <strong>5 790 zł miesięcznie</strong>.
+      <div class="result-wrap" id="result-ryczalt">
+        <div class="result-panel full" id="res-ryczalt"></div>
       </div>
     </div>
-
-    <!-- UMOWA ZLECENIE -->
-    <div class="calc-panel" id="panel-zlecenie">
-      <div class="calc-box">
-        <h3>Umowa zlecenie — kalkulacja 2026</h3>
-        <p class="desc">Koszt zlecenia zależy od sytuacji ubezpieczeniowej zleceniobiorcy. Przy zbiegu tytułów lub dla studenta koszt pracodawcy może być znacznie niższy niż przy umowie o pracę.</p>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Wynagrodzenie brutto (zł)</label>
-            <input type="number" id="uz-brutto" placeholder="np. 5000" min="0">
-            <span class="hint">Min. stawka godzinowa 2026: 31,40 zł/h</span>
-          </div>
-          <div class="form-group">
-            <label>Sytuacja ubezpieczeniowa zleceniobiorcy</label>
-            <select id="uz-sytuacja">
-              <option value="pelny">Jedyny tytuł ubezpieczenia — pełne składki ZUS</option>
-              <option value="etat_min">Ma inny etat ≥ min. wynagrodzeniu — tylko zdrowotna</option>
-              <option value="student">Student / uczeń do 26 lat — brak składek ZUS</option>
-            </select>
-          </div>
-        </div>
-        <button class="calc-btn" onclick="obliczZlecenie()">Oblicz</button>
-        <div class="result-wrap" id="result-uz" style="grid-template-columns:1fr">
-          <div class="result-panel" id="res-uz"></div>
-        </div>
-      </div>
-      <div class="tip-box">
-        <strong>Uwaga:</strong> Przy umowie zleceniu brak FGŚP i urlopu. Zleceniobiorca nie ma prawa do zwolnienia chorobowego finansowanego przez pracodawcę od 1. dnia (jak przy UoP). Dobrowolne ubezpieczenie chorobowe zleceniobiorcy finansuje on sam.
-      </div>
+    <div class="tip-box">
+      <strong>Uwaga:</strong> prezentowane stawki mają charakter informacyjny. O ostatecznej stawce ryczałtu decyduje faktyczny zakres świadczonych usług według klasyfikacji PKWiU, a nie sam wpis kodu PKD w rejestrze CEIDG.
     </div>
-
-    <!-- UMOWA O DZIEŁO -->
-    <div class="calc-panel" id="panel-dzielo">
-      <div class="calc-box">
-        <h3>Umowa o dzieło — kalkulacja 2026</h3>
-        <p class="desc">Umowa o dzieło nie podlega składkom ZUS (wyjątek: umowa z własnym pracownikiem). Pracodawca potrąca wyłącznie zaliczkę na podatek dochodowy. Od 2021 r. każdą umowę o dzieło należy zgłosić do ZUS formularzem RUD w ciągu 7 dni.</p>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Wynagrodzenie brutto (zł)</label>
-            <input type="number" id="ud-brutto" placeholder="np. 3000" min="0">
-          </div>
-          <div class="form-group">
-            <label>Koszty uzyskania przychodu</label>
-            <select id="ud-kup">
-              <option value="20">20% — standardowe</option>
-              <option value="50">50% — prawa autorskie / artystyczne</option>
-            </select>
-          </div>
-        </div>
-        <button class="calc-btn" onclick="obliczDzielo()">Oblicz</button>
-        <div class="result-wrap" id="result-ud" style="grid-template-columns:1fr">
-          <div class="result-panel" id="res-ud"></div>
-        </div>
-      </div>
-      <div class="tip-box">
-        <strong>Kiedy można zawrzeć umowę o dzieło?</strong> Tylko gdy zlecane jest konkretne, mierzalne dzieło (np. napisanie artykułu, stworzenie projektu, wykonanie mebla). Nie można jej stosować do prac ciągłych lub powtarzalnych — w takim przypadku ZUS może zakwestionować umowę i przekształcić ją w zlecenie lub stosunek pracy.
-      </div>
-    </div>
-
   </div>
 
   <div class="info-cta">
-    <h3>Planujesz pierwsze zatrudnienie?</h3>
-    <p>Wybór formy umowy, zgłoszenie pracownika do ZUS, pierwsze listy płac — zajmę się wszystkim. Skontaktuj się ze mną przed podpisaniem pierwszej umowy.</p>
+    <h3>Nie masz pewności, jaka stawka Cię dotyczy?</h3>
+    <p>Dobór właściwej stawki ryczałtu do konkretnego PKD bywa nieoczywisty — pomogę Ci to zweryfikować i dobrać najkorzystniejszą formę opodatkowania.</p>
     <a href="https://kingabiuro.pl#kontakt">Skonsultuj się bezpłatnie</a>
   </div>
 
 </div>
-
 <script>
-function fmt(n){
-  if(isNaN(n)||n===null)return'—';
-  return n.toFixed(2).replace('.',',').replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' zł';
-}
 function rrow(label,val,cls){
-  return '<div class="rrow'+(cls?' '+cls:'')+'"><span>'+label+'</span><strong>'+fmt(val)+'</strong></div>';
-}
-function showTab(id,btn){
-  document.querySelectorAll('.calc-tab').forEach(function(t){t.classList.remove('active');});
-  document.querySelectorAll('.calc-panel').forEach(function(p){p.classList.remove('active');});
-  btn.classList.add('active');
-  document.getElementById('panel-'+id).classList.add('active');
+  return '<div class="rrow'+(cls?' '+cls:'')+'"><span>'+label+'</span><strong>'+val+'</strong></div>';
 }
 
-/* ══ UMOWA O PRACĘ ══ */
-function obliczUoP(){
-  var brutto    = parseFloat(document.getElementById('uop-brutto').value)||0;
-  var ppk       = document.getElementById('uop-ppk').value==='tak'; // czy PPK
-  var mlodc     = document.getElementById('uop-mlodc').value==='tak'; // do 26 lat
-  var kup       = document.getElementById('uop-kup').value;       // zwykłe/podw
+// Baza kodów PKD ze stawkami ryczałtu. Aby dodać nowy kod, wystarczy dopisać
+// kolejny obiekt do tej tablicy — wyszukiwarka zadziała automatycznie.
+// allRates to TABLICA stawek jako stringi (np. ["12%"] albo ["8.5%","15%"]).
+// Gdy allRates ma więcej niż 1 element, karta wyniku pokazuje ostrzeżenie
+// o stawce zależnej od zakresu prac oraz pole "details".
+function rrow(label,val,cls){
+  return '<div class="rrow'+(cls?' '+cls:'')+'"><span>'+label+'</span><strong>'+val+'</strong></div>';
+}
 
-  if(brutto<=0){alert('Podaj wynagrodzenie brutto.');return;}
+// Baza kodów PKD ze stawkami ryczałtu. Aby dodać nowy kod, wystarczy dopisać
+// kolejny obiekt do tej tablicy — wyszukiwarka i karta wyniku zadziałają
+// automatycznie. allRates to TABLICA stawek jako stringi, np. ["12%"] albo
+// ["8.5%","15%"]. Gdy allRates ma więcej niż 1 element, karta wyniku pokazuje
+// ostrzeżenie o stawce zależnej od zakresu prac oraz pole "details".
+var PKD_DATA = [
+  {
+    "code": "62.01.Z",
+    "name": "Działalność związana z oprogramowaniem",
+    "category": "IT i Nowe Technologie",
+    "baseRate": "12%",
+    "allRates": [
+      "12%",
+      "8.5%",
+      "15%"
+    ],
+    "details": "Stawka 12% ma zastosowanie do przychodów związanych z wydawaniem pakietów oprogramowania, oprogramowania komputerowego oraz doradztwem w zakresie oprogramowania. Usługi związane z analizą wymagań, testowaniem czy zarządzaniem projektami IT (bez pisania kodu i doradztwa) mogą kwalifikować się do 8,5%."
+  },
+  {
+    "code": "62.02.Z",
+    "name": "Działalność związana z doradztwem w zakresie sprzętu komputerowego",
+    "category": "IT i Nowe Technologie",
+    "baseRate": "15%",
+    "allRates": [
+      "15%",
+      "8.5%"
+    ],
+    "details": "Usługi doradztwa w zakresie sprzętu i infrastruktury komputerowej podlegają stawce 15%. Jeśli usługi dotyczą instalacji bez doradztwa, możliwa jest stawka 8,5%."
+  },
+  {
+    "code": "62.03.Z",
+    "name": "Działalność związana z zarządzaniem urządzeniami informatycznymi",
+    "category": "IT i Nowe Technologie",
+    "baseRate": "12%",
+    "allRates": [
+      "12%",
+      "8.5%"
+    ],
+    "details": "Zarządzanie sieciami i systemami komputerowymi podlega co do zasady stawce 12% (zarządzanie sieciami/systemami) lub 8,5% (podstawowa obsługa techniczna)."
+  },
+  {
+    "code": "62.09.Z",
+    "name": "Pozostała działalność usługowa w zakresie technologii informatycznych i komputerowych",
+    "category": "IT i Nowe Technologie",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%",
+      "12%"
+    ],
+    "details": "Obejmuje m.in. odzyskiwanie danych, instalację oprogramowania. Stawka 8,5% dotyczy pozostałych usług IT niezastrzeżonych dla stawki 12% lub 15%."
+  },
+  {
+    "code": "63.11.Z",
+    "name": "Przetwarzanie danych; zarządzanie stronami internetowymi (hosting) i podobna działalność",
+    "category": "IT i Nowe Technologie",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%",
+      "12%"
+    ],
+    "details": "Usługi hostingu, przetwarzania danych i udostępniania infrastruktury podlegają stawce 8,5%. Usługi zarządzania stronami z elementami programowania – 12%."
+  },
+  {
+    "code": "63.12.Z",
+    "name": "Działalność portali internetowych",
+    "category": "IT i Nowe Technologie",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%"
+    ],
+    "details": "Prowadzenie portali internetowych, wyszukiwarek, media społecznościowe (przychody z reklam/subskrypcji) – stawka 8,5%."
+  },
+  {
+    "code": "58.21.Z",
+    "name": "Działalność wydawnicza w zakresie gier komputerowych",
+    "category": "IT i Nowe Technologie",
+    "baseRate": "12%",
+    "allRates": [
+      "12%"
+    ],
+    "details": "Prawa autorskie i licencje związane z oprogramowaniem gier komputerowych – stawka 12%."
+  },
+  {
+    "code": "58.29.Z",
+    "name": "Działalność wydawnicza w zakresie pozostałego oprogramowania",
+    "category": "IT i Nowe Technologie",
+    "baseRate": "12%",
+    "allRates": [
+      "12%"
+    ],
+    "details": "Wydawanie oprogramowania użytkowego (SaaS, licencje) – stawka 12%."
+  },
+  {
+    "code": "70.22.Z",
+    "name": "Pozostałe doradztwo w zakresie prowadzenia działalności gospodarczej i zarządzania",
+    "category": "Doradztwo i Biznes",
+    "baseRate": "15%",
+    "allRates": [
+      "15%",
+      "8.5%"
+    ],
+    "details": "Usługi doradztwa biznesowego, strategicznego i zarządzania podlegają stawce 15%. Wsparcie operacyjne/administracyjne niewymagające doradztwa może w opinii Dyrektora KIS wpaść w 8,5%."
+  },
+  {
+    "code": "70.10.Z",
+    "name": "Działalność firm centralnych (head offices) i holdingów",
+    "category": "Doradztwo i Biznes",
+    "baseRate": "15%",
+    "allRates": [
+      "15%"
+    ],
+    "details": "Zarządzanie spółkami i podmiotami powiązanymi – stawka 15%."
+  },
+  {
+    "code": "69.10.Z",
+    "name": "Działalność prawnicza",
+    "category": "Usługi Profesjonalne",
+    "baseRate": "15%",
+    "allRates": [
+      "15%",
+      "17%"
+    ],
+    "details": "Usługi prawnicze opodatkowane są stawką 15%. W przypadku wolnych zawodów świadczonych bez zatrudniania pracowników stawka wynosi 17%."
+  },
+  {
+    "code": "69.20.Z",
+    "name": "Działalność rachunkowo-księgowa; doradztwo podatkowe",
+    "category": "Usługi Profesjonalne",
+    "baseRate": "15%",
+    "allRates": [
+      "15%",
+      "17%"
+    ],
+    "details": "Usługi doradztwa podatkowego oraz usługi księgowe i rachunkowe podlegać będą stawce 15% (lub 17% jako wolny zawód)."
+  },
+  {
+    "code": "74.90.Z",
+    "name": "Pozostała działalność profesjonalna, naukowa i techniczna, gdzie indziej niesklasyfikowana",
+    "category": "Usługi Profesjonalne",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%",
+      "15%"
+    ],
+    "details": "Pośrednictwo w interesach, wyceny (poza nieruchomościami). Zależnie od elementu doradztwa (15%) lub obsługi ogólnej (8,5%)."
+  },
+  {
+    "code": "71.11.Z",
+    "name": "Działalność w zakresie architektury",
+    "category": "Inżynieria i Architektura",
+    "baseRate": "14%",
+    "allRates": [
+      "14%",
+      "17%"
+    ],
+    "details": "Usługi architektoniczne i projektowe podlegają stawce 14%. W przypadku wykonywania zawodu bez zatrudniania pracowników – 17%."
+  },
+  {
+    "code": "71.12.Z",
+    "name": "Działalność w zakresie inżynierii i związane z nią doradztwo techniczne",
+    "category": "Inżynieria i Architektura",
+    "baseRate": "14%",
+    "allRates": [
+      "14%",
+      "15%",
+      "17%"
+    ],
+    "details": "Usługi inżynieryjne projektowe – 14%. Doradztwo techniczne – 15%. Wolny zawód – 17%."
+  },
+  {
+    "code": "71.20.B",
+    "name": "Badania i analizy techniczne",
+    "category": "Inżynieria i Architektura",
+    "baseRate": "14%",
+    "allRates": [
+      "14%"
+    ],
+    "details": "Ekspertyzy, badania laboratoryjne, certyfikacja techniczna – 14%."
+  },
+  {
+    "code": "73.11.Z",
+    "name": "Działalność agencji reklamowych",
+    "category": "Marketing i Media",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%",
+      "15%"
+    ],
+    "details": "Tworzenie kampanii reklamowych, przygotowanie materiałów marketingowych – stawka 8,5%. Jeśli usługa obejmuje doradztwo marketingowe/strategiczne – 15%."
+  },
+  {
+    "code": "73.12.A",
+    "name": "Pośrednictwo w sprzedaży czasu i miejsca na cele reklamowe w radio i telewizji",
+    "category": "Marketing i Media",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%"
+    ],
+    "details": "Sprzedaż powierzchni i czasu reklamowego – 8,5%."
+  },
+  {
+    "code": "73.12.C",
+    "name": "Pośrednictwo w sprzedaży miejsca na cele reklamowe w mediach elektronicznych (Internet)",
+    "category": "Marketing i Media",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%"
+    ],
+    "details": "Pośrednictwo i sprzedaż powierzchni reklamowej w Internecie – 8,5%."
+  },
+  {
+    "code": "74.10.Z",
+    "name": "Działalność w zakresie specjalistycznego projektowania",
+    "category": "Marketing i Media",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%",
+      "14%"
+    ],
+    "details": "Projektowanie graficzne, UI/UX, wystrój wnętrz, wzornictwo – stawka 8,5%. Projektowanie budowlane/architektoniczne – 14%."
+  },
+  {
+    "code": "74.20.Z",
+    "name": "Działalność fotograficzna",
+    "category": "Marketing i Media",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%"
+    ],
+    "details": "Usługi fotograficzne (sesje, obróbka zdjęć, fotografia produktowa) – stawka 8,5%."
+  },
+  {
+    "code": "73.20.Z",
+    "name": "Badanie rynku i opinii publicznej",
+    "category": "Marketing i Media",
+    "baseRate": "15%",
+    "allRates": [
+      "15%"
+    ],
+    "details": "Usługi badania rynku, opinii publicznej i analityka rynkowa podlegają stawce 15%."
+  },
+  {
+    "code": "41.20.Z",
+    "name": "Roboty budowlane związane ze wznoszeniem budynków mieszkalnych i niemieszkalnych",
+    "category": "Budownictwo i Nieruchomości",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Wszelkie roboty budowlane opodatkowane są stawką 5,5%."
+  },
+  {
+    "code": "43.21.Z",
+    "name": "Wykonywanie instalacji elektrycznych",
+    "category": "Budownictwo i Nieruchomości",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Prace instalacyjne w budynkach i obiektach – 5,5%."
+  },
+  {
+    "code": "43.22.Z",
+    "name": "Wykonywanie instalacji wodno-kanalizacyjnych, cieplnych, gazowych i klimatyzacyjnych",
+    "category": "Budownictwo i Nieruchomości",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Usługi hydrauliczne, montaż pieców, klimatyzacji – stawka 5,5%."
+  },
+  {
+    "code": "43.30.Z",
+    "name": "Wykonywanie robót budowlanych wykończeniowych",
+    "category": "Budownictwo i Nieruchomości",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Usługi wykończeniowe (malowanie, tynkowanie, układanie płytek/paneli) – stawka 5,5%."
+  },
+  {
+    "code": "43.99.Z",
+    "name": "Pozostałe specjalistyczne roboty budowlane, gdzie indziej niesklasyfikowane",
+    "category": "Budownictwo i Nieruchomości",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Montaż rusztowań, prace wysokościowe, roboty betonowe – 5,5%."
+  },
+  {
+    "code": "68.20.Z",
+    "name": "Wynajem i zarządzanie nieruchomościami własnymi lub wydzierżawionymi",
+    "category": "Budownictwo i Nieruchomości",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%",
+      "12%"
+    ],
+    "details": "Przychody z najmu nieruchomości: 8,5% do kwoty 100 000 zł rocznie, powyżej tej kwoty nadwyżka opodatkowana jest stawką 12%."
+  },
+  {
+    "code": "68.31.Z",
+    "name": "Pośrednictwo w obrocie nieruchomościami",
+    "category": "Budownictwo i Nieruchomości",
+    "baseRate": "15%",
+    "allRates": [
+      "15%"
+    ],
+    "details": "Usługi agencji nieruchomości i pośrednictwa – 15%."
+  },
+  {
+    "code": "68.32.Z",
+    "name": "Zarządzanie nieruchomościami wykonywane na zlecenie",
+    "category": "Budownictwo i Nieruchomości",
+    "baseRate": "15%",
+    "allRates": [
+      "15%"
+    ],
+    "details": "Usługi mecenatu/zarządzania nieruchomościami na zlecenie – 15%."
+  },
+  {
+    "code": "47.91.Z",
+    "name": "Sprzedaż detaliczna prowadzona przez domy sprzedaży wysyłkowej lub Internet",
+    "category": "Handel i Produkcja",
+    "baseRate": "3%",
+    "allRates": [
+      "3%"
+    ],
+    "details": "Handel detaliczny w sklepach internetowych / e-commerce – stawka 3%."
+  },
+  {
+    "code": "46.90.Z",
+    "name": "Sprzedaż hurtowa niewyspecjalizowana",
+    "category": "Handel i Produkcja",
+    "baseRate": "3%",
+    "allRates": [
+      "3%"
+    ],
+    "details": "Działalność gastronomiczna/handlowa – sprzedaż hurtowa towarów podlega stawce 3%."
+  },
+  {
+    "code": "47.89.Z",
+    "name": "Sprzedaż detaliczna pozostałych wyrobów prowadzona na straganach i targowiskach",
+    "category": "Handel i Produkcja",
+    "baseRate": "3%",
+    "allRates": [
+      "3%"
+    ],
+    "details": "Sprzedaż towarów zakupionych do odprzedaży – 3%."
+  },
+  {
+    "code": "18.12.Z",
+    "name": "Pozostałe drukowanie",
+    "category": "Handel i Produkcja",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Działalność produkcyjna / poligraficzna – wytwarzanie własnych produktów drukarskich opodatkowane jest stawką 5,5%."
+  },
+  {
+    "code": "13.92.Z",
+    "name": "Produkcja gotowych artykułów tekstylnych, z wyłączeniem odzieży",
+    "category": "Handel i Produkcja",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Działalność wytwórcza opodatkowana jest stawką 5,5%."
+  },
+  {
+    "code": "46.19.Z",
+    "name": "Działalność agentów zajmujących się sprzedażą towarów różnego rodzaju",
+    "category": "Handel i Produkcja",
+    "baseRate": "15%",
+    "allRates": [
+      "15%"
+    ],
+    "details": "Prowizje i pośrednictwo handlowe (praca agenta handlowego na prowizji) podlegają stawce 15%."
+  },
+  {
+    "code": "86.21.Z",
+    "name": "Praktyka lekarska ogólna",
+    "category": "Zdrowie i Uroda",
+    "baseRate": "14%",
+    "allRates": [
+      "14%",
+      "17%"
+    ],
+    "details": "Usługi opieki zdrowotnej świadczone przez lekarzy podlegają stawce 14%. W przypadku indywidualnej praktyki bez zatrudniania personelu pomocniczego – 17%."
+  },
+  {
+    "code": "86.22.Z",
+    "name": "Praktyka lekarska specjalistyczna",
+    "category": "Zdrowie i Uroda",
+    "baseRate": "14%",
+    "allRates": [
+      "14%",
+      "17%"
+    ],
+    "details": "Usługi lekarzy specjalistów – 14% (lub 17% bez pracowników)."
+  },
+  {
+    "code": "86.23.Z",
+    "name": "Praktyka lekarska dentystyczna",
+    "category": "Zdrowie i Uroda",
+    "baseRate": "14%",
+    "allRates": [
+      "14%",
+      "17%"
+    ],
+    "details": "Stomatologia – 14% (lub 17% bez pracowników)."
+  },
+  {
+    "code": "86.90.A",
+    "name": "Działalność fizjoterapeutyczna",
+    "category": "Zdrowie i Uroda",
+    "baseRate": "14%",
+    "allRates": [
+      "14%",
+      "17%"
+    ],
+    "details": "Usługi fizjoterapii i masażu leczniczego – 14% (lub 17% jako wolny zawód)."
+  },
+  {
+    "code": "86.90.E",
+    "name": "Pozostała działalność w zakresie opieki zdrowotnej, gdzie indziej niesklasyfikowana",
+    "category": "Zdrowie i Uroda",
+    "baseRate": "14%",
+    "allRates": [
+      "14%",
+      "8.5%"
+    ],
+    "details": "Usługi paramedyczne, psychoterapia – 14%. Usługi ogólnej pielęgnacji – 8,5%."
+  },
+  {
+    "code": "96.02.Z",
+    "name": "Usługi fryzjerskie i pozostałe zabiegi kosmetyczne",
+    "category": "Zdrowie i Uroda",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%"
+    ],
+    "details": "Usługi fryzjerskie, kosmetologia, manicure, pedicure – stawka 8,5%."
+  },
+  {
+    "code": "96.04.Z",
+    "name": "Działalność usługowa związana z poprawą kondycji fizycznej",
+    "category": "Zdrowie i Uroda",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%"
+    ],
+    "details": "Masaże relaksacyjne, sauny, solaria, salony odchudzające – 8,5%."
+  },
+  {
+    "code": "85.51.Z",
+    "name": "Pozaszkolne formy edukacji sportowej oraz zajęć sportowych i rekreacyjnych",
+    "category": "Zdrowie i Uroda",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%"
+    ],
+    "details": "Trenerzy personalni, instruktorzy sportu, nauka pływania/jogi – 8,5%."
+  },
+  {
+    "code": "85.59.B",
+    "name": "Pozostałe pozaszkolne formy edukacji, gdzie indziej niesklasyfikowane",
+    "category": "Edukacja i Usługi",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%"
+    ],
+    "details": "Korepetycje, szkolenia biznesowe, warsztaty, kursy zawodowe – stawka 8,5%."
+  },
+  {
+    "code": "85.59.A",
+    "name": "Nauka języków obcych",
+    "category": "Edukacja i Usługi",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%"
+    ],
+    "details": "Lektoraty i nauka języków obcych – stawka 8,5%."
+  },
+  {
+    "code": "74.30.Z",
+    "name": "Działalność związana z tłumaczeniem",
+    "category": "Edukacja i Usługi",
+    "baseRate": "14%",
+    "allRates": [
+      "14%",
+      "17%"
+    ],
+    "details": "Usługi tłumaczeniowe – 14%. W przypadku tłumaczy przysięgłych świadczących usługi w ramach wolnego zawodu – 17%."
+  },
+  {
+    "code": "49.41.Z",
+    "name": "Transport drogowy towarów",
+    "category": "Transport i Motoryzacja",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%",
+      "8.5%"
+    ],
+    "details": "Przewóz towarów pojazdami o ładowności powyżej 2 ton – stawka 5,5%. Przewóz ładunkami do 2 ton – stawka 8,5%."
+  },
+  {
+    "code": "49.39.Z",
+    "name": "Pozostały pasażerski transport lądowy, gdzie indziej niesklasyfikowany",
+    "category": "Transport i Motoryzacja",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%"
+    ],
+    "details": "Przewóz osób, autokary, przewozy okazjonalne – 8,5%."
+  },
+  {
+    "code": "49.32.Z",
+    "name": "Działalność taksówek osobowych",
+    "category": "Transport i Motoryzacja",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%"
+    ],
+    "details": "Usługi taksówkarskie oraz przewóz osób (Uber, Bolt itp.) – 8,5%."
+  },
+  {
+    "code": "45.20.Z",
+    "name": "Konserwacja i naprawa pojazdów samochodowych, z wyłączeniem motocykli",
+    "category": "Transport i Motoryzacja",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%"
+    ],
+    "details": "Mechanika pojazdowa, wulkanizacja, autodetailing – stawka 8,5%."
+  },
+  {
+    "code": "52.21.Z",
+    "name": "Działalność usługowa wspomagająca transport lądowy",
+    "category": "Transport i Motoryzacja",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%"
+    ],
+    "details": "Holowanie pojazdów, obsługa parkingów – 8,5%."
+  },
+  {
+    "code": "56.10.A",
+    "name": "Restauracje i inne stałe placówki gastronomiczne",
+    "category": "Gastronomia i Usługi B2C",
+    "baseRate": "3%",
+    "allRates": [
+      "3%",
+      "8.5%"
+    ],
+    "details": "Przychody ze sprzedaży napojów i posiłków z wyjątkiem sprzedaży napojów o zawartości alkoholu powyżej 1,5% – stawka 3%. Sprzedaż alkoholu – stawka 8,5%."
+  },
+  {
+    "code": "56.21.Z",
+    "name": "Przygotowywanie i dostarczanie żywności dla odbiorców zewnętrznych (katering)",
+    "category": "Gastronomia i Usługi B2C",
+    "baseRate": "3%",
+    "allRates": [
+      "3%",
+      "8.5%"
+    ],
+    "details": "Usługi cateringowe – 3% (z wyłączeniem sprzedaży alkoholu)."
+  },
+  {
+    "code": "55.10.Z",
+    "name": "Hotele i podobne obiekty zakwaterowania",
+    "category": "Gastronomia i Usługi B2C",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%"
+    ],
+    "details": "Usługi związane z zakwaterowaniem krótko- i długoterminowym – 8,5%."
+  },
+  {
+    "code": "96.09.Z",
+    "name": "Pozostała działalność usługowa, gdzie indziej niesklasyfikowana",
+    "category": "Gastronomia i Usługi B2C",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%"
+    ],
+    "details": "Opieka nad zwierzętami, usługi astrologiczne, astrologia, agencje matrymonialne, usługi ślubne – 8,5%."
+  },
+  {
+    "code": "78.10.Z",
+    "name": "Działalność agencji pracy tymczasowej / pozyskiwanie pracowników",
+    "category": "Gastronomia i Usługi B2C",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%",
+      "15%"
+    ],
+    "details": "Rekrutacja i udostępnianie pracowników – 8,5% (lub 15% przy doradztwie HR)."
+  },
+  {
+    "code": "01.19.Z",
+    "name": "Uprawa pozostałych roślin wieloletnich",
+    "category": "Rolnictwo i Hodowla",
+    "baseRate": "2%",
+    "allRates": [
+      "2%",
+      "5.5%"
+    ],
+    "details": "Sprzedaż nieprzetworzonych produktów roślinnych z własnej uprawy podlega stawce 2%. Świadczenie usług rolniczych na zlecenie podlega stawką 5,5%."
+  },
+  {
+    "code": "01.28.Z",
+    "name": "Uprawa roślin przyprawowych, aromatycznych, leczniczych i zielarskich",
+    "category": "Rolnictwo i Hodowla",
+    "baseRate": "2%",
+    "allRates": [
+      "2%",
+      "5.5%"
+    ],
+    "details": "Sprzedaż ziół i roślin leczniczych z własnej uprawy – 2%. Usługi z nimi związane – 5,5%."
+  },
+  {
+    "code": "01.42.Z",
+    "name": "Chów i hodowla pozostałych zwierząt",
+    "category": "Rolnictwo i Hodowla",
+    "baseRate": "2%",
+    "allRates": [
+      "2%",
+      "5.5%"
+    ],
+    "details": "Sprzedaż produktów pochodzenia zwierzęcego z własnej hodowli podlega pod 2%. Działalność usługowa wspomagająca chów zwierząt – 5,5%."
+  },
+  {
+    "code": "01.48.Z",
+    "name": "Chów i hodowla zwierząt, gdzie indziej niesklasyfikowane",
+    "category": "Rolnictwo i Hodowla",
+    "baseRate": "2%",
+    "allRates": [
+      "2%",
+      "5.5%"
+    ],
+    "details": "Sprzedaż żywych zwierząt i produktów nieprzetworzonych – 2%. Działalność usługowa – 5,5%."
+  },
+  {
+    "code": "01.62.Z",
+    "name": "Działalność usługowa wspomagająca chów i hodowlę zwierząt gospodarskich",
+    "category": "Rolnictwo i Hodowla",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Usługi rolnicze i wspomagające chów zwierząt (porządkowe, pielęgnacyjne, strzyżenie, poskramianie) opodatkowane są stawką 5,5%."
+  },
+  {
+    "code": "03.11.Z",
+    "name": "Rybołówstwo w wodach morskich",
+    "category": "Rybołówstwo i Akwakultura",
+    "baseRate": "2%",
+    "allRates": [
+      "2%",
+      "3%",
+      "5.5%"
+    ],
+    "details": "Sprzedaż ryb nieprzetworzonych z własnego połowu – 2%. Sprzedaż przetworzonych ryb lub handel towarowy – 3%. Usługi pomocnicze – 5,5%."
+  },
+  {
+    "code": "03.12.Z",
+    "name": "Rybołówstwo w wodach śródlądowych",
+    "category": "Rybołówstwo i Akwakultura",
+    "baseRate": "2%",
+    "allRates": [
+      "2%",
+      "3%",
+      "5.5%"
+    ],
+    "details": "Sprzedaż ryb śródlądowych nieprzetworzonych – 2%. Sprzedaż po przetworzeniu / handel – 3%."
+  },
+  {
+    "code": "03.21.Z",
+    "name": "Akwakultura w wodach morskich",
+    "category": "Rybołówstwo i Akwakultura",
+    "baseRate": "2%",
+    "allRates": [
+      "2%",
+      "3%",
+      "5.5%"
+    ],
+    "details": "Hodowla ryb i skorupiaków morskich – sprzedaż surowca 2%, przetworów 3%, usługi 5,5%."
+  },
+  {
+    "code": "03.22.Z",
+    "name": "Akwakultura w wodach śródlądowych",
+    "category": "Rybołówstwo i Akwakultura",
+    "baseRate": "2%",
+    "allRates": [
+      "2%",
+      "3%",
+      "5.5%"
+    ],
+    "details": "Hodowla ryb w stawach i wodach śródlądowych – 2% za produkty nieprzetworzone."
+  },
+  {
+    "code": "10.86.Z",
+    "name": "Produkcja artykułów spożywczych homogenizowanych i żywności dietetycznej",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Działalność wytwórcza w zakresie produkcji artykułów spożywczych podlega stawce 5,5%."
+  },
+  {
+    "code": "10.89.Z",
+    "name": "Produkcja pozostałych artykułów spożywczych, gdzie indziej niesklasyfikowana",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Wytwarzanie ekstraktów, suplementów diety, mieszanek – stawka wytwórcza 5,5%."
+  },
+  {
+    "code": "13.20.Z",
+    "name": "Produkcja tkanin",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Działalność wytwórcza – produkcja wyrobów tekstylnych opodatkowana jest stawką 5,5%."
+  },
+  {
+    "code": "14.21.Z",
+    "name": "Produkcja odzieży skórzanej",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Szycie i produkcja odzieży skórzanej – 5,5%. Naprawa/usługi krawieckie – 8,5%."
+  },
+  {
+    "code": "14.22.Z",
+    "name": "Produkcja galanterii skórzanej",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%",
+      "8.5%"
+    ],
+    "details": "Wytwarzanie pasków, torebek i galanterii – 5,5%. Usługi naprawcze – 8,5%."
+  },
+  {
+    "code": "14.29.Z",
+    "name": "Produkcja pozostałych wyrobów ze skóry",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Produkcja wyrobów ze skóry – stawka wytwórcza 5,5%."
+  },
+  {
+    "code": "16.11.Z",
+    "name": "Produkcja wyrobów tartacznych",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Cięcie, przecieranie i obróbka drewna – działalność wytwórcza 5,5%."
+  },
+  {
+    "code": "16.21.Z",
+    "name": "Produkcja arkuszy fornirowych i płyt wykonanych na bazie drewna",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Wytwarzanie sklejki, płyt skrawanych i fornirowych – 5,5%."
+  },
+  {
+    "code": "16.22.Z",
+    "name": "Produkcja gotowych parkietów podłogowych",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Produkcja podłóg i desek parkietowych – 5,5%. Usługi układania podłóg (roboty budowlane) – 5,5%."
+  },
+  {
+    "code": "16.23.Z",
+    "name": "Produkcja pozostałych wyrobów stolarskich i ciesielskich dla budownictwa",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Produkcja drzwi, okien i konstrukcji drewnianych do budynków – 5,5%."
+  },
+  {
+    "code": "16.24.Z",
+    "name": "Produkcja opakowań drewnianych",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Produkcja palet, skrzyń i opakowań z drewna – 5,5%."
+  },
+  {
+    "code": "16.28.Z",
+    "name": "Produkcja pozostałych wyrobów z drewna; produkcja wyrobów z korka, słomy i materiałów wyplatanych",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Wytwarzanie galanterii drewnianej, ozdób z korka i plecionek – 5,5%."
+  },
+  {
+    "code": "20.11.Z",
+    "name": "Produkcja gazów technicznych",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Działalność wytwórcza w sektorze chemicznym – 5,5%."
+  },
+  {
+    "code": "20.14.Z",
+    "name": "Produkcja pozostałych podstawowych chemikaliów organicznych",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Wytwarzanie chemii organicznej – stawka 5,5%."
+  },
+  {
+    "code": "20.20.C",
+    "name": "Produkcja pestycydów i pozostałych środków agrochemicznych",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Produkcja nawozów, oprysków i chemii rolnej – 5,5%."
+  },
+  {
+    "code": "20.59.Z",
+    "name": "Produkcja pozostałych wyrobów chemicznych, gdzie indziej niesklasyfikowana",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Produkcja odczynników, olejków eterycznych, dodatek chemicznych – 5,5%."
+  },
+  {
+    "code": "22.12.Z",
+    "name": "Produkcja opon i dętek z gumy; bieżnikowanie i regenerowanie opon z gumy",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%",
+      "8.5%"
+    ],
+    "details": "Wytwarzanie i regeneracja opon – 5,5%. Usługi wulkanizacyjne / wymiany opon – 8,5%."
+  },
+  {
+    "code": "22.21.Z",
+    "name": "Produkcja płyt, arkuszy, rur i kształtowników z tworzyw sztucznych",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Wytwarzanie półproduktów tworzyw sztucznych – 5,5%."
+  },
+  {
+    "code": "22.22.Z",
+    "name": "Produkcja opakowań z tworzyw sztucznych",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Produkcja butelek, skrzynek i folii z tworzyw sztucznych – 5,5%."
+  },
+  {
+    "code": "22.24.Z",
+    "name": "Produkcja wyrobów budowlanych z tworzyw sztucznych",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Produkcja okien PVC, rynien, rur – stawka wytwórcza 5,5%."
+  },
+  {
+    "code": "22.26.Z",
+    "name": "Produkcja pozostałych wyrobów z tworzyw sztucznych",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Działalność wytwórcza elementów z plastiku – 5,5%."
+  },
+  {
+    "code": "23.12.Z",
+    "name": "Kształtowanie i obróbka szkła płaskiego",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Obróbka, szlifowanie, hartowanie i cięcie szkła – 5,5%."
+  },
+  {
+    "code": "23.42.Z",
+    "name": "Produkcja wyrobów sanitarnych z ceramiki",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Produkcja umywalek, muszli i armatury ceramicznej – 5,5%."
+  },
+  {
+    "code": "23.70.B",
+    "name": "Cięcie, wykańczanie i obróbka kamienia poza kamieniołomami",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Produkcja blatów, pomników, nagrobków i wyrobów z kamienia – 5,5%. Wykańczanie kamienia w budynkach – 5,5%."
+  },
+  {
+    "code": "24.53.Z",
+    "name": "Odlewnictwo metali lekkich",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Odlewanie aluminium i stopów lekkich – stawka wytwórcza 5,5%."
+  },
+  {
+    "code": "25.21.Z",
+    "name": "Produkcja grzejników i kotłów centralnego ogrzewania",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Wytwarzanie kotłów CO i grzejników – 5,5%. Usługi instalacji CO – 5,5%."
+  },
+  {
+    "code": "25.53.Z",
+    "name": "Kucie, prasowanie, tłoczenie i walcowanie metali; profilowanie wyrobów metodą profilowania na zimno",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Obróbka plastyczna metali i kowalstwo – 5,5%."
+  },
+  {
+    "code": "26.20.Z",
+    "name": "Produkcja komputerów i urządzeń peryferyjnych",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%",
+      "8.5%"
+    ],
+    "details": "Montaż i produkcja sprzętu komputerowego – 5,5%. Usługi naprawy i serwisu sprzętu – 8,5%."
+  },
+  {
+    "code": "26.30.Z",
+    "name": "Produkcja sprzętu telekomunikacyjnego",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%",
+      "8.5%"
+    ],
+    "details": "Wytwarzanie central, telefonów, anten – 5,5%. Usługi serwisowe – 8,5%."
+  },
+  {
+    "code": "27.11.Z",
+    "name": "Produkcja elektrycznych silników, prądnic i transformatorów",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%",
+      "8.5%"
+    ],
+    "details": "Produkcja silników – 5,5%. Usługi przezwajania silników i naprawy – 8,5%."
+  },
+  {
+    "code": "27.12.Z",
+    "name": "Produkcja aparatury rozdzielczej i sterowniczej energii elektrycznej",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Produkcja rozdzielnic, bezpieczników i przekaźników – 5,5%."
+  },
+  {
+    "code": "27.90.Z",
+    "name": "Produkcja pozostałego sprzętu elektrycznego",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Wytwarzanie akumulatorów, kabli i osprzętu elektrycznego – 5,5%."
+  },
+  {
+    "code": "28.11.Z",
+    "name": "Produkcja silników i turbin, z wyłączeniem silników lotniczych, samochodowych i motocyklowych",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Produkcja silników przemysłowych – 5,5%."
+  },
+  {
+    "code": "28.21.Z",
+    "name": "Produkcja pieców, palników i pieców przemysłowych",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Wytwarzanie palników i pieców fabrycznych – 5,5%."
+  },
+  {
+    "code": "28.23.Z",
+    "name": "Produkcja maszyn i sprzętu biurowego, z wyłączeniem komputerów i urządzeń peryferyjnych",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%",
+      "8.5%"
+    ],
+    "details": "Wytwarzanie niszczarek, kserokopiarek – 5,5%. Naprawa sprzętu biurowego – 8,5%."
+  },
+  {
+    "code": "28.25.Z",
+    "name": "Produkcja przemysłowych urządzeń chłodniczych i wentylacyjnych",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Wytwarzanie klimatyzatorów i chłodni przemysłowych – 5,5%. Montaż klimatyzacji – 5,5%."
+  },
+  {
+    "code": "28.29.Z",
+    "name": "Produkcja pozostałych maszyn ogólnego przeznaczenia, gdzie indziej niesklasyfikowana",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Wytwarzanie wag, pakowaczek i urządzeń czyszczących – 5,5%."
+  },
+  {
+    "code": "28.42.Z",
+    "name": "Produkcja pozostałych narzędzi mechanicznych",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Produkcja lutownic, pił i elektronarzędzi – 5,5%."
+  },
+  {
+    "code": "28.92.Z",
+    "name": "Produkcja maszyn dla górnictwa, doobywania i budownictwa",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Wytwarzanie koparek, spycharek i maszyn drążących – 5,5%."
+  },
+  {
+    "code": "28.96.Z",
+    "name": "Produkcja maszyn do obróbki tworzyw sztucznych i gumy",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Wytwarzanie wtryskarek i wytłaczarek – 5,5%."
+  },
+  {
+    "code": "28.99.Z",
+    "name": "Produkcja pozostałych maszyn specjalnego przeznaczenia, gdzie indziej niesklasyfikowana",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Produkcja robotów przemysłowych i automatów montażowych – 5,5%."
+  },
+  {
+    "code": "30.11.Z",
+    "name": "Budowa statków i konstrukcji pływających",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Budowa jednostek pływających, promów i barek – 5,5%."
+  },
+  {
+    "code": "30.31.Z",
+    "name": "Budowa statków powietrznych i statków kosmicznych oraz maszyn przyległych",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Produkcja samolotów, śmigłowców, dronów przemysłowych – 5,5%."
+  },
+  {
+    "code": "30.40.Z",
+    "name": "Produkcja wojskowych pojazdów bojowych",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Produkcja pojazdów opancerzonych i czołgów – 5,5%."
+  },
+  {
+    "code": "30.91.Z",
+    "name": "Produkcja motocykli",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Produkcja motocykli, skuterów i części do nich – 5,5%. Naprawa motocykli – 8,5%."
+  },
+  {
+    "code": "32.30.Z",
+    "name": "Produkcja sprzętu sportowego",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Produkcja nart, piłek, sprzętu siłowego – 5,5%."
+  },
+  {
+    "code": "32.50.B",
+    "name": "Produkcja pozostałych wyrobów medycznych i dentystycznych",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Wytwarzanie protez, implantów, mebli medycznych, okularów – 5,5%."
+  },
+  {
+    "code": "32.99.Z",
+    "name": "Produkcja pozostałych wyrobów, gdzie indziej niesklasyfikowana",
+    "category": "Produkcja i Przetwórstwo",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Produkcja parasoli, świec, mioteł, gadżetów reklamowych – 5,5%."
+  },
+  {
+    "code": "33.11.Z",
+    "name": "Naprawa i konserwacja wyrobów metalowych",
+    "category": "Naprawa i Serwis",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%"
+    ],
+    "details": "Usługi naprawcze zbiorników, rur i konstrukcji metalowych podlegają stawce 8,5%."
+  },
+  {
+    "code": "33.12.Z",
+    "name": "Naprawa i konserwacja maszyn",
+    "category": "Naprawa i Serwis",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%"
+    ],
+    "details": "Serwis i naprawa silników, pomp, obrabiarek i maszyn przemysłowych – 8,5%."
+  },
+  {
+    "code": "33.15.Z",
+    "name": "Naprawa i konserwacja statków i łodzi",
+    "category": "Naprawa i Serwis",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%"
+    ],
+    "details": "Usługi konserwacji i naprawy jednostek pływających – 8,5%."
+  },
+  {
+    "code": "33.16.Z",
+    "name": "Naprawa i konserwacja statków powietrznych i statków kosmicznych",
+    "category": "Naprawa i Serwis",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%"
+    ],
+    "details": "Serwis techniczny i przeglądy samolotów oraz dronów – 8,5%."
+  },
+  {
+    "code": "33.19.Z",
+    "name": "Naprawa i konserwacja pozostałego sprzętu",
+    "category": "Naprawa i Serwis",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%"
+    ],
+    "details": "Usługi naprawy sprzętu, siatek, plandek – stawka 8,5%."
+  },
+  {
+    "code": "35.11.Z",
+    "name": "Wytwarzanie energii elektrycznej",
+    "category": "Energetyka i Odpady",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Produkcja prądu (w tym z instalacji fotowoltaicznych, wiatrowych) – działalność wytwórcza 5,5%."
+  },
+  {
+    "code": "35.15.Z",
+    "name": "Dystrybucja energii elektrycznej",
+    "category": "Energetyka i Odpady",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%",
+      "15%"
+    ],
+    "details": "Przesył i dystrybucja energii – 8,5%. Usługi doradztwa lub zarządzania siecią – 15%."
+  },
+  {
+    "code": "35.23.Z",
+    "name": "Handel paliwami gazowymi w systemie sieciowym",
+    "category": "Energetyka i Odpady",
+    "baseRate": "3%",
+    "allRates": [
+      "3%",
+      "15%"
+    ],
+    "details": "Handel gazem – 3%. Pośrednictwo w sprzedaży / agentura gazowa – 15%."
+  },
+  {
+    "code": "38.21.Z",
+    "name": "Odtwarzanie materiałów z odpadów segreowanych",
+    "category": "Energetyka i Odpady",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%",
+      "8.5%"
+    ],
+    "details": "Przetwarzanie odpadów w nowe surowce (produkcja) – 5,5%. Wyłącznie usługi zbierania/utylizacji – 8,5%."
+  },
+  {
+    "code": "38.32.Z",
+    "name": "Odzysk surowców z materiałów segregowanych",
+    "category": "Energetyka i Odpady",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%",
+      "8.5%"
+    ],
+    "details": "Recykling i produkcja surowców wtórnych – 5,5%. Usługi sortowania/zagospodarowania – 8,5%."
+  },
+  {
+    "code": "42.11.Z",
+    "name": "Roboty związane z budową dróg i autostrad",
+    "category": "Budownictwo i Nieruchomości",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Wszelkie roboty budowlane drogowe opodatkowane są stawką 5,5%."
+  },
+  {
+    "code": "42.99.Z",
+    "name": "Roboty związane z budową pozostałych obiektów inżynierii lądowej i wodnej, gdzie indziej niesklasyfikowane",
+    "category": "Budownictwo i Nieruchomości",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Budowle inżynieryjne, obiekty sportowe, placu zabaw – roboty budowlane 5,5%."
+  },
+  {
+    "code": "43.24.Z",
+    "name": "Pozostałe wykonywanie instalacji budowlanych",
+    "category": "Budownictwo i Nieruchomości",
+    "baseRate": "5.5%",
+    "allRates": [
+      "5.5%"
+    ],
+    "details": "Montaż ogrodzeń automatycznych, instalacje oświetleniowe, systemy alarmowe – 5,5%."
+  },
+  {
+    "code": "46.11.B",
+    "name": "Działalność agentów zajmujących się sprzedażą płodów rolnych, żywych zwierząt, surowców włókienniczych i półproduktów",
+    "category": "Handel i Pośrednictwo",
+    "baseRate": "15%",
+    "allRates": [
+      "15%"
+    ],
+    "details": "Działalność agentów i pośredników handlowych na prowizji podlega stawce 15%."
+  },
+  {
+    "code": "46.21.B",
+    "name": "Sprzedaż hurtowa zboża, nieprzetworzonego tytoniu, nasion i pasz dla zwierząt",
+    "category": "Handel i Pośrednictwo",
+    "baseRate": "3%",
+    "allRates": [
+      "3%"
+    ],
+    "details": "Handel hurtowy towarami – stawka 3%."
+  },
+  {
+    "code": "46.38.Z",
+    "name": "Sprzedaż hurtowa pozostałej żywności, włączając ryby, skorupiaki i mięczaki",
+    "category": "Handel i Pośrednictwo",
+    "baseRate": "3%",
+    "allRates": [
+      "3%"
+    ],
+    "details": "Sprzedaż hurtowa artykułów spożywczych i ryb – 3%."
+  },
+  {
+    "code": "46.43.Z",
+    "name": "Sprzedaż hurtowa elektrycznych artykułów gospodarstwa domowego",
+    "category": "Handel i Pośrednictwo",
+    "baseRate": "3%",
+    "allRates": [
+      "3%"
+    ],
+    "details": "Handel hurtowy sprzętem AGD i RTV – 3%."
+  },
+  {
+    "code": "46.72.Z",
+    "name": "Sprzedaż hurtowa metali i rud metali",
+    "category": "Handel i Pośrednictwo",
+    "baseRate": "3%",
+    "allRates": [
+      "3%"
+    ],
+    "details": "Hurtowa sprzedaż stali, wyrobów hutniczych i metali – 3%."
+  },
+  {
+    "code": "46.85.B",
+    "name": "Sprzedaż hurtowa pozostałych półproduktów",
+    "category": "Handel i Pośrednictwo",
+    "baseRate": "3%",
+    "allRates": [
+      "3%"
+    ],
+    "details": "Handel hurtowy wyrobami pośrednimi i surowcami – 3%."
+  },
+  {
+    "code": "47.81.Z",
+    "name": "Sprzedaż detaliczna żywności, napojów i wyrobów tytoniowych prowadzona na straganach i targowiskach",
+    "category": "Handel i Pośrednictwo",
+    "baseRate": "3%",
+    "allRates": [
+      "3%"
+    ],
+    "details": "Handel detaliczny na targach/straganach – 3%."
+  },
+  {
+    "code": "47.82.Z",
+    "name": "Sprzedaż detaliczna wyrobów tekstylnych, odzieży i obuwia prowadzona na straganach i targowiskach",
+    "category": "Handel i Pośrednictwo",
+    "baseRate": "3%",
+    "allRates": [
+      "3%"
+    ],
+    "details": "Handel detaliczny odzieżą na targowiskach – 3%."
+  },
+  {
+    "code": "47.83.Z",
+    "name": "Sprzedaż detaliczna pozostałych towarów prowadzona na straganach i targowiskach",
+    "category": "Handel i Pośrednictwo",
+    "baseRate": "3%",
+    "allRates": [
+      "3%"
+    ],
+    "details": "Sprzedaż detaliczna na straganch i placach – 3%."
+  },
+  {
+    "code": "68.12.A",
+    "name": "Kupno i sprzedaż nieruchomości na własny rachunek",
+    "category": "Budownictwo i Nieruchomości",
+    "baseRate": "10%",
+    "allRates": [
+      "10%"
+    ],
+    "details": "Przychody z kupna i sprzedaży nieruchomości na własny rachunek (flipy, obrót lokalami) opodatkowane są stawką 10%."
+  },
+  {
+    "code": "95.31.B",
+    "name": "Naprawa i konserwacja sprzętu komputerowego",
+    "category": "Naprawa i Serwis",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%"
+    ],
+    "details": "Usługi naprawcze, serwisowe i czyszczenie komputerów/laptopów podlegają stawce 8,5%."
+  },
+  {
+    "code": "95.31.C",
+    "name": "Naprawa i konserwacja urządzeń peryferyjnych",
+    "category": "Naprawa i Serwis",
+    "baseRate": "8.5%",
+    "allRates": [
+      "8.5%"
+    ],
+    "details": "Serwis drukarek, skanerów, monitorów i akcesoriów – 8,5%."
+  }
+];
 
-  // ── Składki PRACOWNIK ──
-  var p_em   = brutto * 0.0976;  // emerytal. 9,76%
-  var p_rent = brutto * 0.015;   // rentowa 1,5%
-  var p_chor = brutto * 0.0245;  // chorobowa 2,45%
-  var p_spo  = p_em + p_rent + p_chor; // łączne społ. pracownika
+// Normalizacja kodu PKD do porównań (usuwa kropki/spacje, wielkie litery)
+function normalizeCode(s){
+  return (s || '').replace(/[.\s]/g, '').toUpperCase();
+}
+PKD_DATA.forEach(function(item){ item.codeNorm = normalizeCode(item.code); });
 
-  // Składka zdrowotna pracownik: 9% z (brutto - składki społ.)
-  var podst_zdr = brutto - p_spo;
-  var p_zdr = podst_zdr * 0.09;
+function parseRatePct(str){
+  return parseFloat(str.replace('%','').replace(',', '.'));
+}
 
-  // KUP (koszty uzyskania przychodu)
-  var kup_kw = kup==='podw' ? 300 : 250; // podwyższone (inne miasto) lub zwykłe
+// Dopasowanie wpisanego zapytania do pozycji z bazy — działa zarówno po
+// (fragmencie) numeru PKD, jak i po słowach kluczowych z nazwy/opisu/kategorii.
+function pkdMatches(item, query){
+  var q = query.trim().toLowerCase();
+  if(!q) return false;
 
-  // PPK pracownik: 2% brutto (domyślnie, tu 2%)
-  var ppk_p = ppk ? brutto*0.02 : 0;
+  var qCodeNorm = normalizeCode(q);
+  if(qCodeNorm && item.codeNorm.indexOf(qCodeNorm) !== -1) return true;
 
-  // Podstawa opodatkowania
-  var podst_pit = brutto - p_spo - kup_kw + (ppk ? brutto*0.015 : 0);
-  podst_pit = Math.max(0, Math.round(podst_pit));
+  var haystack = (item.code + ' ' + item.name + ' ' + item.category + ' ' + item.details).toLowerCase();
+  var tokens = q.split(/\s+/).filter(Boolean);
+  return tokens.every(function(t){ return haystack.indexOf(t) !== -1; });
+}
 
-  // Zaliczka PIT
-  var pit = 0;
-  if(!mlodc){
-    // kwota zmniejszająca 300 zł/mies tylko przy złożeniu PIT-2
-    pit = Math.max(0, Math.round(podst_pit * 0.12 - 300));
-    // Uproszczenie: zakładamy skalę 12% i złożony PIT-2
+function searchPkd(query){
+  if(!query.trim()) return [];
+  return PKD_DATA.filter(function(item){ return pkdMatches(item, query); }).slice(0, 8);
+}
+
+function onPkdSearchInput(){
+  var input = document.getElementById('pkd-search-input');
+  var resultsBox = document.getElementById('pkd-search-results');
+  var query = input.value;
+  var matches = searchPkd(query);
+
+  if(!query.trim()){
+    resultsBox.innerHTML = '';
+    resultsBox.classList.remove('show');
+    return;
   }
 
-  // Netto pracownika
-  var netto = brutto - p_spo - p_zdr - pit - ppk_p;
-
-  // ── Składki PRACODAWCA ──
-  var pr_em   = brutto * 0.0976; // 9,76%
-  var pr_rent = brutto * 0.065;  // 6,50%
-  var pr_wyp  = brutto * 0.0167; // 1,67% (standardowa)
-  var pr_fp   = brutto * 0.0245; // 2,45%
-  var pr_fgsp = brutto * 0.001;  // 0,10%
-  var pr_ppk  = ppk ? brutto*0.015 : 0; // 1,5%
-  var pr_spo  = pr_em + pr_rent + pr_wyp + pr_fp + pr_fgsp + pr_ppk;
-
-  var koszt_calkowity = brutto + pr_spo;
-
-  // Wyświetl
-  var divP = document.getElementById('res-uop-pracownik');
-  var divPr = document.getElementById('res-uop-pracodawca');
-  var divSum = document.getElementById('res-uop-suma');
-
-  divP.innerHTML =
-    '<div class="result-panel-title">Wynagrodzenie pracownika</div>' +
-    rrow('Brutto',brutto) +
-    rrow('Emerytalna pracownika (9,76%)',-p_em,'minus') +
-    rrow('Rentowa pracownika (1,50%)',-p_rent,'minus') +
-    rrow('Chorobowa pracownika (2,45%)',-p_chor,'minus') +
-    rrow('Składka zdrowotna (9%)',-p_zdr,'minus') +
-    (ppk?rrow('PPK pracownika (2%)',-ppk_p,'minus'):'') +
-    (!mlodc?rrow('Zaliczka PIT (12%)',-pit,'minus'):'') +
-    (mlodc?'<div class="rrow"><span>Zaliczka PIT</span><strong style="color:var(--teal-lt)">0 zł (do 26 lat)</strong></div>':'') +
-    '<div class="rtotal"><span>Netto "na rękę"</span><strong>'+fmt(netto)+'</strong></div>';
-
-  divPr.innerHTML =
-    '<div class="result-panel-title">Koszty pracodawcy</div>' +
-    rrow('Wynagrodzenie brutto',brutto) +
-    rrow('Emerytalna pracodawcy (9,76%)',pr_em,'plus') +
-    rrow('Rentowa pracodawcy (6,50%)',pr_rent,'plus') +
-    rrow('Wypadkowa (1,67%)',pr_wyp,'plus') +
-    rrow('Fundusz Pracy (2,45%)',pr_fp,'plus') +
-    rrow('FGŚP (0,10%)',pr_fgsp,'plus') +
-    (ppk?rrow('PPK pracodawcy (1,50%)',pr_ppk,'plus'):'') +
-    '<div class="rtotal"><span>Całkowity koszt</span><strong>'+fmt(koszt_calkowity)+'</strong></div>';
-
-  divSum.innerHTML =
-    '<div class="result-panel-title">Podsumowanie</div>' +
-    rrow('Pracownik otrzymuje "na rękę"',netto) +
-    rrow('Całkowity koszt pracodawcy',koszt_calkowity) +
-    rrow('Różnica (podatki + ZUS łącznie)',koszt_calkowity-netto) +
-    '<div class="disclaimer">* Wyniki orientacyjne. Zakładają skalę podatkową 12%, złożony PIT-2, standardową stopę wypadkową 1,67%. Nie uwzględniają ulg podatkowych.</div>';
-
-  document.getElementById('result-uop').classList.add('show');
-}
-
-/* ══ UMOWA ZLECENIE ══ */
-function obliczZlecenie(){
-  var brutto  = parseFloat(document.getElementById('uz-brutto').value)||0;
-  var sytuacja = document.getElementById('uz-sytuacja').value;
-  // sytuacja: pelny / etat_min / student
-
-  if(brutto<=0){alert('Podaj wynagrodzenie brutto.');return;}
-
-  var p_em=0,p_rent=0,p_chor=0,p_spo=0,pr_em=0,pr_rent=0,pr_wyp=0,pr_fp=0;
-
-  if(sytuacja==='student'){
-    // Student do 26 lat — brak składek ZUS
-    // Tylko podatek 17% (zryczałtowany przy niskich kwotach, tu 12% skala)
-    var kup = brutto * 0.20; // 20% KUP dla zleceń
-    var podst = Math.max(0, brutto - kup);
-    var pit = Math.round(podst * 0.12);
-    var netto = brutto - pit;
-    var koszt = brutto; // pracodawca płaci tylko brutto
-
-    document.getElementById('res-uz').innerHTML =
-      '<div class="result-panel-title">Student do 26 lat — brak składek ZUS</div>' +
-      rrow('Wynagrodzenie brutto',brutto) +
-      rrow('KUP (20%)',-kup,'minus') +
-      rrow('Zaliczka PIT (12%)',-pit,'minus') +
-      '<div class="rtotal"><span>Netto "na rękę"</span><strong>'+fmt(netto)+'</strong></div>' +
-      '<div class="rtotal" style="margin-top:.5rem"><span>Całkowity koszt pracodawcy</span><strong>'+fmt(koszt)+'</strong></div>' +
-      '<div class="disclaimer">Brak składek ZUS — student do 26. roku życia. Pracodawca płaci tylko kwotę brutto.</div>';
-  } else if(sytuacja==='etat_min'){
-    // Ma inny etat ≥ minimalne — tylko zdrowotna
-    var p_zdr = (brutto)*0.09;
-    var kup = brutto*0.20;
-    var podst = Math.max(0, brutto - kup);
-    var pit = Math.round(podst*0.12);
-    var netto = brutto - p_zdr - pit;
-    var pr_zdr_pr = 0; // zdrowotna tylko po stronie pracownika
-    var koszt = brutto; // pracodawca nie płaci dodatkowych składek
-
-    document.getElementById('res-uz').innerHTML =
-      '<div class="result-panel-title">Zbieg tytułów — tylko składka zdrowotna</div>' +
-      rrow('Wynagrodzenie brutto',brutto) +
-      rrow('Składka zdrowotna (9%)',-p_zdr,'minus') +
-      rrow('KUP (20%)',-kup,'minus') +
-      rrow('Zaliczka PIT (12%)',-pit,'minus') +
-      '<div class="rtotal"><span>Netto "na rękę"</span><strong>'+fmt(netto)+'</strong></div>' +
-      '<div class="rtotal" style="margin-top:.5rem"><span>Całkowity koszt pracodawcy</span><strong>'+fmt(koszt)+'</strong></div>' +
-      '<div class="disclaimer">Zleceniobiorca ma inny tytuł ubezpieczenia z wynagrodzeniem ≥ minimalnemu. Pracodawca płaci tylko brutto.</div>';
-  } else {
-    // Pełne składki ZUS (jedyny tytuł)
-    p_em   = brutto*0.0976;
-    p_rent = brutto*0.015;
-    p_chor = brutto*0.0245;
-    p_spo  = p_em+p_rent+p_chor;
-    var p_zdr2 = (brutto-p_spo)*0.09;
-    var kup2 = brutto*0.20;
-    var podst2 = Math.max(0,brutto-p_spo-kup2);
-    var pit2 = Math.round(podst2*0.12-300);
-    pit2 = Math.max(0,pit2);
-    var netto2 = brutto-p_spo-p_zdr2-pit2;
-
-    pr_em   = brutto*0.0976;
-    pr_rent = brutto*0.065;
-    pr_wyp  = brutto*0.0167;
-    pr_fp   = brutto*0.0245;
-    var pr_fgsp2 = 0; // zlecenie — brak FGŚP
-    var pr_spo2 = pr_em+pr_rent+pr_wyp+pr_fp;
-    var koszt2 = brutto+pr_spo2;
-
-    document.getElementById('res-uz').innerHTML =
-      '<div class="result-panel-title">Pełne składki ZUS</div>' +
-      rrow('Brutto',brutto) +
-      rrow('Składki społ. pracownika (13,71%)',-p_spo,'minus') +
-      rrow('Składka zdrowotna (9%)',-p_zdr2,'minus') +
-      rrow('Zaliczka PIT (12%)',-pit2,'minus') +
-      '<div class="rtotal"><span>Netto "na rękę"</span><strong>'+fmt(netto2)+'</strong></div>' +
-      '<hr style="border:none;border-top:1px solid rgba(45,170,143,.15);margin:.75rem 0">' +
-      rrow('Emerytalna pracodawcy (9,76%)',pr_em,'plus') +
-      rrow('Rentowa pracodawcy (6,50%)',pr_rent,'plus') +
-      rrow('Wypadkowa (1,67%)',pr_wyp,'plus') +
-      rrow('Fundusz Pracy (2,45%)',pr_fp,'plus') +
-      '<div class="rtotal"><span>Całkowity koszt pracodawcy</span><strong>'+fmt(koszt2)+'</strong></div>' +
-      '<div class="disclaimer">Brak FGŚP przy zleceniu. Stopa wypadkowa 1,67% (standardowa).</div>';
+  if(matches.length === 0){
+    resultsBox.innerHTML = '<div class="pkd-search-empty">Nie znaleziono kodu PKD ani opisu pasującego do zapytania — sprawdź pisownię lub skontaktuj się w sprawie stawki.</div>';
+    resultsBox.classList.add('show');
+    return;
   }
 
-  document.getElementById('result-uz').classList.add('show');
+  resultsBox.innerHTML = matches.map(function(item, idx){
+    return '<div class="pkd-search-item" data-idx="' + PKD_DATA.indexOf(item) + '">' +
+      '<div class="pkd-search-item-top">' +
+        '<strong>' + item.code + '</strong>' +
+        '<span class="pkd-search-rate">' + item.baseRate + '</span>' +
+      '</div>' +
+      '<div class="pkd-search-item-desc">' + item.name + '</div>' +
+      '</div>';
+  }).join('');
+  resultsBox.classList.add('show');
+
+  resultsBox.querySelectorAll('.pkd-search-item').forEach(function(el){
+    el.addEventListener('click', function(){
+      var idx = parseInt(el.getAttribute('data-idx'), 10);
+      showPkdRate(PKD_DATA[idx]);
+      resultsBox.innerHTML = '';
+      resultsBox.classList.remove('show');
+      input.value = item_code_label(PKD_DATA[idx]);
+    });
+  });
 }
 
-/* ══ UMOWA O DZIEŁO ══ */
-function obliczDzielo(){
-  var brutto = parseFloat(document.getElementById('ud-brutto').value)||0;
-  var kup50  = document.getElementById('ud-kup').value==='50'; // prawa autorskie
-
-  if(brutto<=0){alert('Podaj wynagrodzenie brutto.');return;}
-
-  var kup_proc = kup50 ? 0.50 : 0.20;
-  // Limit KUP 50%: 120 000 zł rocznie — miesięcznie 10 000 zł, uproszczamy
-  var kup_kw = brutto * kup_proc;
-  var podst = Math.max(0, brutto - kup_kw);
-  var pit = Math.round(podst * 0.12);
-  var netto = brutto - pit;
-  var koszt = brutto; // pracodawca płaci tylko brutto (brak ZUS)
-
-  document.getElementById('res-ud').innerHTML =
-    '<div class="result-panel-title">Umowa o dzieło — brak składek ZUS</div>' +
-    rrow('Wynagrodzenie brutto',brutto) +
-    rrow('KUP ('+(kup50?'50%':'20%)'),-kup_kw,'minus') +
-    rrow('Podstawa opodatkowania',podst) +
-    rrow('Zaliczka PIT (12%)',-pit,'minus') +
-    '<div class="rtotal"><span>Netto "na rękę"</span><strong>'+fmt(netto)+'</strong></div>' +
-    '<div class="rtotal" style="margin-top:.5rem"><span>Całkowity koszt pracodawcy</span><strong>'+fmt(koszt)+'</strong></div>' +
-    '<div class="disclaimer">Brak składek ZUS (o ile wykonawca nie jest własnym pracownikiem). Pracodawca potrąca tylko zaliczkę PIT. Uwaga: od 2021 r. umowy o dzieło zgłasza się do ZUS (formularz RUD).</div>';
-
-  document.getElementById('result-ud').classList.add('show');
+function item_code_label(item){
+  return item.code + ' ' + item.name;
 }
+
+function showPkdRate(item){
+  var rates = item.allRates || [];
+  var html = '<div class="result-panel-title">Stawka dla wybranego profilu</div>' +
+    rrow('Kod PKD', item.code) +
+    rrow('Rodzaj działalności', item.name) +
+    rrow('Stawka podstawowa', item.baseRate);
+
+  if(rates.length > 1){
+    var values = rates.map(parseRatePct);
+    var minV = Math.min.apply(null, values);
+    var maxV = Math.max.apply(null, values);
+    var minStr = rates[values.indexOf(minV)];
+    var maxStr = rates[values.indexOf(maxV)];
+    html += '<div class="pkd-warning-badge">Uwaga: Stawka zależna od zakresu prac (' + minStr + ' - ' + maxStr + ')</div>';
+    html += '<div class="disclaimer" style="margin-top:.5rem">' + item.details + '</div>';
+  }
+
+  document.getElementById('res-ryczalt').innerHTML = html;
+  document.getElementById('result-ryczalt').classList.add('show');
+}
+
+// Zamykanie listy podpowiedzi po kliknięciu poza nią
+document.addEventListener('click', function(e){
+  var wrap = document.getElementById('pkd-search-input');
+  var resultsBox = document.getElementById('pkd-search-results');
+  if(wrap && resultsBox && !wrap.contains(e.target) && !resultsBox.contains(e.target)){
+    resultsBox.innerHTML = '';
+    resultsBox.classList.remove('show');
+  }
+});
 </script>
 
 <a href="https://wa.me/48669985755?text=Dzień+dobry%2C+chciałbym+zapytać+o+ofertę+biura+rachunkowego."

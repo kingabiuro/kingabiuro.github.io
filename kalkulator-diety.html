@@ -9,9 +9,8 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MYC73T19W3');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<title>Kalkulator kosztów zatrudnienia 2026 – Kinga Biuro Rachunkowe</title>
-<meta name="description" content="Kalkulator kosztów zatrudnienia 2026. Oblicz ile kosztuje pracownik na umowę o pracę, zlecenie i dzieło — wynagrodzenie netto i całkowity koszt pracodawcy.">
+<title>Kalkulator diety krajowej 2026 – Kinga Biuro Rachunkowe</title>
+<meta name="description" content="Kalkulator diety z tytułu krajowej podróży służbowej 2026. Podaj datę i godzinę wyjazdu oraz powrotu, uwzględnij zapewnione posiłki — kalkulator wyliczy należną dietę zgodnie z przepisami.">
 <style>
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -146,6 +145,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
 .info-cta a{display:inline-block;background:var(--teal);color:#fff;padding:.75rem 1.8rem;border-radius:3px;font-family:var(--sans);font-size:.82rem;font-weight:500;text-decoration:none;letter-spacing:.05em;text-transform:uppercase}
 @media(max-width:600px){.form-row{grid-template-columns:1fr}.result-wrap{grid-template-columns:1fr}}
 </style>
+
 </head>
 <body class="has-subnav">
 <nav>
@@ -202,7 +202,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
   <a href="kalkulator-odsetek.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulator odsetek</a>
   <a href="kalkulator-kasy-fiskalnej.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulator kasy fiskalnej</a>
   <a href="kalkulator-macierzynski.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulator macierzyński</a>
-  <a href="kalkulator-diety.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulator diety krajowej</a>
+  <a href="kalkulator-diety.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulator diety</a>
   <a href="aktualnosci.html" onclick="closeMenu()" style="padding-left:1rem">Aktualności</a>
   <a href="baza-wiedzy.html" onclick="closeMenu()" style="padding-left:1rem">Baza wiedzy</a>
   <a href="https://kingabiuro.pl#kontakt" onclick="closeMenu()">Umów konsultację</a>
@@ -217,7 +217,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
   <span class="subnav-sep">›</span>
   <a href="kalkulatory.html" class="subnav-item ">Kalkulatory</a>
   <span class="subnav-sep">›</span>
-  <a href="kalkulator-zatrudnienia.html" class="subnav-item active">Zatrudnienie</a>
+    <a href="kalkulator-zatrudnienia.html" class="subnav-item ">Zatrudnienie</a>
   <span class="subnav-sep">›</span>
   <a href="kalkulator-wynagrodzen.html" class="subnav-item ">Wynagrodzenia</a>
   <span class="subnav-sep">›</span>
@@ -235,7 +235,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
   <span class="subnav-sep">›</span>
   <a href="kalkulator-macierzynski.html" class="subnav-item ">Macierzyński</a>
   <span class="subnav-sep">›</span>
-  <a href="kalkulator-diety.html" class="subnav-item ">Diety</a>
+  <a href="kalkulator-diety.html" class="subnav-item active">Diety</a>
   <span class="subnav-sep">›</span>
   <a href="aktualnosci.html" class="subnav-item ">Aktualności</a>
   <span class="subnav-sep">›</span>
@@ -243,370 +243,196 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
 </div>
 <div class="hero">
   <p class="hero-label">Narzędzia</p>
-  <h1>Kalkulator kosztów zatrudnienia 2026</h1>
-  <p class="hero-sub">Sprawdź ile naprawdę kosztuje pracownik — oblicz wynagrodzenie netto i całkowity koszt pracodawcy dla umowy o pracę, zlecenie i dzieło.</p>
+  <h1>Kalkulator diety krajowej 2026</h1>
+  <p class="hero-sub">Oblicz należną dietę z tytułu krajowej podróży służbowej — podaj datę i godzinę wyjazdu oraz powrotu, uwzględnij zapewnione posiłki, a kalkulator wyliczy kwotę zgodnie z obowiązującymi przepisami.</p>
 </div>
 <div class="content">
 
   <div class="section">
-    <p class="section-label">Porównanie form zatrudnienia</p>
-    <h2>Która umowa jest najtańsza?</h2>
-    <div class="info-grid">
-      <div class="info-box">
-        <strong>Umowa o pracę</strong>
-        <span>Najwyższy koszt dla pracodawcy — pełne składki ZUS, FP, FGŚP (ok. +20,48% ponad brutto). Pełna ochrona pracownicza: urlop, L4, ochrona przed zwolnieniem.</span>
+    <p class="section-label">Kalkulator</p>
+    <h2>Ile wyniesie dieta za podróż służbową?</h2>
+    <div class="calc-box">
+      <h3>Dane podróży</h3>
+      <p class="desc">Podaj datę i godzinę rozpoczęcia oraz zakończenia delegacji krajowej. Jeśli w trakcie podróży zapewniono bezpłatne posiłki, wpisz ich liczbę — kalkulator pomniejszy dietę zgodnie z przepisami.</p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="startDate">Data i godzina rozpoczęcia</label>
+          <input type="datetime-local" id="startDate">
+        </div>
+        <div class="form-group">
+          <label for="endDate">Data i godzina zakończenia</label>
+          <input type="datetime-local" id="endDate">
+          <span class="hint">Domyślnie ustawiona na teraz</span>
+        </div>
       </div>
-      <div class="info-box">
-        <strong>Umowa zlecenie</strong>
-        <span>Koszt zależy od sytuacji zleceniobiorcy. Student do 26 lat — zero składek. Pełne ZUS — koszt zbliżony do UoP, ale brak FGŚP i urlopu.</span>
+
+      <div class="form-row" style="grid-template-columns:repeat(3,1fr)">
+        <div class="form-group">
+          <label for="breakfasts">Śniadania (25%)</label>
+          <input type="number" id="breakfasts" min="0" value="0">
+        </div>
+        <div class="form-group">
+          <label for="lunches">Obiady (50%)</label>
+          <input type="number" id="lunches" min="0" value="0">
+        </div>
+        <div class="form-group">
+          <label for="dinners">Kolacje (25%)</label>
+          <input type="number" id="dinners" min="0" value="0">
+        </div>
       </div>
-      <div class="info-box">
-        <strong>Umowa o dzieło</strong>
-        <span>Najtańsza — brak składek ZUS. Pracodawca płaci tylko brutto. Ograniczone zastosowanie: tylko przy konkretnym, mierzalnym dziele.</span>
+      <span class="hint" style="display:block;margin:-.5rem 0 1rem">Łączna liczba zapewnionych bezpłatnych posiłków w całej podróży</span>
+
+      <button class="calc-btn" onclick="calculateDiet()">Oblicz dietę</button>
+
+      <div class="result-wrap" id="resultWrap">
+        <div class="result-panel full" id="resultPanel">
+          <p class="result-panel-title" id="resultTitle">Wynik kalkulacji</p>
+          <div id="resultContent"></div>
+        </div>
       </div>
+
+      <div class="tip-box">
+        <strong>Zasada:</strong> za każdą pełną dobę podróży przysługuje pełna dieta (45 zł). Za niepełną, ale rozpoczętą dobę: do 8 godzin — połowa diety, powyżej 8 godzin — pełna dieta. Jeśli cała podróż trwa nie dłużej niż dobę: poniżej 8 godzin dieta nie przysługuje, od 8 do 12 godzin — połowa diety, powyżej 12 godzin — pełna dieta.
+      </div>
+      <p class="disclaimer">Kalkulator ma charakter poglądowy i nie stanowi porady prawnej ani podatkowej. Przy rozliczaniu delegacji pracowniczych sprawdź dodatkowo zasady wynikające z regulaminu wynagradzania lub umowy o pracę.</p>
     </div>
   </div>
 
   <div class="section">
-    <h2>Oblicz koszty zatrudnienia</h2>
-
-    <div class="calc-tabs">
-      <button class="calc-tab active" onclick="showTab('uop',this)">Umowa o pracę</button>
-      <button class="calc-tab" onclick="showTab('zlecenie',this)">Umowa zlecenie</button>
-      <button class="calc-tab" onclick="showTab('dzielo',this)">Umowa o dzieło</button>
-    </div>
-
-    <!-- UMOWA O PRACĘ -->
-    <div class="calc-panel active" id="panel-uop">
-      <div class="calc-box">
-        <h3>Umowa o pracę — pełna kalkulacja 2026</h3>
-        <p class="desc">Składki pracodawcy: emerytalna 9,76% + rentowa 6,50% + wypadkowa 1,67% + FP 2,45% + FGŚP 0,10% = łącznie <strong>20,48%</strong> ponad brutto (bez PPK). Minimalne wynagrodzenie 2026: <strong>4 806 zł brutto</strong>.</p>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Wynagrodzenie brutto (zł)</label>
-            <input type="number" id="uop-brutto" placeholder="np. 6000" min="4806">
-            <span class="hint">Minimum: 4 806 zł (płaca minimalna 2026)</span>
-          </div>
-          <div class="form-group">
-            <label>Koszty uzyskania przychodu</label>
-            <select id="uop-kup">
-              <option value="zwykl">Zwykłe — 250 zł (miejscowość zamieszkania = praca)</option>
-              <option value="podw">Podwyższone — 300 zł (dojazd do innej miejscowości)</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>PPK (Pracownicze Plany Kapitałowe)</label>
-            <select id="uop-ppk">
-              <option value="nie">Nie (pracownik zrezygnował)</option>
-              <option value="tak">Tak (pracodawca 1,5% + pracownik 2%)</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Wiek pracownika</label>
-            <select id="uop-mlodc">
-              <option value="nie">26 lat lub więcej</option>
-              <option value="tak">Do 26 lat (zerowy PIT — ulga dla młodych)</option>
-            </select>
-          </div>
-        </div>
-        <button class="calc-btn" onclick="obliczUoP()">Oblicz</button>
-        <div class="result-wrap" id="result-uop">
-          <div class="result-panel" id="res-uop-pracownik"></div>
-          <div class="result-panel" id="res-uop-pracodawca"></div>
-          <div class="result-panel full" id="res-uop-suma"></div>
-        </div>
+    <p class="section-label">Warto wiedzieć</p>
+    <h2>Jak liczona jest dieta krajowa</h2>
+    <div class="info-grid">
+      <div class="info-box">
+        <strong>Stawka — 45 zł za dobę</strong>
+        <span>Wysokość diety krajowej obowiązuje bez zmian od 1 stycznia 2023 r. Dotyczy zarówno pracowników, jak i przedsiębiorców rozliczających koszty własnej podróży służbowej.</span>
       </div>
-      <div class="tip-box">
-        <strong>Składki pracodawcy przy umowie o pracę 2026:</strong> emerytalna 9,76% + rentowa 6,50% + wypadkowa 1,67% + Fundusz Pracy 2,45% + FGŚP 0,10% = <strong>20,48% ponad wynagrodzenie brutto</strong>. Przy minimalnym wynagrodzeniu 4 806 zł całkowity koszt pracodawcy wynosi ok. <strong>5 790 zł miesięcznie</strong>.
+      <div class="info-box">
+        <strong>Niepełna doba</strong>
+        <span>Przy podróży dłuższej niż doba: do 8 godzin dodatkowego czasu — połowa diety, powyżej 8 godzin — pełna dieta za rozpoczętą dobę.</span>
+      </div>
+      <div class="info-box">
+        <strong>Podróż do 24 godzin</strong>
+        <span>Poniżej 8 godzin dieta nie przysługuje. Od 8 do 12 godzin — połowa diety (22,50 zł). Powyżej 12 godzin — pełna dieta (45 zł).</span>
       </div>
     </div>
-
-    <!-- UMOWA ZLECENIE -->
-    <div class="calc-panel" id="panel-zlecenie">
-      <div class="calc-box">
-        <h3>Umowa zlecenie — kalkulacja 2026</h3>
-        <p class="desc">Koszt zlecenia zależy od sytuacji ubezpieczeniowej zleceniobiorcy. Przy zbiegu tytułów lub dla studenta koszt pracodawcy może być znacznie niższy niż przy umowie o pracę.</p>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Wynagrodzenie brutto (zł)</label>
-            <input type="number" id="uz-brutto" placeholder="np. 5000" min="0">
-            <span class="hint">Min. stawka godzinowa 2026: 31,40 zł/h</span>
-          </div>
-          <div class="form-group">
-            <label>Sytuacja ubezpieczeniowa zleceniobiorcy</label>
-            <select id="uz-sytuacja">
-              <option value="pelny">Jedyny tytuł ubezpieczenia — pełne składki ZUS</option>
-              <option value="etat_min">Ma inny etat ≥ min. wynagrodzeniu — tylko zdrowotna</option>
-              <option value="student">Student / uczeń do 26 lat — brak składek ZUS</option>
-            </select>
-          </div>
-        </div>
-        <button class="calc-btn" onclick="obliczZlecenie()">Oblicz</button>
-        <div class="result-wrap" id="result-uz" style="grid-template-columns:1fr">
-          <div class="result-panel" id="res-uz"></div>
-        </div>
-      </div>
-      <div class="tip-box">
-        <strong>Uwaga:</strong> Przy umowie zleceniu brak FGŚP i urlopu. Zleceniobiorca nie ma prawa do zwolnienia chorobowego finansowanego przez pracodawcę od 1. dnia (jak przy UoP). Dobrowolne ubezpieczenie chorobowe zleceniobiorcy finansuje on sam.
-      </div>
+    <div class="tip-box">
+      Jeśli w trakcie delegacji zapewniono bezpłatne posiłki, dietę pomniejsza się liczone od pełnej stawki 45 zł: śniadanie o 25% (11,25 zł), obiad o 50% (22,50 zł), kolacja o 25% (11,25 zł). Zapewnienie całodziennego bezpłatnego wyżywienia oznacza brak prawa do diety za dany dzień — kalkulator nie pozwoli, by wynik spadł poniżej zera.
     </div>
-
-    <!-- UMOWA O DZIEŁO -->
-    <div class="calc-panel" id="panel-dzielo">
-      <div class="calc-box">
-        <h3>Umowa o dzieło — kalkulacja 2026</h3>
-        <p class="desc">Umowa o dzieło nie podlega składkom ZUS (wyjątek: umowa z własnym pracownikiem). Pracodawca potrąca wyłącznie zaliczkę na podatek dochodowy. Od 2021 r. każdą umowę o dzieło należy zgłosić do ZUS formularzem RUD w ciągu 7 dni.</p>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Wynagrodzenie brutto (zł)</label>
-            <input type="number" id="ud-brutto" placeholder="np. 3000" min="0">
-          </div>
-          <div class="form-group">
-            <label>Koszty uzyskania przychodu</label>
-            <select id="ud-kup">
-              <option value="20">20% — standardowe</option>
-              <option value="50">50% — prawa autorskie / artystyczne</option>
-            </select>
-          </div>
-        </div>
-        <button class="calc-btn" onclick="obliczDzielo()">Oblicz</button>
-        <div class="result-wrap" id="result-ud" style="grid-template-columns:1fr">
-          <div class="result-panel" id="res-ud"></div>
-        </div>
-      </div>
-      <div class="tip-box">
-        <strong>Kiedy można zawrzeć umowę o dzieło?</strong> Tylko gdy zlecane jest konkretne, mierzalne dzieło (np. napisanie artykułu, stworzenie projektu, wykonanie mebla). Nie można jej stosować do prac ciągłych lub powtarzalnych — w takim przypadku ZUS może zakwestionować umowę i przekształcić ją w zlecenie lub stosunek pracy.
-      </div>
-    </div>
-
   </div>
 
   <div class="info-cta">
-    <h3>Planujesz pierwsze zatrudnienie?</h3>
-    <p>Wybór formy umowy, zgłoszenie pracownika do ZUS, pierwsze listy płac — zajmę się wszystkim. Skontaktuj się ze mną przed podpisaniem pierwszej umowy.</p>
+    <h3>Rozliczasz podróże służbowe w firmie?</h3>
+    <p>Pomogę Ci prawidłowo ująć diety i inne koszty delegacji w księgach — indywidualnie, bez zbędnego stresu.</p>
     <a href="https://kingabiuro.pl#kontakt">Skonsultuj się bezpłatnie</a>
   </div>
 
 </div>
-
 <script>
 function fmt(n){
   if(isNaN(n)||n===null)return'—';
   return n.toFixed(2).replace('.',',').replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' zł';
 }
 function rrow(label,val,cls){
-  return '<div class="rrow'+(cls?' '+cls:'')+'"><span>'+label+'</span><strong>'+fmt(val)+'</strong></div>';
-}
-function showTab(id,btn){
-  document.querySelectorAll('.calc-tab').forEach(function(t){t.classList.remove('active');});
-  document.querySelectorAll('.calc-panel').forEach(function(p){p.classList.remove('active');});
-  btn.classList.add('active');
-  document.getElementById('panel-'+id).classList.add('active');
+  var v = (typeof val === 'string') ? val : fmt(val);
+  return '<div class="rrow'+(cls?' '+cls:'')+'"><span>'+label+'</span><strong>'+v+'</strong></div>';
 }
 
-/* ══ UMOWA O PRACĘ ══ */
-function obliczUoP(){
-  var brutto    = parseFloat(document.getElementById('uop-brutto').value)||0;
-  var ppk       = document.getElementById('uop-ppk').value==='tak'; // czy PPK
-  var mlodc     = document.getElementById('uop-mlodc').value==='tak'; // do 26 lat
-  var kup       = document.getElementById('uop-kup').value;       // zwykłe/podw
+var DIET_RATE = 45.00;
 
-  if(brutto<=0){alert('Podaj wynagrodzenie brutto.');return;}
+document.addEventListener('DOMContentLoaded',function(){
+  var e = document.getElementById('endDate');
+  if(e){
+    var now = new Date();
+    now.setMinutes(now.getMinutes()-now.getTimezoneOffset());
+    e.value = now.toISOString().slice(0,16);
+  }
+});
 
-  // ── Składki PRACOWNIK ──
-  var p_em   = brutto * 0.0976;  // emerytal. 9,76%
-  var p_rent = brutto * 0.015;   // rentowa 1,5%
-  var p_chor = brutto * 0.0245;  // chorobowa 2,45%
-  var p_spo  = p_em + p_rent + p_chor; // łączne społ. pracownika
+function calculateDiet(){
+  var wrap = document.getElementById('resultWrap');
+  var title = document.getElementById('resultTitle');
+  var out = document.getElementById('resultContent');
+  wrap.classList.add('show');
 
-  // Składka zdrowotna pracownik: 9% z (brutto - składki społ.)
-  var podst_zdr = brutto - p_spo;
-  var p_zdr = podst_zdr * 0.09;
+  var startInput = document.getElementById('startDate').value;
+  var endInput = document.getElementById('endDate').value;
 
-  // KUP (koszty uzyskania przychodu)
-  var kup_kw = kup==='podw' ? 300 : 250; // podwyższone (inne miasto) lub zwykłe
-
-  // PPK pracownik: 2% brutto (domyślnie, tu 2%)
-  var ppk_p = ppk ? brutto*0.02 : 0;
-
-  // Podstawa opodatkowania
-  var podst_pit = brutto - p_spo - kup_kw + (ppk ? brutto*0.015 : 0);
-  podst_pit = Math.max(0, Math.round(podst_pit));
-
-  // Zaliczka PIT
-  var pit = 0;
-  if(!mlodc){
-    // kwota zmniejszająca 300 zł/mies tylko przy złożeniu PIT-2
-    pit = Math.max(0, Math.round(podst_pit * 0.12 - 300));
-    // Uproszczenie: zakładamy skalę 12% i złożony PIT-2
+  if(!startInput || !endInput){
+    return showError(title,out,'Proszę uzupełnić datę rozpoczęcia i zakończenia podróży służbowej.');
   }
 
-  // Netto pracownika
-  var netto = brutto - p_spo - p_zdr - pit - ppk_p;
+  var start = new Date(startInput);
+  var end = new Date(endInput);
 
-  // ── Składki PRACODAWCA ──
-  var pr_em   = brutto * 0.0976; // 9,76%
-  var pr_rent = brutto * 0.065;  // 6,50%
-  var pr_wyp  = brutto * 0.0167; // 1,67% (standardowa)
-  var pr_fp   = brutto * 0.0245; // 2,45%
-  var pr_fgsp = brutto * 0.001;  // 0,10%
-  var pr_ppk  = ppk ? brutto*0.015 : 0; // 1,5%
-  var pr_spo  = pr_em + pr_rent + pr_wyp + pr_fp + pr_fgsp + pr_ppk;
-
-  var koszt_calkowity = brutto + pr_spo;
-
-  // Wyświetl
-  var divP = document.getElementById('res-uop-pracownik');
-  var divPr = document.getElementById('res-uop-pracodawca');
-  var divSum = document.getElementById('res-uop-suma');
-
-  divP.innerHTML =
-    '<div class="result-panel-title">Wynagrodzenie pracownika</div>' +
-    rrow('Brutto',brutto) +
-    rrow('Emerytalna pracownika (9,76%)',-p_em,'minus') +
-    rrow('Rentowa pracownika (1,50%)',-p_rent,'minus') +
-    rrow('Chorobowa pracownika (2,45%)',-p_chor,'minus') +
-    rrow('Składka zdrowotna (9%)',-p_zdr,'minus') +
-    (ppk?rrow('PPK pracownika (2%)',-ppk_p,'minus'):'') +
-    (!mlodc?rrow('Zaliczka PIT (12%)',-pit,'minus'):'') +
-    (mlodc?'<div class="rrow"><span>Zaliczka PIT</span><strong style="color:var(--teal-lt)">0 zł (do 26 lat)</strong></div>':'') +
-    '<div class="rtotal"><span>Netto "na rękę"</span><strong>'+fmt(netto)+'</strong></div>';
-
-  divPr.innerHTML =
-    '<div class="result-panel-title">Koszty pracodawcy</div>' +
-    rrow('Wynagrodzenie brutto',brutto) +
-    rrow('Emerytalna pracodawcy (9,76%)',pr_em,'plus') +
-    rrow('Rentowa pracodawcy (6,50%)',pr_rent,'plus') +
-    rrow('Wypadkowa (1,67%)',pr_wyp,'plus') +
-    rrow('Fundusz Pracy (2,45%)',pr_fp,'plus') +
-    rrow('FGŚP (0,10%)',pr_fgsp,'plus') +
-    (ppk?rrow('PPK pracodawcy (1,50%)',pr_ppk,'plus'):'') +
-    '<div class="rtotal"><span>Całkowity koszt</span><strong>'+fmt(koszt_calkowity)+'</strong></div>';
-
-  divSum.innerHTML =
-    '<div class="result-panel-title">Podsumowanie</div>' +
-    rrow('Pracownik otrzymuje "na rękę"',netto) +
-    rrow('Całkowity koszt pracodawcy',koszt_calkowity) +
-    rrow('Różnica (podatki + ZUS łącznie)',koszt_calkowity-netto) +
-    '<div class="disclaimer">* Wyniki orientacyjne. Zakładają skalę podatkową 12%, złożony PIT-2, standardową stopę wypadkową 1,67%. Nie uwzględniają ulg podatkowych.</div>';
-
-  document.getElementById('result-uop').classList.add('show');
-}
-
-/* ══ UMOWA ZLECENIE ══ */
-function obliczZlecenie(){
-  var brutto  = parseFloat(document.getElementById('uz-brutto').value)||0;
-  var sytuacja = document.getElementById('uz-sytuacja').value;
-  // sytuacja: pelny / etat_min / student
-
-  if(brutto<=0){alert('Podaj wynagrodzenie brutto.');return;}
-
-  var p_em=0,p_rent=0,p_chor=0,p_spo=0,pr_em=0,pr_rent=0,pr_wyp=0,pr_fp=0;
-
-  if(sytuacja==='student'){
-    // Student do 26 lat — brak składek ZUS
-    // Tylko podatek 17% (zryczałtowany przy niskich kwotach, tu 12% skala)
-    var kup = brutto * 0.20; // 20% KUP dla zleceń
-    var podst = Math.max(0, brutto - kup);
-    var pit = Math.round(podst * 0.12);
-    var netto = brutto - pit;
-    var koszt = brutto; // pracodawca płaci tylko brutto
-
-    document.getElementById('res-uz').innerHTML =
-      '<div class="result-panel-title">Student do 26 lat — brak składek ZUS</div>' +
-      rrow('Wynagrodzenie brutto',brutto) +
-      rrow('KUP (20%)',-kup,'minus') +
-      rrow('Zaliczka PIT (12%)',-pit,'minus') +
-      '<div class="rtotal"><span>Netto "na rękę"</span><strong>'+fmt(netto)+'</strong></div>' +
-      '<div class="rtotal" style="margin-top:.5rem"><span>Całkowity koszt pracodawcy</span><strong>'+fmt(koszt)+'</strong></div>' +
-      '<div class="disclaimer">Brak składek ZUS — student do 26. roku życia. Pracodawca płaci tylko kwotę brutto.</div>';
-  } else if(sytuacja==='etat_min'){
-    // Ma inny etat ≥ minimalne — tylko zdrowotna
-    var p_zdr = (brutto)*0.09;
-    var kup = brutto*0.20;
-    var podst = Math.max(0, brutto - kup);
-    var pit = Math.round(podst*0.12);
-    var netto = brutto - p_zdr - pit;
-    var pr_zdr_pr = 0; // zdrowotna tylko po stronie pracownika
-    var koszt = brutto; // pracodawca nie płaci dodatkowych składek
-
-    document.getElementById('res-uz').innerHTML =
-      '<div class="result-panel-title">Zbieg tytułów — tylko składka zdrowotna</div>' +
-      rrow('Wynagrodzenie brutto',brutto) +
-      rrow('Składka zdrowotna (9%)',-p_zdr,'minus') +
-      rrow('KUP (20%)',-kup,'minus') +
-      rrow('Zaliczka PIT (12%)',-pit,'minus') +
-      '<div class="rtotal"><span>Netto "na rękę"</span><strong>'+fmt(netto)+'</strong></div>' +
-      '<div class="rtotal" style="margin-top:.5rem"><span>Całkowity koszt pracodawcy</span><strong>'+fmt(koszt)+'</strong></div>' +
-      '<div class="disclaimer">Zleceniobiorca ma inny tytuł ubezpieczenia z wynagrodzeniem ≥ minimalnemu. Pracodawca płaci tylko brutto.</div>';
-  } else {
-    // Pełne składki ZUS (jedyny tytuł)
-    p_em   = brutto*0.0976;
-    p_rent = brutto*0.015;
-    p_chor = brutto*0.0245;
-    p_spo  = p_em+p_rent+p_chor;
-    var p_zdr2 = (brutto-p_spo)*0.09;
-    var kup2 = brutto*0.20;
-    var podst2 = Math.max(0,brutto-p_spo-kup2);
-    var pit2 = Math.round(podst2*0.12-300);
-    pit2 = Math.max(0,pit2);
-    var netto2 = brutto-p_spo-p_zdr2-pit2;
-
-    pr_em   = brutto*0.0976;
-    pr_rent = brutto*0.065;
-    pr_wyp  = brutto*0.0167;
-    pr_fp   = brutto*0.0245;
-    var pr_fgsp2 = 0; // zlecenie — brak FGŚP
-    var pr_spo2 = pr_em+pr_rent+pr_wyp+pr_fp;
-    var koszt2 = brutto+pr_spo2;
-
-    document.getElementById('res-uz').innerHTML =
-      '<div class="result-panel-title">Pełne składki ZUS</div>' +
-      rrow('Brutto',brutto) +
-      rrow('Składki społ. pracownika (13,71%)',-p_spo,'minus') +
-      rrow('Składka zdrowotna (9%)',-p_zdr2,'minus') +
-      rrow('Zaliczka PIT (12%)',-pit2,'minus') +
-      '<div class="rtotal"><span>Netto "na rękę"</span><strong>'+fmt(netto2)+'</strong></div>' +
-      '<hr style="border:none;border-top:1px solid rgba(45,170,143,.15);margin:.75rem 0">' +
-      rrow('Emerytalna pracodawcy (9,76%)',pr_em,'plus') +
-      rrow('Rentowa pracodawcy (6,50%)',pr_rent,'plus') +
-      rrow('Wypadkowa (1,67%)',pr_wyp,'plus') +
-      rrow('Fundusz Pracy (2,45%)',pr_fp,'plus') +
-      '<div class="rtotal"><span>Całkowity koszt pracodawcy</span><strong>'+fmt(koszt2)+'</strong></div>' +
-      '<div class="disclaimer">Brak FGŚP przy zleceniu. Stopa wypadkowa 1,67% (standardowa).</div>';
+  if(end <= start){
+    return showError(title,out,'Data zakończenia musi być późniejsza niż data rozpoczęcia.');
   }
 
-  document.getElementById('result-uz').classList.add('show');
+  var diffMs = end - start;
+  var totalHours = diffMs / (1000*60*60);
+
+  var fullDays = Math.floor(totalHours/24);
+  var remainingHours = totalHours % 24;
+
+  var dietCount = fullDays;
+  var partialDiets = 0;
+
+  if(fullDays === 0){
+    if(remainingHours >= 8 && remainingHours <= 12){
+      dietCount += 0.5;
+      partialDiets = 0.5;
+    }else if(remainingHours > 12){
+      dietCount += 1;
+      partialDiets = 1;
+    }
+  }else{
+    if(remainingHours > 0 && remainingHours <= 8){
+      dietCount += 0.5;
+      partialDiets = 0.5;
+    }else if(remainingHours > 8){
+      dietCount += 1;
+      partialDiets = 1;
+    }
+  }
+
+  var baseAmount = dietCount * DIET_RATE;
+
+  var breakfasts = parseInt(document.getElementById('breakfasts').value) || 0;
+  var lunches = parseInt(document.getElementById('lunches').value) || 0;
+  var dinners = parseInt(document.getElementById('dinners').value) || 0;
+
+  var breakfastDeduction = breakfasts * (DIET_RATE * 0.25);
+  var lunchDeduction = lunches * (DIET_RATE * 0.50);
+  var dinnerDeduction = dinners * (DIET_RATE * 0.25);
+  var totalDeductions = breakfastDeduction + lunchDeduction + dinnerDeduction;
+
+  var finalAmount = baseAmount - totalDeductions;
+  if(finalAmount < 0) finalAmount = 0;
+
+  var daysPart = Math.floor(totalHours/24);
+  var hoursPart = Math.floor(totalHours%24);
+  var minutesPart = Math.round((totalHours%1)*60);
+  var durationText = '';
+  if(daysPart > 0) durationText += daysPart + ' dni ';
+  if(hoursPart > 0 || daysPart === 0) durationText += hoursPart + ' godz. ';
+  if(minutesPart > 0) durationText += minutesPart + ' min.';
+
+  var partialLabel = partialDiets > 0 ? (partialDiets === 0.5 ? '1/2 diety' : '1 dieta') : 'brak';
+
+  title.innerText = 'Wynik kalkulacji';
+  out.innerHTML =
+    rrow('Łączny czas delegacji', durationText.trim()) +
+    rrow('Pełne doby podróży', fullDays + ' × 45 zł') +
+    rrow('Niepełna doba', partialLabel) +
+    rrow('Kwota diety przed pomniejszeniem', baseAmount) +
+    rrow('Potrącenia za zapewnione posiłki', totalDeductions, totalDeductions>0?'minus':'') +
+    '<div class="rtotal"><span>Należna dieta</span><strong>'+fmt(finalAmount)+'</strong></div>';
 }
 
-/* ══ UMOWA O DZIEŁO ══ */
-function obliczDzielo(){
-  var brutto = parseFloat(document.getElementById('ud-brutto').value)||0;
-  var kup50  = document.getElementById('ud-kup').value==='50'; // prawa autorskie
-
-  if(brutto<=0){alert('Podaj wynagrodzenie brutto.');return;}
-
-  var kup_proc = kup50 ? 0.50 : 0.20;
-  // Limit KUP 50%: 120 000 zł rocznie — miesięcznie 10 000 zł, uproszczamy
-  var kup_kw = brutto * kup_proc;
-  var podst = Math.max(0, brutto - kup_kw);
-  var pit = Math.round(podst * 0.12);
-  var netto = brutto - pit;
-  var koszt = brutto; // pracodawca płaci tylko brutto (brak ZUS)
-
-  document.getElementById('res-ud').innerHTML =
-    '<div class="result-panel-title">Umowa o dzieło — brak składek ZUS</div>' +
-    rrow('Wynagrodzenie brutto',brutto) +
-    rrow('KUP ('+(kup50?'50%':'20%)'),-kup_kw,'minus') +
-    rrow('Podstawa opodatkowania',podst) +
-    rrow('Zaliczka PIT (12%)',-pit,'minus') +
-    '<div class="rtotal"><span>Netto "na rękę"</span><strong>'+fmt(netto)+'</strong></div>' +
-    '<div class="rtotal" style="margin-top:.5rem"><span>Całkowity koszt pracodawcy</span><strong>'+fmt(koszt)+'</strong></div>' +
-    '<div class="disclaimer">Brak składek ZUS (o ile wykonawca nie jest własnym pracownikiem). Pracodawca potrąca tylko zaliczkę PIT. Uwaga: od 2021 r. umowy o dzieło zgłasza się do ZUS (formularz RUD).</div>';
-
-  document.getElementById('result-ud').classList.add('show');
+function showError(title,out,message){
+  title.innerText = 'Błąd';
+  out.innerHTML = '<p style="font-size:.85rem;color:#ff8a8a;line-height:1.7">'+message+'</p>';
 }
 </script>
 

@@ -9,8 +9,8 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MYC73T19W3');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<title>Kalkulator kosztów zatrudnienia 2026 – Kinga Biuro Rachunkowe</title>
+<title>Kalkulator zasiłku chorobowego 2026 – Kinga Biuro Rachunkowe</title>
+<meta name="description" content="Kalkulator zasiłku chorobowego 2026. Oblicz wysokość świadczenia chorobowego dla umowy o pracę oraz działalności gospodarczej (JDG).">
 <meta name="description" content="Kalkulator kosztów zatrudnienia 2026. Oblicz ile kosztuje pracownik na umowę o pracę, zlecenie i dzieło — wynagrodzenie netto i całkowity koszt pracodawcy.">
 <style>
 
@@ -217,7 +217,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
   <span class="subnav-sep">›</span>
   <a href="kalkulatory.html" class="subnav-item ">Kalkulatory</a>
   <span class="subnav-sep">›</span>
-  <a href="kalkulator-zatrudnienia.html" class="subnav-item active">Zatrudnienie</a>
+  <a href="kalkulator-zatrudnienia.html" class="subnav-item ">Zatrudnienie</a>
   <span class="subnav-sep">›</span>
   <a href="kalkulator-wynagrodzen.html" class="subnav-item ">Wynagrodzenia</a>
   <span class="subnav-sep">›</span>
@@ -227,7 +227,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
   <span class="subnav-sep">›</span>
   <a href="kalkulator-ryczaltu.html" class="subnav-item ">Ryczałt</a>
   <span class="subnav-sep">›</span>
-  <a href="kalkulator-chorobowy.html" class="subnav-item ">Chorobowe</a>
+  <a href="kalkulator-chorobowy.html" class="subnav-item active">Chorobowe</a>
   <span class="subnav-sep">›</span>
   <a href="kalkulator-odsetek.html" class="subnav-item ">Odsetki</a>
   <span class="subnav-sep">›</span>
@@ -243,370 +243,203 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
 </div>
 <div class="hero">
   <p class="hero-label">Narzędzia</p>
-  <h1>Kalkulator kosztów zatrudnienia 2026</h1>
-  <p class="hero-sub">Sprawdź ile naprawdę kosztuje pracownik — oblicz wynagrodzenie netto i całkowity koszt pracodawcy dla umowy o pracę, zlecenie i dzieło.</p>
+  <h1>Kalkulator zasiłku chorobowego 2026</h1>
+  <p class="hero-sub">Sprawdź, ile wyniesie Twoje świadczenie chorobowe — dla umowy o pracę oraz dla własnej działalności gospodarczej.</p>
 </div>
 <div class="content">
 
   <div class="section">
-    <p class="section-label">Porównanie form zatrudnienia</p>
-    <h2>Która umowa jest najtańsza?</h2>
+    <p class="section-label">Świadczenia chorobowe</p>
+    <h2>Ile wyniesie Twój zasiłek chorobowy?</h2>
     <div class="info-grid">
       <div class="info-box">
         <strong>Umowa o pracę</strong>
-        <span>Najwyższy koszt dla pracodawcy — pełne składki ZUS, FP, FGŚP (ok. +20,48% ponad brutto). Pełna ochrona pracownicza: urlop, L4, ochrona przed zwolnieniem.</span>
+        <span>Pierwsze 33 dni choroby w roku kalendarzowym (14 dni dla osób po 50. roku życia) płaci pracodawca jako wynagrodzenie chorobowe. Kolejne dni wypłaca ZUS.</span>
       </div>
       <div class="info-box">
-        <strong>Umowa zlecenie</strong>
-        <span>Koszt zależy od sytuacji zleceniobiorcy. Student do 26 lat — zero składek. Pełne ZUS — koszt zbliżony do UoP, ale brak FGŚP i urlopu.</span>
+        <strong>Działalność gospodarcza (JDG)</strong>
+        <span>Zasiłek chorobowy przysługuje wyłącznie przy dobrowolnym opłacaniu składki chorobowej i wypłacany jest od pierwszego dnia bezpośrednio przez ZUS.</span>
       </div>
       <div class="info-box">
-        <strong>Umowa o dzieło</strong>
-        <span>Najtańsza — brak składek ZUS. Pracodawca płaci tylko brutto. Ograniczone zastosowanie: tylko przy konkretnym, mierzalnym dziele.</span>
+        <strong>Standardowa wysokość</strong>
+        <span>Zasiłek wynosi zwykle 80% podstawy wymiaru. 100% przysługuje m.in. w ciąży oraz przy wypadku w drodze do pracy.</span>
       </div>
     </div>
   </div>
 
   <div class="section">
-    <h2>Oblicz koszty zatrudnienia</h2>
+    <h2>Oblicz wysokość świadczenia</h2>
 
     <div class="calc-tabs">
       <button class="calc-tab active" onclick="showTab('uop',this)">Umowa o pracę</button>
-      <button class="calc-tab" onclick="showTab('zlecenie',this)">Umowa zlecenie</button>
-      <button class="calc-tab" onclick="showTab('dzielo',this)">Umowa o dzieło</button>
+      <button class="calc-tab" onclick="showTab('jdg',this)">Działalność gospodarcza (JDG)</button>
     </div>
 
     <!-- UMOWA O PRACĘ -->
     <div class="calc-panel active" id="panel-uop">
       <div class="calc-box">
-        <h3>Umowa o pracę — pełna kalkulacja 2026</h3>
-        <p class="desc">Składki pracodawcy: emerytalna 9,76% + rentowa 6,50% + wypadkowa 1,67% + FP 2,45% + FGŚP 0,10% = łącznie <strong>20,48%</strong> ponad brutto (bez PPK). Minimalne wynagrodzenie 2026: <strong>4 806 zł brutto</strong>.</p>
+        <h3>Zasiłek chorobowy — umowa o pracę</h3>
+        <p class="desc">Podstawa wymiaru to średnie wynagrodzenie brutto z ostatnich 12 miesięcy, pomniejszone o 13,71% (składki finansowane przez pracownika).</p>
         <div class="form-row">
           <div class="form-group">
-            <label>Wynagrodzenie brutto (zł)</label>
-            <input type="number" id="uop-brutto" placeholder="np. 6000" min="4806">
-            <span class="hint">Minimum: 4 806 zł (płaca minimalna 2026)</span>
+            <label>Średnie wynagrodzenie brutto z 12 mies. (zł)</label>
+            <input type="number" id="uop-salary" placeholder="np. 5000" min="0" step="0.01">
           </div>
           <div class="form-group">
-            <label>Koszty uzyskania przychodu</label>
-            <select id="uop-kup">
-              <option value="zwykl">Zwykłe — 250 zł (miejscowość zamieszkania = praca)</option>
-              <option value="podw">Podwyższone — 300 zł (dojazd do innej miejscowości)</option>
-            </select>
+            <label>Liczba dni na zwolnieniu (L4)</label>
+            <input type="number" id="uop-days" placeholder="np. 7" min="1" max="182">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label>PPK (Pracownicze Plany Kapitałowe)</label>
-            <select id="uop-ppk">
-              <option value="nie">Nie (pracownik zrezygnował)</option>
-              <option value="tak">Tak (pracodawca 1,5% + pracownik 2%)</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Wiek pracownika</label>
-            <select id="uop-mlodc">
-              <option value="nie">26 lat lub więcej</option>
-              <option value="tak">Do 26 lat (zerowy PIT — ulga dla młodych)</option>
+            <label>Procent wypłaty zasiłku</label>
+            <select id="uop-pct">
+              <option value="80">80% — standardowe chorobowe</option>
+              <option value="100">100% — ciąża / wypadek w drodze do pracy</option>
             </select>
           </div>
         </div>
         <button class="calc-btn" onclick="obliczUoP()">Oblicz</button>
         <div class="result-wrap" id="result-uop">
-          <div class="result-panel" id="res-uop-pracownik"></div>
-          <div class="result-panel" id="res-uop-pracodawca"></div>
-          <div class="result-panel full" id="res-uop-suma"></div>
+          <div class="result-panel full" id="res-uop"></div>
         </div>
       </div>
       <div class="tip-box">
-        <strong>Składki pracodawcy przy umowie o pracę 2026:</strong> emerytalna 9,76% + rentowa 6,50% + wypadkowa 1,67% + Fundusz Pracy 2,45% + FGŚP 0,10% = <strong>20,48% ponad wynagrodzenie brutto</strong>. Przy minimalnym wynagrodzeniu 4 806 zł całkowity koszt pracodawcy wynosi ok. <strong>5 790 zł miesięcznie</strong>.
+        <strong>Podział płatnika:</strong> przy L4 do 33 dni w roku (14 dni dla osób 50+) całość płaci pracodawca. Powyżej tego limitu kolejne dni wypłaca ZUS.
       </div>
     </div>
 
-    <!-- UMOWA ZLECENIE -->
-    <div class="calc-panel" id="panel-zlecenie">
+    <!-- JDG -->
+    <div class="calc-panel" id="panel-jdg">
       <div class="calc-box">
-        <h3>Umowa zlecenie — kalkulacja 2026</h3>
-        <p class="desc">Koszt zlecenia zależy od sytuacji ubezpieczeniowej zleceniobiorcy. Przy zbiegu tytułów lub dla studenta koszt pracodawcy może być znacznie niższy niż przy umowie o pracę.</p>
+        <h3>Zasiłek chorobowy — działalność gospodarcza</h3>
+        <p class="desc">Podstawa wymiaru to zadeklarowana podstawa składek, pomniejszona o 13,71%. Świadczenie od pierwszego dnia wypłaca ZUS.</p>
         <div class="form-row">
           <div class="form-group">
-            <label>Wynagrodzenie brutto (zł)</label>
-            <input type="number" id="uz-brutto" placeholder="np. 5000" min="0">
-            <span class="hint">Min. stawka godzinowa 2026: 31,40 zł/h</span>
+            <label>Podstawa wymiaru składek</label>
+            <select id="jdg-basis-type" onchange="toggleCustomBasis()">
+              <option value="min">Minimalna podstawa (mały ZUS / preferencyjny)</option>
+              <option value="std">Duży ZUS — podstawa standardowa 2026</option>
+              <option value="custom">Własna zadeklarowana kwota</option>
+            </select>
+          </div>
+          <div class="form-group" id="jdg-custom-wrap" style="display:none">
+            <label>Zadeklarowana podstawa składek (zł)</label>
+            <input type="number" id="jdg-custom-basis" placeholder="np. 4000" min="0" step="0.01">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Liczba dni na zwolnieniu (L4)</label>
+            <input type="number" id="jdg-days" placeholder="np. 7" min="1" max="182">
           </div>
           <div class="form-group">
-            <label>Sytuacja ubezpieczeniowa zleceniobiorcy</label>
-            <select id="uz-sytuacja">
-              <option value="pelny">Jedyny tytuł ubezpieczenia — pełne składki ZUS</option>
-              <option value="etat_min">Ma inny etat ≥ min. wynagrodzeniu — tylko zdrowotna</option>
-              <option value="student">Student / uczeń do 26 lat — brak składek ZUS</option>
+            <label>Procent wypłaty zasiłku</label>
+            <select id="jdg-pct">
+              <option value="80">80% — standardowe chorobowe</option>
+              <option value="100">100% — ciąża / wypadek w drodze do pracy</option>
             </select>
           </div>
         </div>
-        <button class="calc-btn" onclick="obliczZlecenie()">Oblicz</button>
-        <div class="result-wrap" id="result-uz" style="grid-template-columns:1fr">
-          <div class="result-panel" id="res-uz"></div>
+        <button class="calc-btn" onclick="obliczJDG()">Oblicz</button>
+        <div class="result-wrap" id="result-jdg">
+          <div class="result-panel full" id="res-jdg"></div>
         </div>
       </div>
       <div class="tip-box">
-        <strong>Uwaga:</strong> Przy umowie zleceniu brak FGŚP i urlopu. Zleceniobiorca nie ma prawa do zwolnienia chorobowego finansowanego przez pracodawcę od 1. dnia (jak przy UoP). Dobrowolne ubezpieczenie chorobowe zleceniobiorcy finansuje on sam.
+        <strong>Uwaga:</strong> zasiłek chorobowy dla JDG przysługuje wyłącznie osobom, które opłacają dobrowolną składkę chorobową — bez niej świadczenie nie przysługuje.
       </div>
     </div>
-
-    <!-- UMOWA O DZIEŁO -->
-    <div class="calc-panel" id="panel-dzielo">
-      <div class="calc-box">
-        <h3>Umowa o dzieło — kalkulacja 2026</h3>
-        <p class="desc">Umowa o dzieło nie podlega składkom ZUS (wyjątek: umowa z własnym pracownikiem). Pracodawca potrąca wyłącznie zaliczkę na podatek dochodowy. Od 2021 r. każdą umowę o dzieło należy zgłosić do ZUS formularzem RUD w ciągu 7 dni.</p>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Wynagrodzenie brutto (zł)</label>
-            <input type="number" id="ud-brutto" placeholder="np. 3000" min="0">
-          </div>
-          <div class="form-group">
-            <label>Koszty uzyskania przychodu</label>
-            <select id="ud-kup">
-              <option value="20">20% — standardowe</option>
-              <option value="50">50% — prawa autorskie / artystyczne</option>
-            </select>
-          </div>
-        </div>
-        <button class="calc-btn" onclick="obliczDzielo()">Oblicz</button>
-        <div class="result-wrap" id="result-ud" style="grid-template-columns:1fr">
-          <div class="result-panel" id="res-ud"></div>
-        </div>
-      </div>
-      <div class="tip-box">
-        <strong>Kiedy można zawrzeć umowę o dzieło?</strong> Tylko gdy zlecane jest konkretne, mierzalne dzieło (np. napisanie artykułu, stworzenie projektu, wykonanie mebla). Nie można jej stosować do prac ciągłych lub powtarzalnych — w takim przypadku ZUS może zakwestionować umowę i przekształcić ją w zlecenie lub stosunek pracy.
-      </div>
-    </div>
-
   </div>
 
   <div class="info-cta">
-    <h3>Planujesz pierwsze zatrudnienie?</h3>
-    <p>Wybór formy umowy, zgłoszenie pracownika do ZUS, pierwsze listy płac — zajmę się wszystkim. Skontaktuj się ze mną przed podpisaniem pierwszej umowy.</p>
+    <h3>Planujesz L4 lub chcesz zabezpieczyć się na wypadek choroby?</h3>
+    <p>Pomogę Ci ustalić, czy warto opłacać dobrowolną składkę chorobową i jak przygotować dokumentację do ZUS.</p>
     <a href="https://kingabiuro.pl#kontakt">Skonsultuj się bezpłatnie</a>
   </div>
 
 </div>
-
 <script>
 function fmt(n){
   if(isNaN(n)||n===null)return'—';
   return n.toFixed(2).replace('.',',').replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' zł';
 }
 function rrow(label,val,cls){
-  return '<div class="rrow'+(cls?' '+cls:'')+'"><span>'+label+'</span><strong>'+fmt(val)+'</strong></div>';
+  var v = (typeof val === 'string') ? val : fmt(val);
+  return '<div class="rrow'+(cls?' '+cls:'')+'"><span>'+label+'</span><strong>'+v+'</strong></div>';
 }
-function showTab(id,btn){
-  document.querySelectorAll('.calc-tab').forEach(function(t){t.classList.remove('active');});
-  document.querySelectorAll('.calc-panel').forEach(function(p){p.classList.remove('active');});
+function showTab(name,btn){
+  document.querySelectorAll('.calc-tab').forEach(function(t){t.classList.remove('active')});
+  document.querySelectorAll('.calc-panel').forEach(function(p){p.classList.remove('active')});
   btn.classList.add('active');
-  document.getElementById('panel-'+id).classList.add('active');
+  document.getElementById('panel-'+name).classList.add('active');
+}
+function toggleCustomBasis(){
+  var v = document.getElementById('jdg-basis-type').value;
+  document.getElementById('jdg-custom-wrap').style.display = (v==='custom') ? 'flex' : 'none';
 }
 
 /* ══ UMOWA O PRACĘ ══ */
 function obliczUoP(){
-  var brutto    = parseFloat(document.getElementById('uop-brutto').value)||0;
-  var ppk       = document.getElementById('uop-ppk').value==='tak'; // czy PPK
-  var mlodc     = document.getElementById('uop-mlodc').value==='tak'; // do 26 lat
-  var kup       = document.getElementById('uop-kup').value;       // zwykłe/podw
+  var salary = parseFloat(document.getElementById('uop-salary').value)||0;
+  var days = parseInt(document.getElementById('uop-days').value)||0;
+  var pct = parseFloat(document.getElementById('uop-pct').value)/100;
 
-  if(brutto<=0){alert('Podaj wynagrodzenie brutto.');return;}
+  if(salary<=0||days<=0){alert('Podaj wynagrodzenie i liczbę dni.');return;}
 
-  // ── Składki PRACOWNIK ──
-  var p_em   = brutto * 0.0976;  // emerytal. 9,76%
-  var p_rent = brutto * 0.015;   // rentowa 1,5%
-  var p_chor = brutto * 0.0245;  // chorobowa 2,45%
-  var p_spo  = p_em + p_rent + p_chor; // łączne społ. pracownika
+  var netBasis = salary*(1-0.1371);
+  var dailyRate = (netBasis/30)*pct;
+  var totalGross = dailyRate*days;
 
-  // Składka zdrowotna pracownik: 9% z (brutto - składki społ.)
-  var podst_zdr = brutto - p_spo;
-  var p_zdr = podst_zdr * 0.09;
-
-  // KUP (koszty uzyskania przychodu)
-  var kup_kw = kup==='podw' ? 300 : 250; // podwyższone (inne miasto) lub zwykłe
-
-  // PPK pracownik: 2% brutto (domyślnie, tu 2%)
-  var ppk_p = ppk ? brutto*0.02 : 0;
-
-  // Podstawa opodatkowania
-  var podst_pit = brutto - p_spo - kup_kw + (ppk ? brutto*0.015 : 0);
-  podst_pit = Math.max(0, Math.round(podst_pit));
-
-  // Zaliczka PIT
-  var pit = 0;
-  if(!mlodc){
-    // kwota zmniejszająca 300 zł/mies tylko przy złożeniu PIT-2
-    pit = Math.max(0, Math.round(podst_pit * 0.12 - 300));
-    // Uproszczenie: zakładamy skalę 12% i złożony PIT-2
+  var employerPay, zusPay;
+  if(days<=33){
+    employerPay = totalGross;
+    zusPay = 0;
+  } else {
+    employerPay = dailyRate*33;
+    zusPay = dailyRate*(days-33);
   }
 
-  // Netto pracownika
-  var netto = brutto - p_spo - p_zdr - pit - ppk_p;
-
-  // ── Składki PRACODAWCA ──
-  var pr_em   = brutto * 0.0976; // 9,76%
-  var pr_rent = brutto * 0.065;  // 6,50%
-  var pr_wyp  = brutto * 0.0167; // 1,67% (standardowa)
-  var pr_fp   = brutto * 0.0245; // 2,45%
-  var pr_fgsp = brutto * 0.001;  // 0,10%
-  var pr_ppk  = ppk ? brutto*0.015 : 0; // 1,5%
-  var pr_spo  = pr_em + pr_rent + pr_wyp + pr_fp + pr_fgsp + pr_ppk;
-
-  var koszt_calkowity = brutto + pr_spo;
-
-  // Wyświetl
-  var divP = document.getElementById('res-uop-pracownik');
-  var divPr = document.getElementById('res-uop-pracodawca');
-  var divSum = document.getElementById('res-uop-suma');
-
-  divP.innerHTML =
-    '<div class="result-panel-title">Wynagrodzenie pracownika</div>' +
-    rrow('Brutto',brutto) +
-    rrow('Emerytalna pracownika (9,76%)',-p_em,'minus') +
-    rrow('Rentowa pracownika (1,50%)',-p_rent,'minus') +
-    rrow('Chorobowa pracownika (2,45%)',-p_chor,'minus') +
-    rrow('Składka zdrowotna (9%)',-p_zdr,'minus') +
-    (ppk?rrow('PPK pracownika (2%)',-ppk_p,'minus'):'') +
-    (!mlodc?rrow('Zaliczka PIT (12%)',-pit,'minus'):'') +
-    (mlodc?'<div class="rrow"><span>Zaliczka PIT</span><strong style="color:var(--teal-lt)">0 zł (do 26 lat)</strong></div>':'') +
-    '<div class="rtotal"><span>Netto "na rękę"</span><strong>'+fmt(netto)+'</strong></div>';
-
-  divPr.innerHTML =
-    '<div class="result-panel-title">Koszty pracodawcy</div>' +
-    rrow('Wynagrodzenie brutto',brutto) +
-    rrow('Emerytalna pracodawcy (9,76%)',pr_em,'plus') +
-    rrow('Rentowa pracodawcy (6,50%)',pr_rent,'plus') +
-    rrow('Wypadkowa (1,67%)',pr_wyp,'plus') +
-    rrow('Fundusz Pracy (2,45%)',pr_fp,'plus') +
-    rrow('FGŚP (0,10%)',pr_fgsp,'plus') +
-    (ppk?rrow('PPK pracodawcy (1,50%)',pr_ppk,'plus'):'') +
-    '<div class="rtotal"><span>Całkowity koszt</span><strong>'+fmt(koszt_calkowity)+'</strong></div>';
-
-  divSum.innerHTML =
-    '<div class="result-panel-title">Podsumowanie</div>' +
-    rrow('Pracownik otrzymuje "na rękę"',netto) +
-    rrow('Całkowity koszt pracodawcy',koszt_calkowity) +
-    rrow('Różnica (podatki + ZUS łącznie)',koszt_calkowity-netto) +
-    '<div class="disclaimer">* Wyniki orientacyjne. Zakładają skalę podatkową 12%, złożony PIT-2, standardową stopę wypadkową 1,67%. Nie uwzględniają ulg podatkowych.</div>';
+  document.getElementById('res-uop').innerHTML =
+    '<div class="result-panel-title">Wynik — umowa o pracę</div>' +
+    rrow('Podstawa wymiaru (po pomniejszeniu 13,71%)',netBasis) +
+    rrow('Stawka dzienna świadczenia',dailyRate) +
+    rrow('Płatne przez pracodawcę',employerPay) +
+    rrow('Płatne przez ZUS',zusPay) +
+    '<div class="rtotal"><span>Łączna kwota świadczenia brutto</span><strong>'+fmt(totalGross)+'</strong></div>' +
+    '<div class="disclaimer">Wyliczenie poglądowe. Ostateczną wartość świadczenia ustala pracodawca lub ZUS na podstawie faktycznej historii ubezpieczenia.</div>';
 
   document.getElementById('result-uop').classList.add('show');
 }
 
-/* ══ UMOWA ZLECENIE ══ */
-function obliczZlecenie(){
-  var brutto  = parseFloat(document.getElementById('uz-brutto').value)||0;
-  var sytuacja = document.getElementById('uz-sytuacja').value;
-  // sytuacja: pelny / etat_min / student
+/* ══ JDG ══ */
+function obliczJDG(){
+  var basisType = document.getElementById('jdg-basis-type').value;
+  var days = parseInt(document.getElementById('jdg-days').value)||0;
+  var pct = parseFloat(document.getElementById('jdg-pct').value)/100;
 
-  if(brutto<=0){alert('Podaj wynagrodzenie brutto.');return;}
+  if(days<=0){alert('Podaj liczbę dni na zwolnieniu.');return;}
 
-  var p_em=0,p_rent=0,p_chor=0,p_spo=0,pr_em=0,pr_rent=0,pr_wyp=0,pr_fp=0;
+  var basis;
+  if(basisType==='min') basis = 1400;
+  else if(basisType==='std') basis = 5300;
+  else basis = parseFloat(document.getElementById('jdg-custom-basis').value)||0;
 
-  if(sytuacja==='student'){
-    // Student do 26 lat — brak składek ZUS
-    // Tylko podatek 17% (zryczałtowany przy niskich kwotach, tu 12% skala)
-    var kup = brutto * 0.20; // 20% KUP dla zleceń
-    var podst = Math.max(0, brutto - kup);
-    var pit = Math.round(podst * 0.12);
-    var netto = brutto - pit;
-    var koszt = brutto; // pracodawca płaci tylko brutto
+  if(basis<=0){alert('Podaj prawidłową podstawę składek.');return;}
 
-    document.getElementById('res-uz').innerHTML =
-      '<div class="result-panel-title">Student do 26 lat — brak składek ZUS</div>' +
-      rrow('Wynagrodzenie brutto',brutto) +
-      rrow('KUP (20%)',-kup,'minus') +
-      rrow('Zaliczka PIT (12%)',-pit,'minus') +
-      '<div class="rtotal"><span>Netto "na rękę"</span><strong>'+fmt(netto)+'</strong></div>' +
-      '<div class="rtotal" style="margin-top:.5rem"><span>Całkowity koszt pracodawcy</span><strong>'+fmt(koszt)+'</strong></div>' +
-      '<div class="disclaimer">Brak składek ZUS — student do 26. roku życia. Pracodawca płaci tylko kwotę brutto.</div>';
-  } else if(sytuacja==='etat_min'){
-    // Ma inny etat ≥ minimalne — tylko zdrowotna
-    var p_zdr = (brutto)*0.09;
-    var kup = brutto*0.20;
-    var podst = Math.max(0, brutto - kup);
-    var pit = Math.round(podst*0.12);
-    var netto = brutto - p_zdr - pit;
-    var pr_zdr_pr = 0; // zdrowotna tylko po stronie pracownika
-    var koszt = brutto; // pracodawca nie płaci dodatkowych składek
+  var netBasis = basis*(1-0.1371);
+  var dailyRate = (netBasis/30)*pct;
+  var totalGross = dailyRate*days;
 
-    document.getElementById('res-uz').innerHTML =
-      '<div class="result-panel-title">Zbieg tytułów — tylko składka zdrowotna</div>' +
-      rrow('Wynagrodzenie brutto',brutto) +
-      rrow('Składka zdrowotna (9%)',-p_zdr,'minus') +
-      rrow('KUP (20%)',-kup,'minus') +
-      rrow('Zaliczka PIT (12%)',-pit,'minus') +
-      '<div class="rtotal"><span>Netto "na rękę"</span><strong>'+fmt(netto)+'</strong></div>' +
-      '<div class="rtotal" style="margin-top:.5rem"><span>Całkowity koszt pracodawcy</span><strong>'+fmt(koszt)+'</strong></div>' +
-      '<div class="disclaimer">Zleceniobiorca ma inny tytuł ubezpieczenia z wynagrodzeniem ≥ minimalnemu. Pracodawca płaci tylko brutto.</div>';
-  } else {
-    // Pełne składki ZUS (jedyny tytuł)
-    p_em   = brutto*0.0976;
-    p_rent = brutto*0.015;
-    p_chor = brutto*0.0245;
-    p_spo  = p_em+p_rent+p_chor;
-    var p_zdr2 = (brutto-p_spo)*0.09;
-    var kup2 = brutto*0.20;
-    var podst2 = Math.max(0,brutto-p_spo-kup2);
-    var pit2 = Math.round(podst2*0.12-300);
-    pit2 = Math.max(0,pit2);
-    var netto2 = brutto-p_spo-p_zdr2-pit2;
+  document.getElementById('res-jdg').innerHTML =
+    '<div class="result-panel-title">Wynik — działalność gospodarcza</div>' +
+    rrow('Podstawa wymiaru (po pomniejszeniu 13,71%)',netBasis) +
+    rrow('Stawka dzienna świadczenia',dailyRate) +
+    rrow('Płatne przez ZUS (od 1. dnia)',totalGross) +
+    '<div class="rtotal"><span>Łączna kwota świadczenia brutto</span><strong>'+fmt(totalGross)+'</strong></div>' +
+    '<div class="disclaimer">Świadczenie przysługuje wyłącznie przy opłacaniu dobrowolnej składki chorobowej. Wyliczenie ma charakter poglądowy.</div>';
 
-    pr_em   = brutto*0.0976;
-    pr_rent = brutto*0.065;
-    pr_wyp  = brutto*0.0167;
-    pr_fp   = brutto*0.0245;
-    var pr_fgsp2 = 0; // zlecenie — brak FGŚP
-    var pr_spo2 = pr_em+pr_rent+pr_wyp+pr_fp;
-    var koszt2 = brutto+pr_spo2;
-
-    document.getElementById('res-uz').innerHTML =
-      '<div class="result-panel-title">Pełne składki ZUS</div>' +
-      rrow('Brutto',brutto) +
-      rrow('Składki społ. pracownika (13,71%)',-p_spo,'minus') +
-      rrow('Składka zdrowotna (9%)',-p_zdr2,'minus') +
-      rrow('Zaliczka PIT (12%)',-pit2,'minus') +
-      '<div class="rtotal"><span>Netto "na rękę"</span><strong>'+fmt(netto2)+'</strong></div>' +
-      '<hr style="border:none;border-top:1px solid rgba(45,170,143,.15);margin:.75rem 0">' +
-      rrow('Emerytalna pracodawcy (9,76%)',pr_em,'plus') +
-      rrow('Rentowa pracodawcy (6,50%)',pr_rent,'plus') +
-      rrow('Wypadkowa (1,67%)',pr_wyp,'plus') +
-      rrow('Fundusz Pracy (2,45%)',pr_fp,'plus') +
-      '<div class="rtotal"><span>Całkowity koszt pracodawcy</span><strong>'+fmt(koszt2)+'</strong></div>' +
-      '<div class="disclaimer">Brak FGŚP przy zleceniu. Stopa wypadkowa 1,67% (standardowa).</div>';
-  }
-
-  document.getElementById('result-uz').classList.add('show');
-}
-
-/* ══ UMOWA O DZIEŁO ══ */
-function obliczDzielo(){
-  var brutto = parseFloat(document.getElementById('ud-brutto').value)||0;
-  var kup50  = document.getElementById('ud-kup').value==='50'; // prawa autorskie
-
-  if(brutto<=0){alert('Podaj wynagrodzenie brutto.');return;}
-
-  var kup_proc = kup50 ? 0.50 : 0.20;
-  // Limit KUP 50%: 120 000 zł rocznie — miesięcznie 10 000 zł, uproszczamy
-  var kup_kw = brutto * kup_proc;
-  var podst = Math.max(0, brutto - kup_kw);
-  var pit = Math.round(podst * 0.12);
-  var netto = brutto - pit;
-  var koszt = brutto; // pracodawca płaci tylko brutto (brak ZUS)
-
-  document.getElementById('res-ud').innerHTML =
-    '<div class="result-panel-title">Umowa o dzieło — brak składek ZUS</div>' +
-    rrow('Wynagrodzenie brutto',brutto) +
-    rrow('KUP ('+(kup50?'50%':'20%)'),-kup_kw,'minus') +
-    rrow('Podstawa opodatkowania',podst) +
-    rrow('Zaliczka PIT (12%)',-pit,'minus') +
-    '<div class="rtotal"><span>Netto "na rękę"</span><strong>'+fmt(netto)+'</strong></div>' +
-    '<div class="rtotal" style="margin-top:.5rem"><span>Całkowity koszt pracodawcy</span><strong>'+fmt(koszt)+'</strong></div>' +
-    '<div class="disclaimer">Brak składek ZUS (o ile wykonawca nie jest własnym pracownikiem). Pracodawca potrąca tylko zaliczkę PIT. Uwaga: od 2021 r. umowy o dzieło zgłasza się do ZUS (formularz RUD).</div>';
-
-  document.getElementById('result-ud').classList.add('show');
+  document.getElementById('result-jdg').classList.add('show');
 }
 </script>
 
