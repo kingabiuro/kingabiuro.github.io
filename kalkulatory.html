@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<title>Kalkulatory podatkowe 2026 – Kinga Biuro Rachunkowe</title>
-<meta name="description" content="Darmowe kalkulatory ZUS i podatku 2026.">
+<title>Kalkulatory – Kinga Biuro Rachunkowe</title>
+<meta name="description" content="Kalkulatory podatkowe i księgowe dla jednoosobowej działalności gospodarczej: podatek, ZUS, limity, zasiłki. Wybierz kalkulator i policz online.">
 <style>
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -103,53 +103,27 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
 .section ul{padding-left:1.4rem;margin-bottom:.85rem}
 .section ul li{font-size:.9rem;color:#2a3a36;line-height:1.85;margin-bottom:.4rem}
 .section ul li::marker{color:var(--teal)}
-.highlight{background:var(--warm);border-left:3px solid var(--teal);padding:1rem 1.25rem;border-radius:0 4px 4px 0;margin:1rem 0;font-size:.87rem;color:var(--forest);line-height:1.7}
 .info-card{background:var(--warm);border-left:3px solid var(--teal);padding:1.25rem 1.5rem;border-radius:0 4px 4px 0;margin-bottom:1.25rem}
 .info-card h3{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--forest);margin-bottom:.5rem}
 .info-card p{font-size:.87rem;margin-bottom:.3rem}
-@media(max-width:768px){nav{padding:0 4vw}.content{padding:3rem 6vw 5rem}.hero{padding:8rem 6vw 3rem}footer{flex-direction:column;text-align:center}}
+@media(max-width:768px){nav{padding:0 4vw}.content{padding:3rem 6vw 5rem}.hero{padding:8rem 6vw 3rem}footer{flex-direction:column;text-align:center}.step:not(:last-child)::after{display:none}.steps{gap:1rem}}
 
-.calc-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem}
-.calc-tab{padding:.6rem 1.2rem;border:1.5px solid rgba(45,170,143,.3);border-radius:3px;background:transparent;color:var(--forest);font-family:var(--sans);font-size:.82rem;font-weight:500;cursor:pointer;transition:all .2s}
-.calc-tab.active,.calc-tab:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
-.calc-panel{display:none}
-.calc-panel.active{display:block}
-.calc-box{background:#fff;border:1.5px solid rgba(20,90,78,.12);border-radius:6px;padding:2rem;margin-bottom:1.5rem}
-.calc-box h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--dark);margin-bottom:.5rem}
-.calc-box p.desc{font-size:.83rem;color:var(--forest);opacity:.8;margin-bottom:1.25rem;line-height:1.6}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
-.form-group{display:flex;flex-direction:column;gap:.35rem}
-.form-group label{font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
-.form-group input,.form-group select{font-family:var(--sans);font-size:.9rem;padding:.65rem .9rem;background:var(--cream);border:1px solid rgba(20,90,78,.18);border-radius:3px;color:var(--dark);outline:none;transition:border-color .2s}
-.form-group input:focus,.form-group select:focus{border-color:var(--teal)}
-.calc-btn{background:var(--teal);color:#fff;border:none;padding:.8rem 2rem;font-family:var(--sans);font-size:.82rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;border-radius:3px;cursor:pointer;transition:background .2s;margin-top:.5rem}
-.calc-btn:hover{background:var(--forest)}
-.result-box{background:var(--dark);border-radius:6px;padding:1.75rem;margin-top:1.5rem;display:none}
-.result-box.show{display:block}
-.result-title{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--teal-lt);margin-bottom:1rem}
-.result-row{display:flex;justify-content:space-between;align-items:center;padding:.55rem 0;border-bottom:1px solid rgba(45,170,143,.1)}
-.result-row:last-child{border-bottom:none}
-.result-row span{font-size:.85rem;color:rgba(178,224,216,.75)}
-.result-row strong{font-size:.92rem;color:#fff;font-weight:500}
-.result-total{margin-top:1rem;padding:1rem;background:rgba(45,170,143,.15);border-radius:4px;display:flex;justify-content:space-between;align-items:center}
-.result-total span{font-size:.82rem;color:var(--teal-lt);font-weight:500;text-transform:uppercase;letter-spacing:.05em}
-.result-total strong{font-size:1.3rem;color:#fff;font-family:var(--serif)}
-.disclaimer{font-size:.74rem;color:rgba(178,224,216,.4);margin-top:.75rem;line-height:1.5}
-.zus-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-bottom:2rem}
-.zus-card{background:#fff;border:1.5px solid rgba(20,90,78,.12);border-radius:6px;overflow:hidden}
-.zus-card-header{background:var(--dark);padding:1rem 1.25rem}
-.zus-card-label{font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--teal-lt);margin-bottom:.25rem}
-.zus-card-title{font-family:var(--serif);font-size:1rem;font-weight:600;color:#fff}
-.zus-card-body{padding:1.25rem}
-.zus-line{display:flex;justify-content:space-between;font-size:.82rem;padding:.3rem 0;border-bottom:1px solid rgba(20,90,78,.08)}
-.zus-line:last-child{border-bottom:none}
-.zus-line span{color:var(--forest)}
-.zus-line strong{color:var(--dark);font-weight:500}
-.zus-total{background:var(--warm);padding:.75rem 1.25rem;display:flex;justify-content:space-between;align-items:center}
-.zus-total span{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--teal);font-weight:500}
-.zus-total strong{font-family:var(--serif);font-size:1.1rem;color:var(--dark)}
-.zus-note{font-size:.75rem;color:var(--forest);opacity:.6;padding:.5rem 1.25rem;line-height:1.4}
-@media(max-width:600px){.form-row{grid-template-columns:1fr}.zus-grid{grid-template-columns:1fr}}
+.branze-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.25rem;margin-top:1.5rem}
+.branza-card{background:#fff;border:1.5px solid rgba(20,90,78,.12);border-radius:6px;padding:1.5rem;transition:border-color .2s,transform .15s}
+.branza-card:hover{border-color:var(--teal);transform:translateY(-2px)}
+.branza-icon{font-size:1.8rem;margin-bottom:.65rem;display:block}
+.branza-title{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--dark);margin-bottom:.4rem}
+.branza-desc{font-size:.83rem;color:var(--forest);line-height:1.7;opacity:.85}
+.cta-dark{background:var(--dark);border-radius:8px;padding:2.5rem;margin-top:3rem;text-align:center}
+.cta-dark h2{font-family:var(--serif);font-size:1.5rem;color:#fff;margin-bottom:.5rem}
+.cta-dark p{font-size:.9rem;color:rgba(178,224,216,.75);max-width:520px;margin:0 auto 1.5rem;line-height:1.7}
+.cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-teal{display:inline-flex;align-items:center;gap:.5rem;background:#25D366;color:#fff;padding:.85rem 1.8rem;border-radius:50px;font-family:var(--sans);font-size:.85rem;font-weight:500;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.35);transition:background .2s}
+.btn-teal:hover{background:#1ebe5d}
+.btn-teal svg{width:20px;height:20px;fill:#fff}
+.btn-outline-light{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:var(--mist);padding:.8rem 1.6rem;border-radius:3px;border:1px solid rgba(178,224,216,.3);font-family:var(--sans);font-size:.82rem;font-weight:500;text-decoration:none;transition:border-color .2s}
+.btn-outline-light:hover{border-color:var(--mist);color:#fff}
+@media(max-width:600px){.branze-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body class="has-subnav">
@@ -165,11 +139,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
     <li class="nav-dropdown">
       <a href="#">Wiedza</a>
       <div class="dropdown-menu">
-        <div class="dropdown-section-label">Kalkulatory</div>
-        <a href="kalkulatory.html">Kalkulatory podatkowe</a>
-        <a href="kalkulator-zatrudnienia.html">Kalkulator zatrudnienia</a>
-        <div class="dropdown-divider"></div>
-        <div class="dropdown-section-label">Artykuły</div>
+        <a href="kalkulatory.html">Kalkulatory</a>
         <a href="aktualnosci.html">Aktualności podatkowe</a>
         <a href="baza-wiedzy.html">Baza wiedzy</a>
       </div>
@@ -191,6 +161,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
   <a href="kalkulatory.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulatory</a>
   <a href="aktualnosci.html" onclick="closeMenu()" style="padding-left:1rem">Aktualności</a>
   <a href="baza-wiedzy.html" onclick="closeMenu()" style="padding-left:1rem">Baza wiedzy</a>
+
   <a href="https://kingabiuro.pl#kontakt" onclick="closeMenu()">Umów konsultację</a>
 </div>
 <div class="subnav">
@@ -199,264 +170,78 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
     Strona główna
   </a>
   <span class="subnav-sep">›</span>
-  <a href="dla-kogo.html" class="subnav-item ">Dla kogo</a>
-  <span class="subnav-sep">›</span>
   <a href="kalkulatory.html" class="subnav-item active">Kalkulatory</a>
-  <span class="subnav-sep">›</span>
-  <a href="kalkulator-zatrudnienia.html" class="subnav-item ">Zatrudnienie</a>
-  <span class="subnav-sep">›</span>
-  <a href="aktualnosci.html" class="subnav-item ">Aktualności</a>
-  <span class="subnav-sep">›</span>
-  <a href="baza-wiedzy.html" class="subnav-item ">Baza wiedzy</a>
 </div>
 <div class="hero">
-  <p class="hero-label">Narzędzia</p>
-  <h1>Kalkulatory podatkowe 2026</h1>
-  <p class="hero-sub">Oblicz swoje składki ZUS i podatek dochodowy. Kwoty zgodne z aktualnymi przepisami na 2026 rok.</p>
+  <p class="hero-label">Kalkulatory podatkowe</p>
+  <h1>Wybierz kalkulator</h1>
+  <p class="hero-sub">Policz podatek, składki ZUS, limity i zasiłki dla swojej jednoosobowej działalności gospodarczej. Wybierz kalkulator poniżej, aby przejść do obliczeń.</p>
 </div>
 <div class="content">
   <div class="section">
-    <p class="section-label">Składki ZUS 2026 — zestawienie kwot</p>
-    <h2>Ile dokładnie zapłacisz do ZUS?</h2>
-    <p>Poniżej dokładne kwoty miesięczne dla każdego wariantu. Składka zdrowotna podana osobno dla skali/liniowego i ryczałtu.</p>
-    <div class="zus-grid">
-      <div class="zus-card">
-        <div class="zus-card-header"><div class="zus-card-label">Pierwsze 6 miesięcy</div><div class="zus-card-title">Ulga na start</div></div>
-        <div class="zus-card-body">
-          <div class="zus-line"><span>Składki społeczne</span><strong>0,00 zł</strong></div>
-          <div class="zus-line"><span>Fundusz Pracy</span><strong>0,00 zł</strong></div>
-        </div>
-        <div class="zus-total"><span>Zdrowotna skala/liniowy</span><strong>432,54 zł</strong></div>
-        <div class="zus-note">Łącznie skala/liniowy: <strong>432,54 zł</strong></div>
-        <div class="zus-total"><span>Zdrowotna ryczałt (do 60k)</span><strong>498,35 zł</strong></div>
-        <div class="zus-note">Łącznie ryczałt: <strong>498,35 zł</strong></div>
-      </div>
-      <div class="zus-card">
-        <div class="zus-card-header"><div class="zus-card-label">Kolejne 24 miesiące</div><div class="zus-card-title">Preferencyjny ZUS</div></div>
-        <div class="zus-card-body">
-          <div class="zus-line"><span>Emerytalna (19,52%)</span><strong>281,44 zł</strong></div>
-          <div class="zus-line"><span>Rentowa (8%)</span><strong>115,34 zł</strong></div>
-          <div class="zus-line"><span>Wypadkowa (1,67%)</span><strong>24,08 zł</strong></div>
-          <div class="zus-line"><span>Chorobowa dobrowolna (2,45%)</span><strong>35,32 zł</strong></div>
-          <div class="zus-line"><span>Fundusz Pracy</span><strong>0,00 zł</strong></div>
-        </div>
-        <div class="zus-total"><span>Społeczne łącznie (z chor.)</span><strong>456,18 zł</strong></div>
-        <div class="zus-note">+ zdrowotna = <strong>~888,72 zł</strong> (skala/liniowy)</div>
-        <div class="zus-note">+ zdrowotna = <strong>~954,53 zł</strong> (ryczałt do 60k)</div>
-      </div>
-      <div class="zus-card">
-        <div class="zus-card-header"><div class="zus-card-label">Dochód do 120 000 zł/rok</div><div class="zus-card-title">Mały ZUS Plus</div></div>
-        <div class="zus-card-body">
-          <div class="zus-line"><span>Emerytalna (19,52%)</span><strong>od 281,44 zł</strong></div>
-          <div class="zus-line"><span>Rentowa (8%)</span><strong>od 115,34 zł</strong></div>
-          <div class="zus-line"><span>Wypadkowa (1,67%)</span><strong>od 24,08 zł</strong></div>
-          <div class="zus-line"><span>Chorobowa dobrowolna</span><strong>indywidualnie</strong></div>
-        </div>
-        <div class="zus-total"><span>Przykład (dochód 80k/rok)</span><strong>~1 040 zł</strong></div>
-        <div class="zus-note">Kwota indywidualna — zależy od dochodu za poprzedni rok.</div>
-      </div>
-      <div class="zus-card">
-        <div class="zus-card-header"><div class="zus-card-label">Podstawa 5 652 zł</div><div class="zus-card-title">Pełny ZUS</div></div>
-        <div class="zus-card-body">
-          <div class="zus-line"><span>Emerytalna (19,52%)</span><strong>1 103,27 zł</strong></div>
-          <div class="zus-line"><span>Rentowa (8%)</span><strong>452,16 zł</strong></div>
-          <div class="zus-line"><span>Wypadkowa (1,67%)</span><strong>94,39 zł</strong></div>
-          <div class="zus-line"><span>Chorobowa dobrowolna (2,45%)</span><strong>138,47 zł</strong></div>
-          <div class="zus-line"><span>Fundusz Pracy (2,45%)</span><strong>138,47 zł</strong></div>
-        </div>
-        <div class="zus-total"><span>Społeczne łącznie (z chor.)</span><strong>1 926,76 zł</strong></div>
-        <div class="zus-note">+ zdrowotna = <strong>2 359,30 zł</strong> (skala/liniowy)</div>
-        <div class="zus-note">+ zdrowotna = <strong>2 425,11 zł</strong> (ryczałt do 60k)</div>
-      </div>
-    </div>
-    <div class="calc-box">
-      <h3>Składka zdrowotna na ryczałcie 2026 — progi przychodowe</h3>
-      <p class="desc">Wysokość składki zdrowotnej na ryczałcie zależy od rocznego przychodu z poprzedniego roku.</p>
-      <table style="width:100%;border-collapse:collapse;font-size:.87rem">
-        <thead><tr style="background:var(--dark);color:var(--mist)">
-          <th style="padding:.65rem 1rem;text-align:left;font-weight:500">Roczny przychód</th>
-          <th style="padding:.65rem 1rem;text-align:right;font-weight:500">Składka miesięczna</th>
-          <th style="padding:.65rem 1rem;text-align:right;font-weight:500">Rocznie</th>
-        </tr></thead>
-        <tbody>
-          <tr style="border-bottom:1px solid rgba(20,90,78,.1)"><td style="padding:.6rem 1rem">do 60 000 zł</td><td style="padding:.6rem 1rem;text-align:right;font-weight:600;color:var(--dark)">498,35 zł</td><td style="padding:.6rem 1rem;text-align:right">5 980,20 zł</td></tr>
-          <tr style="border-bottom:1px solid rgba(20,90,78,.1);background:rgba(45,170,143,.04)"><td style="padding:.6rem 1rem">60 001–300 000 zł</td><td style="padding:.6rem 1rem;text-align:right;font-weight:600;color:var(--dark)">830,58 zł</td><td style="padding:.6rem 1rem;text-align:right">9 966,96 zł</td></tr>
-          <tr><td style="padding:.6rem 1rem">powyżej 300 000 zł</td><td style="padding:.6rem 1rem;text-align:right;font-weight:600;color:var(--dark)">1 495,04 zł</td><td style="padding:.6rem 1rem;text-align:right">17 940,48 zł</td></tr>
-        </tbody>
-      </table>
+    <p class="section-label">9 kalkulatorów</p>
+    <h2>Wszystkie kalkulatory w jednym miejscu</h2>
+    <p>Kliknij w wybrany kalkulator, aby przejść do formularza i dokonać obliczeń.</p>
+    <div class="branze-grid">
+      <a href="kalkulator-zatrudnienia.html" class="branza-card" style="text-decoration:none;color:inherit;display:block">
+        <span class="branza-icon">🧾</span>
+        <div class="branza-title">Kalkulator zatrudnienia</div>
+        <div class="branza-desc">Koszt zatrudnienia pracownika na umowę o pracę lub zlecenie — z uwzględnieniem PIT-2 i PPK.</div>
+      </a>
+      <a href="kalkulator-leasingowy.html" class="branza-card" style="text-decoration:none;color:inherit;display:block">
+        <span class="branza-icon">🚗</span>
+        <div class="branza-title">Kalkulator leasingowy</div>
+        <div class="branza-desc">Rata leasingu i koszty uzyskania przychodu — sprawdź opłacalność leasingu w firmie.</div>
+      </a>
+      <a href="kalkulator-vat.html" class="branza-card" style="text-decoration:none;color:inherit;display:block">
+        <span class="branza-icon">📊</span>
+        <div class="branza-title">Kalkulator limitu VAT</div>
+        <div class="branza-desc">Sprawdź, czy zbliżasz się do rocznego limitu zwolnienia podmiotowego z VAT.</div>
+      </a>
+      <a href="kalkulator-ryczaltu.html" class="branza-card" style="text-decoration:none;color:inherit;display:block">
+        <span class="branza-icon">💼</span>
+        <div class="branza-title">Kalkulator ryczałtu</div>
+        <div class="branza-desc">Znajdź właściwą stawkę ryczałtu dla swojego PKD — z wyszukiwarką kodów.</div>
+      </a>
+      <a href="kalkulator-chorobowy.html" class="branza-card" style="text-decoration:none;color:inherit;display:block">
+        <span class="branza-icon">🏥</span>
+        <div class="branza-title">Kalkulator zasiłku chorobowego</div>
+        <div class="branza-desc">Wylicz wysokość zasiłku chorobowego na podstawie podstawy wymiaru.</div>
+      </a>
+      <a href="kalkulator-odsetek.html" class="branza-card" style="text-decoration:none;color:inherit;display:block">
+        <span class="branza-icon">⏱️</span>
+        <div class="branza-title">Kalkulator odsetek podatkowych</div>
+        <div class="branza-desc">Odsetki za zwłokę w zapłacie podatku — policz kwotę do dopłaty.</div>
+      </a>
+      <a href="kalkulator-kasy-fiskalnej.html" class="branza-card" style="text-decoration:none;color:inherit;display:block">
+        <span class="branza-icon">💵</span>
+        <div class="branza-title">Kalkulator limitu kasy fiskalnej</div>
+        <div class="branza-desc">Sprawdź, czy i kiedy powstaje obowiązek posiadania kasy fiskalnej.</div>
+      </a>
+      <a href="kalkulator-macierzynski.html" class="branza-card" style="text-decoration:none;color:inherit;display:block">
+        <span class="branza-icon">👶</span>
+        <div class="branza-title">Kalkulator zasiłku macierzyńskiego</div>
+        <div class="branza-desc">Wylicz wysokość zasiłku macierzyńskiego dla przedsiębiorcy.</div>
+      </a>
+      <a href="kalkulator-diety.html" class="branza-card" style="text-decoration:none;color:inherit;display:block">
+        <span class="branza-icon">🧳</span>
+        <div class="branza-title">Kalkulator diety krajowej</div>
+        <div class="branza-desc">Dieta z tytułu krajowej podróży służbowej — szybkie wyliczenie.</div>
+      </a>
     </div>
   </div>
-  <div class="section">
-    <p class="section-label">Kalkulator interaktywny</p>
-    <h2>Oblicz swój podatek</h2>
-    <div class="calc-tabs">
-      <button class="calc-tab active" onclick="showTab('skala',this)">Skala podatkowa</button>
-      <button class="calc-tab" onclick="showTab('liniowy',this)">Podatek liniowy</button>
-      <button class="calc-tab" onclick="showTab('ryczalt',this)">Ryczałt</button>
+  <div class="cta-dark">
+    <h2>Nie znalazłeś odpowiedniego kalkulatora?</h2>
+    <p>Skontaktuj się ze mną — pomogę indywidualnie wyliczyć to, czego potrzebujesz.</p>
+    <div class="cta-row">
+      <a href="https://wa.me/48669985755?text=Dzień+dobry%2C+chciałbym+zapytać+o+ofertę+biura+rachunkowego." target="_blank" rel="noopener" class="btn-teal">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.998 2C6.477 2 2 6.477 2 12c0 1.732.45 3.357 1.236 4.765L2 22l5.354-1.218A9.945 9.945 0 0 0 11.998 22c5.521 0 9.999-4.478 9.999-9.999C21.997 6.477 17.519 2 11.998 2z"/></svg>
+        Napisz na WhatsApp
+      </a>
+      <a href="https://kingabiuro.pl#kontakt" class="btn-outline-light">Formularz kontaktowy</a>
     </div>
-    <div class="calc-panel active" id="panel-skala">
-      <div class="calc-box">
-        <h3>Skala podatkowa — 12% / 32%</h3>
-        <p class="desc">Stawka 12% do 120 000 zł dochodu, 32% powyżej. Kwota wolna: 30 000 zł rocznie (300 zł ulgi miesięcznie).</p>
-        <div class="form-row">
-          <div class="form-group"><label>Przychód miesięczny (zł)</label><input type="number" id="s-przychod" placeholder="np. 10000" min="0"></div>
-          <div class="form-group"><label>Koszty uzyskania przychodu (zł)</label><input type="number" id="s-koszty" placeholder="np. 2000" min="0" value="0"></div>
-        </div>
-        <div class="form-row">
-          <div class="form-group"><label>Typ składek ZUS</label>
-            <select id="s-zus"><option value="ulga">Ulga na start</option><option value="pref">Preferencyjny ZUS</option><option value="pelny" selected>Pełny ZUS</option></select>
-          </div>
-          <div class="form-group"><label>Narastający dochód roczny (zł)</label><input type="number" id="s-roczny" placeholder="0" min="0" value="0"><span style="font-size:.72rem;color:var(--forest);opacity:.6">Do sprawdzenia progu 120 000 zł</span></div>
-        </div>
-        <button class="calc-btn" onclick="obliczSkala()">Oblicz</button>
-        <div class="result-box" id="r-skala">
-          <div class="result-title">Wynik — miesięcznie</div>
-          <div id="rows-skala"></div>
-          <div class="result-total"><span>Szacunkowo "na rękę"</span><strong id="netto-skala"></strong></div>
-          <p class="disclaimer">Wyniki orientacyjne. Nie uwzględniają ulg i odliczeń. Skonsultuj z księgową.</p>
-        </div>
-      </div>
-    </div>
-    <div class="calc-panel" id="panel-liniowy">
-      <div class="calc-box">
-        <h3>Podatek liniowy — 19%</h3>
-        <p class="desc">Stała stawka 19%. Składka zdrowotna 4,9% dochodu (min. 432,54 zł). Możliwość odliczenia zdrowotnej jako kosztu (do 11 600 zł/rok).</p>
-        <div class="form-row">
-          <div class="form-group"><label>Przychód miesięczny (zł)</label><input type="number" id="l-przychod" placeholder="np. 15000" min="0"></div>
-          <div class="form-group"><label>Koszty uzyskania przychodu (zł)</label><input type="number" id="l-koszty" placeholder="np. 3000" min="0" value="0"></div>
-        </div>
-        <div class="form-row">
-          <div class="form-group"><label>Typ składek ZUS</label>
-            <select id="l-zus"><option value="ulga">Ulga na start</option><option value="pref">Preferencyjny ZUS</option><option value="pelny" selected>Pełny ZUS</option></select>
-          </div>
-        </div>
-        <button class="calc-btn" onclick="obliczLiniowy()">Oblicz</button>
-        <div class="result-box" id="r-liniowy">
-          <div class="result-title">Wynik — miesięcznie</div>
-          <div id="rows-liniowy"></div>
-          <div class="result-total"><span>Szacunkowo "na rękę"</span><strong id="netto-liniowy"></strong></div>
-          <p class="disclaimer">Wyniki orientacyjne. Skonsultuj z księgową.</p>
-        </div>
-      </div>
-    </div>
-    <div class="calc-panel" id="panel-ryczalt">
-      <div class="calc-box">
-        <h3>Ryczałt ewidencjonowany</h3>
-        <p class="desc">Podatek od przychodu (bez kosztów). Składka zdrowotna stała — wg progu przychodowego. Możliwość odliczenia 50% zdrowotnej od przychodu.</p>
-        <div class="form-row">
-          <div class="form-group"><label>Przychód miesięczny (zł)</label><input type="number" id="r-przychod" placeholder="np. 10000" min="0"></div>
-          <div class="form-group"><label>Stawka ryczałtu (%)</label>
-            <select id="r-stawka">
-              <option value="2">2% — handel rolny</option><option value="3">3% — handel, gastronomia</option>
-              <option value="5.5">5,5% — budownictwo, produkcja</option><option value="8.5" selected>8,5% — usługi, najem</option>
-              <option value="10">10% — sprzedaż nieruchomości</option><option value="12">12% — IT, finanse</option>
-              <option value="14">14% — medycyna, architektura</option><option value="15">15% — wolne zawody</option>
-              <option value="17">17% — reprodukcja materiałów</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group"><label>Typ składek ZUS</label>
-            <select id="r-zus"><option value="ulga">Ulga na start</option><option value="pref">Preferencyjny ZUS</option><option value="pelny" selected>Pełny ZUS</option></select>
-          </div>
-          <div class="form-group"><label>Próg przychodowy roczny</label>
-            <select id="r-prog">
-              <option value="1">do 60 000 zł — zdrowotna 498,35 zł</option>
-              <option value="2">60 001–300 000 zł — zdrowotna 830,58 zł</option>
-              <option value="3">powyżej 300 000 zł — zdrowotna 1 495,04 zł</option>
-            </select>
-          </div>
-        </div>
-        <button class="calc-btn" onclick="obliczRyczalt()">Oblicz</button>
-        <div class="result-box" id="r-ryczalt">
-          <div class="result-title">Wynik — miesięcznie</div>
-          <div id="rows-ryczalt"></div>
-          <div class="result-total"><span>Szacunkowo "na rękę"</span><strong id="netto-ryczalt"></strong></div>
-          <p class="disclaimer">Na ryczałcie brak kosztów. Odliczenie 50% zdrowotnej od przychodu uwzględnione. Wyniki orientacyjne.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="info-card">
-    <h3>💡 Potrzebujesz indywidualnej wyceny?</h3>
-    <p>Kalkulatory podają wartości orientacyjne. Skontaktuj się — pomogę wybrać najkorzystniejszą formę opodatkowania dla Twojej firmy.</p>
-    <a href="https://kingabiuro.pl#kontakt" style="display:inline-block;margin-top:.75rem;background:var(--teal);color:#fff;padding:.65rem 1.4rem;border-radius:3px;font-size:.8rem;font-weight:500;text-decoration:none;text-transform:uppercase;letter-spacing:.05em">Umów bezpłatną rozmowę</a>
   </div>
 </div>
-<script>
-function fmt(n){if(isNaN(n))return'0,00 zł';return n.toFixed(2).replace('.',',').replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' zł';}
-function row(label,val){return'<div class="result-row"><span>'+label+'</span><strong>'+fmt(val)+'</strong></div>';}
-function getSpoleczne(typ){
-  if(typ==='ulga')return{em:0,rent:0,wyp:0,chor:0,fp:0,razem_z_chor:0};
-  if(typ==='pref')return{em:281.44,rent:115.34,wyp:24.08,chor:35.32,fp:0,razem_z_chor:456.18};
-  return{em:1103.27,rent:452.16,wyp:94.39,chor:138.47,fp:138.47,razem_z_chor:1926.76};
-}
-function obliczSkala(){
-  var przychod=parseFloat(document.getElementById('s-przychod').value)||0;
-  var koszty=parseFloat(document.getElementById('s-koszty').value)||0;
-  var zusTyp=document.getElementById('s-zus').value;
-  var roczny=parseFloat(document.getElementById('s-roczny').value)||0;
-  var z=getSpoleczne(zusTyp);
-  var spoleczne=z.razem_z_chor;
-  var dochod=Math.max(0,przychod-koszty);
-  var zdrowotna=Math.max(432.54,dochod*0.09);
-  var podst=zusTyp==='ulga'?dochod:Math.max(0,dochod-z.razem_z_chor);
-  var stawka=((roczny+podst)>120000)?0.32:0.12;
-  var pit=Math.max(0,podst*stawka-(stawka===0.12?300:0));
-  var netto=przychod-spoleczne-zdrowotna-pit;
-  var rows=row('Przychód',przychod)+row('Koszty uzyskania przychodu',koszty)+row('Dochód',dochod);
-  if(zusTyp!=='ulga')rows+=row('Składki społeczne ZUS (z chor.)',spoleczne);
-  rows+=row('Składka zdrowotna (9%, min. 432,54 zł)',zdrowotna)+row('Podstawa opodatkowania',podst)+row('Zaliczka PIT ('+Math.round(stawka*100)+'%)',pit);
-  document.getElementById('rows-skala').innerHTML=rows;
-  document.getElementById('netto-skala').textContent=fmt(netto);
-  document.getElementById('r-skala').classList.add('show');
-}
-function obliczLiniowy(){
-  var przychod=parseFloat(document.getElementById('l-przychod').value)||0;
-  var koszty=parseFloat(document.getElementById('l-koszty').value)||0;
-  var zusTyp=document.getElementById('l-zus').value;
-  var z=getSpoleczne(zusTyp);
-  var spoleczne=z.razem_z_chor;
-  var dochod=Math.max(0,przychod-koszty);
-  var zdrowotna=Math.max(432.54,dochod*0.049);
-  var podst=zusTyp==='ulga'?dochod:Math.max(0,dochod-z.razem_z_chor);
-  var odlicz=Math.min(zdrowotna,966.67);
-  var podst_pit=Math.max(0,podst-odlicz);
-  var pit=podst_pit*0.19;
-  var netto=przychod-spoleczne-zdrowotna-pit;
-  var rows=row('Przychód',przychod)+row('Koszty uzyskania przychodu',koszty)+row('Dochód',dochod);
-  if(zusTyp!=='ulga')rows+=row('Składki społeczne ZUS (z chor.)',spoleczne);
-  rows+=row('Składka zdrowotna (4,9%, min. 432,54 zł)',zdrowotna)+row('Odliczenie zdrowotnej od podstawy PIT',-odlicz)+row('Podstawa opodatkowania',podst_pit)+row('Zaliczka PIT 19%',pit);
-  document.getElementById('rows-liniowy').innerHTML=rows;
-  document.getElementById('netto-liniowy').textContent=fmt(netto);
-  document.getElementById('r-liniowy').classList.add('show');
-}
-function obliczRyczalt(){
-  var przychod=parseFloat(document.getElementById('r-przychod').value)||0;
-  var stawka=parseFloat(document.getElementById('r-stawka').value)/100;
-  var zusTyp=document.getElementById('r-zus').value;
-  var prog=document.getElementById('r-prog').value;
-  var z=getSpoleczne(zusTyp);
-  var spoleczne=z.razem_z_chor;
-  var zdrowotna=prog==='1'?498.35:prog==='2'?830.58:1495.04;
-  var odlicz=zdrowotna*0.5;
-  var podst=Math.max(0,przychod-odlicz);
-  var podatek=podst*stawka;
-  var netto=przychod-spoleczne-zdrowotna-podatek;
-  var rows=row('Przychód',przychod);
-  if(zusTyp!=='ulga')rows+=row('Składki społeczne ZUS (z chor.)',spoleczne);
-  rows+=row('Składka zdrowotna (stała, wg progu)',zdrowotna)+row('Odliczenie 50% zdrowotnej od przychodu',-odlicz)+row('Podstawa opodatkowania',podst)+row('Podatek ryczałtowy ('+Math.round(stawka*100)+'%)',podatek);
-  document.getElementById('rows-ryczalt').innerHTML=rows;
-  document.getElementById('netto-ryczalt').textContent=fmt(netto);
-  document.getElementById('r-ryczalt').classList.add('show');
-}
-function showTab(id,btn){
-  document.querySelectorAll('.calc-tab').forEach(function(t){t.classList.remove('active');});
-  document.querySelectorAll('.calc-panel').forEach(function(p){p.classList.remove('active');});
-  btn.classList.add('active');
-  document.getElementById('panel-'+id).classList.add('active');
-}
-</script>
 
 <a href="https://wa.me/48669985755?text=Dzień+dobry%2C+chciałbym+zapytać+o+ofertę+biura+rachunkowego."
    target="_blank" rel="noopener"
