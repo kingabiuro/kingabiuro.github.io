@@ -15,10 +15,10 @@
 <!-- Tabler Icons -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 
-<!-- Google Fonts: DM Sans + DM Serif Display -->
+<!-- Google Fonts: DM Sans + Lora (spójne z resztą kingabiuro.pl) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
 <style>
 /* ─── SITE NAV (spójne z resztą kingabiuro.pl) ─── */
@@ -59,26 +59,26 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --brand:       #129E97;
-  --brand-dark:  #043536;
-  --brand-mid:   #0d7a75;
-  --brand-light: #e6f7f6;
-  --brand-pale:  #f0fbfa;
-  --text-1:      #0f1f1e;
-  --text-2:      #4a6362;
-  --text-3:      #8aacab;
-  --bg:          #f4fafa;
+  --brand:       #2daa8f;
+  --brand-dark:  #0c2a26;
+  --brand-mid:   #145a4e;
+  --brand-light: #b2e0d8;
+  --brand-pale:  #f5f2ec;
+  --text-1:      #0c2a26;
+  --text-2:      #145a4e;
+  --text-3:      #6b8f88;
+  --bg:          #fafaf8;
   --surface:     #ffffff;
-  --border:      #d4e8e7;
+  --border:      #edeae2;
   --radius-sm:   8px;
   --radius-md:   14px;
   --radius-lg:   20px;
   --radius-xl:   28px;
-  --shadow-sm:   0 1px 4px rgba(4,53,54,.07);
-  --shadow-md:   0 4px 20px rgba(4,53,54,.10);
-  --shadow-lg:   0 8px 40px rgba(4,53,54,.13);
+  --shadow-sm:   0 1px 4px rgba(12,42,38,.07);
+  --shadow-md:   0 4px 20px rgba(12,42,38,.10);
+  --shadow-lg:   0 8px 40px rgba(12,42,38,.13);
   --font-body:   'DM Sans', sans-serif;
-  --font-display:'DM Serif Display', serif;
+  --font-display:'Lora', Georgia, serif;
   --min-price:   200;
 }
 
@@ -285,7 +285,7 @@ body {
   border-radius: 20px; padding: 2px 7px;
   display: inline-block; margin-top: 4px;
 }
-.cc-badge.discount { background: #e6f7f6; color: var(--brand-dark); }
+.cc-badge.discount { background: var(--brand-light); color: var(--brand-dark); }
 
 /* ─── FIELDS ──────────────────────────────────────── */
 .field-wrap { display: flex; flex-direction: column; gap: 4px; }
@@ -508,7 +508,6 @@ body {
         <div class="dropdown-section-label">Kalkulatory</div>
         <a href="kalkulatory.html">Kalkulatory podatkowe</a>
         <a href="kalkulator-zatrudnienia.html">Kalkulator zatrudnienia</a>
-        <a href="kalkulator-wynagrodzen.html">Kalkulator wynagrodzeń</a>
         <a href="kalkulator-leasingowy.html">Kalkulator leasingowy</a>
         <a href="kalkulator-vat.html">Kalkulator limitu VAT</a>
         <a href="kalkulator-ryczaltu.html">Kalkulator ryczałtu</a>
@@ -539,7 +538,6 @@ body {
   <a style="opacity:.5;font-size:.72rem;padding:.5rem 0;border-bottom:none;pointer-events:none">— Wiedza —</a>
   <a href="kalkulatory.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulatory podatkowe</a>
   <a href="kalkulator-zatrudnienia.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulator zatrudnienia</a>
-  <a href="kalkulator-wynagrodzen.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulator wynagrodzeń</a>
   <a href="kalkulator-leasingowy.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulator leasingowy</a>
   <a href="kalkulator-vat.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulator VAT</a>
   <a href="kalkulator-ryczaltu.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulator ryczałtu</a>
