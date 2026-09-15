@@ -111,7 +111,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
 .branze-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.25rem;margin-top:1.5rem}
 .branza-card{background:#fff;border:1.5px solid rgba(20,90,78,.12);border-radius:6px;padding:1.5rem;transition:border-color .2s,transform .15s}
 .branza-card:hover{border-color:var(--teal);transform:translateY(-2px)}
-.branza-icon{font-size:1.8rem;margin-bottom:.65rem;display:block}
+.branza-icon{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;background:rgba(45,170,143,.08);border-radius:10px;margin-bottom:.75rem}
+.branza-icon svg{width:22px;height:22px}
 .branza-title{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--dark);margin-bottom:.4rem}
 .branza-desc{font-size:.83rem;color:var(--forest);line-height:1.7;opacity:.85}
 .cta-dark{background:var(--dark);border-radius:8px;padding:2.5rem;margin-top:3rem;text-align:center}
@@ -179,52 +180,51 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
 </div>
 <div class="content">
   <div class="section">
-    <p class="section-label">9 kalkulatorów</p>
     <h2>Wszystkie kalkulatory w jednym miejscu</h2>
     <p>Kliknij w wybrany kalkulator, aby przejść do formularza i dokonać obliczeń.</p>
     <div class="branze-grid">
       <a href="kalkulator-zatrudnienia.html" class="branza-card" style="text-decoration:none;color:inherit;display:block">
-        <span class="branza-icon">🧾</span>
+        <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
         <div class="branza-title">Kalkulator zatrudnienia</div>
         <div class="branza-desc">Koszt zatrudnienia pracownika na umowę o pracę lub zlecenie — z uwzględnieniem PIT-2 i PPK.</div>
       </a>
       <a href="kalkulator-leasingowy.html" class="branza-card" style="text-decoration:none;color:inherit;display:block">
-        <span class="branza-icon">🚗</span>
+        <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11"/><rect x="3" y="11" width="18" height="6" rx="2"/><circle cx="7.5" cy="17" r="1.5"/><circle cx="16.5" cy="17" r="1.5"/></svg></span>
         <div class="branza-title">Kalkulator leasingowy</div>
         <div class="branza-desc">Rata leasingu i koszty uzyskania przychodu — sprawdź opłacalność leasingu w firmie.</div>
       </a>
       <a href="kalkulator-vat.html" class="branza-card" style="text-decoration:none;color:inherit;display:block">
-        <span class="branza-icon">📊</span>
+        <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
         <div class="branza-title">Kalkulator limitu VAT</div>
         <div class="branza-desc">Sprawdź, czy zbliżasz się do rocznego limitu zwolnienia podmiotowego z VAT.</div>
       </a>
       <a href="kalkulator-ryczaltu.html" class="branza-card" style="text-decoration:none;color:inherit;display:block">
-        <span class="branza-icon">💼</span>
+        <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></span>
         <div class="branza-title">Kalkulator ryczałtu</div>
         <div class="branza-desc">Znajdź właściwą stawkę ryczałtu dla swojego PKD — z wyszukiwarką kodów.</div>
       </a>
       <a href="kalkulator-chorobowy.html" class="branza-card" style="text-decoration:none;color:inherit;display:block">
-        <span class="branza-icon">🏥</span>
+        <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
         <div class="branza-title">Kalkulator zasiłku chorobowego</div>
         <div class="branza-desc">Wylicz wysokość zasiłku chorobowego na podstawie podstawy wymiaru.</div>
       </a>
       <a href="kalkulator-odsetek.html" class="branza-card" style="text-decoration:none;color:inherit;display:block">
-        <span class="branza-icon">⏱️</span>
+        <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
         <div class="branza-title">Kalkulator odsetek podatkowych</div>
         <div class="branza-desc">Odsetki za zwłokę w zapłacie podatku — policz kwotę do dopłaty.</div>
       </a>
       <a href="kalkulator-kasy-fiskalnej.html" class="branza-card" style="text-decoration:none;color:inherit;display:block">
-        <span class="branza-icon">💵</span>
+        <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span>
         <div class="branza-title">Kalkulator limitu kasy fiskalnej</div>
         <div class="branza-desc">Sprawdź, czy i kiedy powstaje obowiązek posiadania kasy fiskalnej.</div>
       </a>
       <a href="kalkulator-macierzynski.html" class="branza-card" style="text-decoration:none;color:inherit;display:block">
-        <span class="branza-icon">👶</span>
+        <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></span>
         <div class="branza-title">Kalkulator zasiłku macierzyńskiego</div>
         <div class="branza-desc">Wylicz wysokość zasiłku macierzyńskiego dla przedsiębiorcy.</div>
       </a>
       <a href="kalkulator-diety.html" class="branza-card" style="text-decoration:none;color:inherit;display:block">
-        <span class="branza-icon">🧳</span>
+        <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
         <div class="branza-title">Kalkulator diety krajowej</div>
         <div class="branza-desc">Dieta z tytułu krajowej podróży służbowej — szybkie wyliczenie.</div>
       </a>

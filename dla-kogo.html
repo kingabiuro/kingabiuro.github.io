@@ -111,7 +111,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
 .branze-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.25rem;margin-top:1.5rem}
 .branza-card{background:#fff;border:1.5px solid rgba(20,90,78,.12);border-radius:6px;padding:1.5rem;transition:border-color .2s,transform .15s}
 .branza-card:hover{border-color:var(--teal);transform:translateY(-2px)}
-.branza-icon{font-size:1.8rem;margin-bottom:.65rem;display:block}
+.branza-icon{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;background:rgba(45,170,143,.08);border-radius:10px;margin-bottom:.75rem}
+.branza-icon svg{width:22px;height:22px}
 .branza-title{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--dark);margin-bottom:.4rem}
 .branza-desc{font-size:.83rem;color:var(--forest);line-height:1.7;opacity:.85}
 .cta-dark{background:var(--dark);border-radius:8px;padding:2.5rem;margin-top:3rem;text-align:center}
@@ -174,8 +175,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
   <span class="subnav-sep">›</span>
   <a href="kalkulatory.html" class="subnav-item ">Kalkulatory</a>
   <span class="subnav-sep">›</span>
-  <a href="kalkulator-zatrudnienia.html" class="subnav-item ">Zatrudnienie</a>
-  <span class="subnav-sep">›</span>
   <a href="aktualnosci.html" class="subnav-item ">Aktualności</a>
   <span class="subnav-sep">›</span>
   <a href="baza-wiedzy.html" class="subnav-item ">Baza wiedzy</a>
@@ -192,72 +191,72 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
     <p>Każda branża ma swoją specyfikę podatkową i księgową. Znam te różnice i wiem jak je wykorzystać na korzyść klienta.</p>
     <div class="branze-grid">
       <div class="branza-card">
-        <span class="branza-icon">🎨</span>
+        <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></span>
         <div class="branza-title">Branża artystyczna i twórcza</div>
         <div class="branza-desc">Artyści, fotografowie, graficy, muzycy, twórcy internetowi. Ryczałt często najkorzystniejszy — pomogę dobrać właściwą stawkę.</div>
       </div>
       <div class="branza-card">
-        <span class="branza-icon">🔨</span>
+        <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
         <div class="branza-title">Usługi remontowe i budowlane</div>
         <div class="branza-desc">Ekipy remontowe, budowlańcy, instalatorzy. Rozliczenia z podwykonawcami, faktury, VAT — wszystko pod kontrolą.</div>
       </div>
       <div class="branza-card">
-        <span class="branza-icon">💼</span>
+        <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
         <div class="branza-title">Doradztwo i konsulting</div>
         <div class="branza-desc">Doradcy biznesowi, coachowie, trenerzy. Często ryczałt 15% lub skala podatkowa — optymalizacja od pierwszego dnia.</div>
       </div>
       <div class="branza-card">
-        <span class="branza-icon">⚖️</span>
+        <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
         <div class="branza-title">Usługi prawne</div>
         <div class="branza-desc">Prawnicy, radcowie, mediatorzy. Pełna obsługa księgowa zgodna z wymogami korporacyjnymi i etycznymi.</div>
       </div>
       <div class="branza-card">
-        <span class="branza-icon">💰</span>
+        <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
         <div class="branza-title">Finanse i ubezpieczenia</div>
         <div class="branza-desc">Agenci ubezpieczeniowi, doradcy finansowi, pośrednicy kredytowi. Specyficzne rozliczenia prowizji i wynagrodzenia.</div>
       </div>
       <div class="branza-card">
-        <span class="branza-icon">✂️</span>
+        <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></span>
         <div class="branza-title">Fryzjerstwo i barberstwo</div>
         <div class="branza-desc">Salony fryzjerskie, barbershopy, styliści. Rozliczenia pracownicze, najem stanowisk, kasa fiskalna.</div>
       </div>
       <div class="branza-card">
-        <span class="branza-icon">💅</span>
+        <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
         <div class="branza-title">Kosmetyka i branża beauty</div>
         <div class="branza-desc">Kosmetyczki, stylistki paznokci, makijażystki, salony spa. Proste i przejrzyste rozliczenia.</div>
       </div>
       <div class="branza-card">
-        <span class="branza-icon">🍕</span>
+        <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></span>
         <div class="branza-title">Gastronomia i catering</div>
         <div class="branza-desc">Restauracje, kawiarnie, food trucki, usługi cateringowe. Kasa fiskalna, VAT, rozliczenia pracownicze.</div>
       </div>
       <div class="branza-card">
-        <span class="branza-icon">🏛️</span>
+        <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
         <div class="branza-title">Architektura i projektowanie</div>
         <div class="branza-desc">Architekci, projektanci wnętrz, urbaniści. Faktury projektowe, prawa autorskie, koszty uzyskania przychodu.</div>
       </div>
       <div class="branza-card">
-        <span class="branza-icon">🛒</span>
+        <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
         <div class="branza-title">Handel i e-commerce</div>
         <div class="branza-desc">Sklepy stacjonarne i internetowe, dropshipping, marketplace. VAT, kasa fiskalna, import towarów.</div>
       </div>
       <div class="branza-card">
-        <span class="branza-icon">💻</span>
+        <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
         <div class="branza-title">IT i programowanie</div>
         <div class="branza-desc">Programiści, developerzy, administratorzy sieci. Ryczałt 12% lub inne formy — znajdziemy najkorzystniejszą.</div>
       </div>
       <div class="branza-card">
-        <span class="branza-icon">📣</span>
+        <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
         <div class="branza-title">Marketing i reklama</div>
         <div class="branza-desc">Agencje reklamowe, specjaliści SEO/SEM, social media managerowie. Koszty kampanii, fakturowanie klientów.</div>
       </div>
       <div class="branza-card">
-        <span class="branza-icon">🏥</span>
+        <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
         <div class="branza-title">Branża medyczna i zdrowotna</div>
         <div class="branza-desc">Lekarze, fizjoterapeuci, psycholodzy, dietetycy. Zwolnienia VAT, specyfika rozliczeń medycznych.</div>
       </div>
       <div class="branza-card">
-        <span class="branza-icon">📚</span>
+        <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
         <div class="branza-title">Szkolenia i edukacja</div>
         <div class="branza-desc">Trenerzy, szkoleniowcy, nauczyciele prywatni, platformy e-learningowe. Faktury za szkolenia, VAT zwolniony.</div>
       </div>
