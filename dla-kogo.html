@@ -108,7 +108,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
 .info-card p{font-size:.87rem;margin-bottom:.3rem}
 @media(max-width:768px){nav{padding:0 4vw}.content{padding:3rem 6vw 5rem}.hero{padding:8rem 6vw 3rem}footer{flex-direction:column;text-align:center}.step:not(:last-child)::after{display:none}.steps{gap:1rem}}
 
-.branze-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.25rem;margin-top:1.5rem}
+.branze-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.25rem;margin-top:1.5rem;position:relative}
 .branza-card{background:#fff;border:1.5px solid rgba(20,90,78,.12);border-radius:6px;padding:1.5rem;transition:border-color .2s,transform .15s}
 .branza-card:hover{border-color:var(--teal);transform:translateY(-2px)}
 .branza-icon{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;background:rgba(45,170,143,.08);border-radius:10px;margin-bottom:.75rem}
@@ -121,8 +121,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
 .branza-hint{display:inline-flex;align-items:center;gap:.3rem;font-size:.72rem;color:var(--teal);opacity:0;margin-top:.6rem;transition:opacity .2s;font-weight:500}
 .branza-card:hover .branza-hint,.branza-card.active .branza-hint{opacity:.9}
 .branza-hint svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2}
-.branza-details{background:#fff;border:1.5px solid rgba(20,90,78,.15);border-left:4px solid var(--teal);border-radius:6px;padding:0;max-height:0;opacity:0;overflow:hidden;grid-column:1/-1;transition:max-height .35s ease,opacity .3s ease,margin .35s ease,padding .35s ease}
-.branza-details.open{max-height:900px;opacity:1;margin:-.4rem 0 .4rem;padding:1.75rem 2rem}
+.branza-details{background:#fff;border:1.5px solid rgba(20,90,78,.15);border-left:4px solid var(--teal);border-radius:6px;position:absolute;left:0;right:0;padding:1.75rem 2rem;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-6px);z-index:5;box-shadow:0 10px 30px rgba(12,42,38,.12);transition:opacity .22s ease,transform .22s ease}
+.branza-details.open{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
 .branza-details-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;padding-bottom:.85rem;border-bottom:1px solid rgba(20,90,78,.12)}
 .branza-details-title{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--dark)}
 .branza-details-close{background:none;border:none;cursor:pointer;color:var(--forest);opacity:.5;padding:.2rem;line-height:0;transition:opacity .2s}
@@ -459,6 +459,7 @@ var BRANZE_DATA = {
   var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   var activeKey = null;
   var closeTimer = null;
+  var gridBaseHeight = grid.scrollHeight;
 
   cards.forEach(function(card){
     var hint = document.createElement('span');
@@ -466,6 +467,8 @@ var BRANZE_DATA = {
     hint.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>' + (canHover ? 'Najedź, aby zobaczyć szczegóły' : 'Dotknij, aby zobaczyć szczegóły');
     card.appendChild(hint);
   });
+
+  if(!grid.contains(panel)) grid.appendChild(panel);
 
   function renderPanel(key){
     var d = BRANZE_DATA[key];
@@ -481,19 +484,29 @@ var BRANZE_DATA = {
     uwagaEl.textContent = d.uwaga;
   }
 
+  function positionPanel(card){
+    var gridRect = grid.getBoundingClientRect();
+    var cardRect = card.getBoundingClientRect();
+    var top = Math.round(cardRect.bottom - gridRect.top) + 14;
+    panel.style.top = top + 'px';
+    var neededPadding = Math.max(0, (top + panel.offsetHeight + 20) - gridBaseHeight);
+    grid.style.paddingBottom = neededPadding + 'px';
+  }
+
   function openPanel(key, card){
     if(!BRANZE_DATA[key]) return;
     clearTimeout(closeTimer);
     activeKey = key;
     renderPanel(key);
-    card.insertAdjacentElement('afterend', panel);
     panel.classList.add('open');
+    positionPanel(card);
     cards.forEach(function(c){ c.classList.toggle('active', c.getAttribute('data-key') === key); });
   }
 
   function closePanel(){
     activeKey = null;
     panel.classList.remove('open');
+    grid.style.paddingBottom = '';
     cards.forEach(function(c){ c.classList.remove('active'); });
   }
 
@@ -525,6 +538,13 @@ var BRANZE_DATA = {
   }
 
   closeBtn.addEventListener('click', closePanel);
+
+  var resizeTimer = null;
+  window.addEventListener('resize', function(){
+    closePanel();
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function(){ gridBaseHeight = grid.scrollHeight; }, 200);
+  });
 })();
 </script>
 </body>
