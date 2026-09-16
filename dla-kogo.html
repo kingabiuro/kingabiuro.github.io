@@ -115,6 +115,31 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
 .branza-icon svg{width:22px;height:22px}
 .branza-title{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--dark);margin-bottom:.4rem}
 .branza-desc{font-size:.83rem;color:var(--forest);line-height:1.7;opacity:.85}
+.branza-card{cursor:pointer;position:relative}
+.branza-card.active{border-color:var(--teal);box-shadow:0 6px 24px rgba(20,90,78,.12)}
+.branza-card:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.branza-hint{display:inline-flex;align-items:center;gap:.3rem;font-size:.72rem;color:var(--teal);opacity:0;margin-top:.6rem;transition:opacity .2s;font-weight:500}
+.branza-card:hover .branza-hint,.branza-card.active .branza-hint{opacity:.9}
+.branza-hint svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2}
+.branza-details{background:#fff;border:1.5px solid rgba(20,90,78,.15);border-left:4px solid var(--teal);border-radius:6px;padding:0;max-height:0;opacity:0;overflow:hidden;margin-top:0;transition:max-height .35s ease,opacity .3s ease,margin-top .35s ease,padding .35s ease}
+.branza-details.open{max-height:900px;opacity:1;margin-top:1.5rem;padding:1.75rem 2rem}
+.branza-details-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;padding-bottom:.85rem;border-bottom:1px solid rgba(20,90,78,.12)}
+.branza-details-title{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--dark)}
+.branza-details-close{background:none;border:none;cursor:pointer;color:var(--forest);opacity:.5;padding:.2rem;line-height:0;transition:opacity .2s}
+.branza-details-close:hover{opacity:1}
+.branza-details-close svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2}
+.branza-details-block{margin-bottom:1.1rem}
+.branza-details-block:last-child{margin-bottom:0}
+.branza-details-label{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:.4rem}
+.branza-details-text{font-size:.87rem;color:#2a3a36;line-height:1.75}
+.branza-details-list{padding-left:1.2rem;margin:0}
+.branza-details-list li{font-size:.87rem;color:#2a3a36;line-height:1.8}
+.branza-details-list li::marker{color:var(--teal)}
+.branza-details-note{background:var(--warm);border-radius:4px;padding:.9rem 1.1rem;font-size:.85rem;color:var(--forest);line-height:1.7}
+@media(max-width:600px){
+  .branza-details.open{padding:1.4rem 1.3rem}
+  .branza-details-title{font-size:1.05rem}
+}
 .cta-dark{background:var(--dark);border-radius:8px;padding:2.5rem;margin-top:3rem;text-align:center}
 .cta-dark h2{font-family:var(--serif);font-size:1.5rem;color:#fff;margin-bottom:.5rem}
 .cta-dark p{font-size:.9rem;color:rgba(178,224,216,.75);max-width:520px;margin:0 auto 1.5rem;line-height:1.7}
@@ -190,75 +215,95 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
     <h2>Branże które obsługuję</h2>
     <p>Każda branża ma swoją specyfikę podatkową i księgową. Znam te różnice i wiem jak je wykorzystać na korzyść klienta.</p>
     <div class="branze-grid">
-      <div class="branza-card">
+      <div class="branza-card" data-key="artystyczna" tabindex="0">
         <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></span>
         <div class="branza-title">Branża artystyczna i twórcza</div>
         <div class="branza-desc">Artyści, fotografowie, graficy, muzycy, twórcy internetowi. Ryczałt często najkorzystniejszy — pomogę dobrać właściwą stawkę.</div>
       </div>
-      <div class="branza-card">
+      <div class="branza-card" data-key="budowlana" tabindex="0">
         <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
         <div class="branza-title">Usługi remontowe i budowlane</div>
         <div class="branza-desc">Ekipy remontowe, budowlańcy, instalatorzy. Rozliczenia z podwykonawcami, faktury, VAT — wszystko pod kontrolą.</div>
       </div>
-      <div class="branza-card">
+      <div class="branza-card" data-key="doradztwo" tabindex="0">
         <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
         <div class="branza-title">Doradztwo i konsulting</div>
         <div class="branza-desc">Doradcy biznesowi, coachowie, trenerzy. Często ryczałt 15% lub skala podatkowa — optymalizacja od pierwszego dnia.</div>
       </div>
-      <div class="branza-card">
+      <div class="branza-card" data-key="prawne" tabindex="0">
         <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
         <div class="branza-title">Usługi prawne</div>
         <div class="branza-desc">Prawnicy, radcowie, mediatorzy. Pełna obsługa księgowa zgodna z wymogami korporacyjnymi i etycznymi.</div>
       </div>
-      <div class="branza-card">
+      <div class="branza-card" data-key="finanse" tabindex="0">
         <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
         <div class="branza-title">Finanse i ubezpieczenia</div>
         <div class="branza-desc">Agenci ubezpieczeniowi, doradcy finansowi, pośrednicy kredytowi. Specyficzne rozliczenia prowizji i wynagrodzenia.</div>
       </div>
-      <div class="branza-card">
+      <div class="branza-card" data-key="fryzjerstwo" tabindex="0">
         <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></span>
         <div class="branza-title">Fryzjerstwo i barberstwo</div>
         <div class="branza-desc">Salony fryzjerskie, barbershopy, styliści. Rozliczenia pracownicze, najem stanowisk, kasa fiskalna.</div>
       </div>
-      <div class="branza-card">
+      <div class="branza-card" data-key="beauty" tabindex="0">
         <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
         <div class="branza-title">Kosmetyka i branża beauty</div>
         <div class="branza-desc">Kosmetyczki, stylistki paznokci, makijażystki, salony spa. Proste i przejrzyste rozliczenia.</div>
       </div>
-      <div class="branza-card">
+      <div class="branza-card" data-key="gastronomia" tabindex="0">
         <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></span>
         <div class="branza-title">Gastronomia i catering</div>
         <div class="branza-desc">Restauracje, kawiarnie, food trucki, usługi cateringowe. Kasa fiskalna, VAT, rozliczenia pracownicze.</div>
       </div>
-      <div class="branza-card">
+      <div class="branza-card" data-key="architektura" tabindex="0">
         <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
         <div class="branza-title">Architektura i projektowanie</div>
         <div class="branza-desc">Architekci, projektanci wnętrz, urbaniści. Faktury projektowe, prawa autorskie, koszty uzyskania przychodu.</div>
       </div>
-      <div class="branza-card">
+      <div class="branza-card" data-key="handel" tabindex="0">
         <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
         <div class="branza-title">Handel i e-commerce</div>
         <div class="branza-desc">Sklepy stacjonarne i internetowe, dropshipping, marketplace. VAT, kasa fiskalna, import towarów.</div>
       </div>
-      <div class="branza-card">
+      <div class="branza-card" data-key="it" tabindex="0">
         <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
         <div class="branza-title">IT i programowanie</div>
         <div class="branza-desc">Programiści, developerzy, administratorzy sieci. Ryczałt 12% lub inne formy — znajdziemy najkorzystniejszą.</div>
       </div>
-      <div class="branza-card">
+      <div class="branza-card" data-key="marketing" tabindex="0">
         <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
         <div class="branza-title">Marketing i reklama</div>
         <div class="branza-desc">Agencje reklamowe, specjaliści SEO/SEM, social media managerowie. Koszty kampanii, fakturowanie klientów.</div>
       </div>
-      <div class="branza-card">
+      <div class="branza-card" data-key="medyczna" tabindex="0">
         <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
         <div class="branza-title">Branża medyczna i zdrowotna</div>
         <div class="branza-desc">Lekarze, fizjoterapeuci, psycholodzy, dietetycy. Zwolnienia VAT, specyfika rozliczeń medycznych.</div>
       </div>
-      <div class="branza-card">
+      <div class="branza-card" data-key="szkolenia" tabindex="0">
         <span class="branza-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
         <div class="branza-title">Szkolenia i edukacja</div>
         <div class="branza-desc">Trenerzy, szkoleniowcy, nauczyciele prywatni, platformy e-learningowe. Faktury za szkolenia, VAT zwolniony.</div>
+      </div>
+    </div>
+    <div id="branzaDetails" class="branza-details" role="region" aria-live="polite">
+      <div class="branza-details-head">
+        <span class="branza-details-title" id="branzaDetailsTitle"></span>
+        <button class="branza-details-close" id="branzaDetailsClose" aria-label="Zamknij">
+          <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="branza-details-block">
+        <div class="branza-details-label">Forma opodatkowania</div>
+        <div class="branza-details-text" id="branzaDetailsForma"></div>
+      </div>
+      <div class="branza-details-block">
+        <div class="branza-details-label">Typowe koszty</div>
+        <ul class="branza-details-list" id="branzaDetailsKoszty"></ul>
+      </div>
+      <div class="branza-details-block">
+        <div class="branza-details-label">Na co uważać</div>
+        <div class="branza-details-note" id="branzaDetailsUwaga"></div>
       </div>
     </div>
     <p style="font-size:.88rem;color:var(--forest);opacity:.7;margin-top:1rem">Nie widzisz swojej branży? Skontaktuj się — z dużym prawdopodobieństwem mogę pomóc.</p>
@@ -312,6 +357,165 @@ function closeMenu(){
 document.addEventListener('contextmenu',function(e){e.preventDefault();return false;});
 document.addEventListener('copy',function(e){e.clipboardData.setData('text/plain','© 2026 Kinga Biuro Rachunkowe – Wszelkie prawa zastrzeżone.');e.preventDefault();});
 document.addEventListener('dragstart',function(e){e.preventDefault();return false;});
+</script>
+<script>
+var BRANZE_DATA = {
+  artystyczna: {
+    title: 'Branża artystyczna i twórcza',
+    forma: 'Ryczałt (najczęściej 8,5% lub 15% w zależności od rodzaju działalności — kluczowa jest prawidłowa klasyfikacja PKWiU) przy niskich kosztach. Przy wysokich kosztach (sprzęt, studio, licencje) lepiej sprawdza się skala podatkowa lub liniowy 19%.',
+    koszty: ['Sprzęt (aparat, kamera, instrumenty, komputer, tablet graficzny)', 'Oprogramowanie i subskrypcje (Adobe, DAW, platformy dystrybucji)', 'Wynajem studia lub część kosztów pracy z domu', 'Kursy i szkolenia branżowe', 'Marketing i strona internetowa', 'Licencje na muzykę stockową, zdjęcia'],
+    uwaga: 'Jeśli pobierasz honorarium za przekazanie praw autorskich do utworu, możesz korzystać ze zwolnienia z VAT niezależnie od obrotu (art. 43 ust. 1 pkt 33 lit. b ustawy o VAT) — ale nie dotyczy to zwykłych usług komercyjnych „na zamówienie”.'
+  },
+  budowlana: {
+    title: 'Usługi remontowe i budowlane',
+    forma: 'Ryczałt 5,5% dla robót budowlanych — korzystny przy niskich kosztach materiałowo-sprzętowych. Przy wysokich kosztach (materiały, sprzęt, podwykonawcy) zwykle lepsza jest skala lub liniowy 19%, bo tylko tam odliczysz koszty.',
+    koszty: ['Materiały budowlane i wykończeniowe', 'Narzędzia i maszyny (zakup, leasing, wynajem)', 'Paliwo i eksploatacja pojazdu', 'Odzież robocza i ochronna', 'Wynagrodzenia podwykonawców', 'Ubezpieczenie OC zawodowe i sprzętu'],
+    uwaga: 'Sprzedaż usług dla osób prywatnych wiąże się zwykle z obowiązkiem kasy fiskalnej. Przy fakturach za roboty budowlane powyżej 15 000 zł brutto między firmami może obowiązywać split payment (mechanizm podzielonej płatności) — warto to sprawdzić przy większych zleceniach.'
+  },
+  doradztwo: {
+    title: 'Doradztwo i konsulting',
+    forma: 'Ryczałt 15% (doradztwo związane z zarządzaniem) lub 8,5% (szkolenia, edukacja) — zależnie od faktycznego charakteru usługi. Przy wysokich kosztach (sale, sprzęt, podwykonawcy) warto porównać ze skalą lub liniowym.',
+    koszty: ['Sprzęt (komputer, kamera, projektor)', 'Narzędzia do wideokonferencji i CRM', 'Wynajem sal na szkolenia', 'Podróże służbowe do klientów', 'Certyfikacje i rozwój zawodowy', 'Obsługa księgowa i ubezpieczenie OC'],
+    uwaga: 'Usługi doradcze są ustawowo wyłączone ze zwolnienia z VAT — musisz rozliczać VAT od pierwszej sprzedaży, niezależnie od obrotu. To częsta pułapka: „jestem na ryczałcie, więc nie muszę być VAT-owcem” to błędne założenie przy doradztwie.'
+  },
+  prawne: {
+    title: 'Usługi prawne',
+    forma: 'Ryczałt 17% dla wolnych zawodów (adwokat, radca prawny) — wyższa stawka niż w większości innych branż. Mediator nie mieści się w definicji wolnego zawodu, więc może podlegać innej, często niższej stawce.',
+    koszty: ['Obowiązkowe ubezpieczenie OC zawodowe', 'Składki na samorząd zawodowy', 'Systemy informacji prawnej i bazy orzecznictwa', 'Szkolenia i doskonalenie zawodowe', 'Najem i utrzymanie kancelarii', 'Obsługa księgowa i sprzęt biurowy'],
+    uwaga: 'Usługi prawnicze są wyłączone ze zwolnienia podmiotowego z VAT — jesteś czynnym podatnikiem VAT od pierwszej faktury, niezależnie od obrotu. Obowiązek KSeF dla kancelarii już obowiązuje (limit 10 000 zł brutto miesięcznie poza KSeF do końca 2026 r.).'
+  },
+  finanse: {
+    title: 'Finanse i ubezpieczenia',
+    forma: 'Ryczałt 15% dla pośrednictwa finansowego i ubezpieczeniowego (PKWiU dział 66). Przy wysokich kosztach (licencje, systemy, podwykonawcy) warto porównać ze skalą lub liniowym.',
+    koszty: ['Licencje i zezwolenia (KNF, rejestr agentów)', 'Szkolenia i egzaminy branżowe', 'Obowiązkowe ubezpieczenie OC zawodowe', 'Systemy CRM', 'Prowizje dla współpracowników', 'Marketing'],
+    uwaga: 'Usługi pośrednictwa finansowego i ubezpieczeniowego są przedmiotowo zwolnione z VAT (art. 43 ust. 1 pkt 37–41 ustawy o VAT), niezależnie od obrotu — to korzystna różnica względem np. doradztwa. Czyste doradztwo finansowe może już nie kwalifikować się do tego zwolnienia.'
+  },
+  fryzjerstwo: {
+    title: 'Fryzjerstwo i barberstwo',
+    forma: 'Ryczałt 8,5% (usługi fryzjerskie) — zwykle najkorzystniejszy przy typowo niskich kosztach. Przy dużym salonie z zatrudnionymi fryzjerami i wysokim czynszem warto porównać ze skalą.',
+    koszty: ['Produkty i kosmetyki fryzjerskie', 'Sprzęt (suszarki, prostownice, fotele)', 'Najem lokalu lub stanowiska', 'Szkolenia i kursy', 'Ubezpieczenie', 'Wynagrodzenia pracowników'],
+    uwaga: 'Usługi fryzjerskie mają bezwzględny obowiązek kasy fiskalnej od pierwszej sprzedaży — limit 20 000 zł obrotu tu nie obowiązuje, w przeciwieństwie do większości innych branż.'
+  },
+  beauty: {
+    title: 'Kosmetyka i branża beauty',
+    forma: 'Ryczałt 8,5% (usługi kosmetyczne i kosmetologiczne) zwykle korzystniejszy niż skala przy typowej strukturze kosztów.',
+    koszty: ['Kosmetyki i materiały jednorazowe', 'Sprzęt (urządzenia kosmetyczne, fotel)', 'Certyfikaty i szkolenia branżowe', 'Spełnienie wymogów sanitarnych', 'Ubezpieczenie OC', 'Najem gabinetu'],
+    uwaga: 'Tak jak fryzjerstwo — obowiązek kasy fiskalnej od pierwszej sprzedaży, bez względu na obrót. Częsty błąd początkujących kosmetyczek i stylistek.'
+  },
+  gastronomia: {
+    title: 'Gastronomia i catering',
+    forma: 'Ryczałt 3% dla sprzedaży posiłków i napojów (z wyjątkiem napojów alkoholowych powyżej 1,5% — tam 8,5%). Przy wysokich kosztach żywności i lokalu warto porównać z liniowym, bo ryczałt nie odlicza kosztów.',
+    koszty: ['Produkty spożywcze', 'Najem lokalu', 'Sprzęt gastronomiczny', 'Wynagrodzenia pracowników', 'Koncesja na alkohol (jeśli dotyczy)', 'Opłaty sanepid'],
+    uwaga: 'Usługi gastronomiczne mają bezwzględny obowiązek kasy fiskalnej od pierwszej sprzedaży. Część dań i napojów korzysta z obniżonej stawki VAT (8%) zamiast podstawowej 23% — warto to sprawdzić przy konkretnym menu.'
+  },
+  architektura: {
+    title: 'Architektura i projektowanie',
+    forma: 'Ryczałt 15% (usługi architektoniczne i inżynierskie) przy niskich kosztach; przy wysokich kosztach (oprogramowanie, wizualizacje, podwykonawcy) korzystniejsza bywa skala lub liniowy.',
+    koszty: ['Licencje CAD/BIM', 'Sprzęt komputerowy', 'Wizualizacje i podwykonawstwo', 'Obowiązkowe ubezpieczenie OC (dla uprawnień budowlanych)', 'Szkolenia i uprawnienia zawodowe'],
+    uwaga: 'Honorarium za projekt to często przeniesienie praw autorskich — w umowie warto precyzyjnie określić zakres przenoszonych praw. W JDG nie stosuje się 50% kosztów uzyskania przychodu — obowiązują koszty rzeczywiste.'
+  },
+  handel: {
+    title: 'Handel i e-commerce',
+    forma: 'Ryczałt 3% dla sprzedaży towarów — bardzo korzystny przy niskiej marży. Ryczałt liczony jest od przychodu, więc koszt zakupu towaru nie jest tu odliczany jak na skali czy liniowym.',
+    koszty: ['Koszt zakupu towaru (na skali/liniowym)', 'Prowizje marketplace (Allegro, Amazon)', 'Magazynowanie i wysyłka', 'Systemy do zarządzania sprzedażą', 'Reklama'],
+    uwaga: 'Limit zwolnienia z VAT (240 000 zł) obowiązuje, ale niektóre kategorie towarów sprzedawanych wysyłkowo (np. elektronika) mogą być wyłączone ze zwolnienia niezależnie od obrotu. Przy sprzedaży do innych krajów UE dochodzi kwestia limitu OSS i rejestracji VAT-UE.'
+  },
+  it: {
+    title: 'IT i programowanie',
+    forma: 'Ryczałt 12% (usługi związane z oprogramowaniem) najczęściej wybierany. Dla twórców autorskiego oprogramowania/gier spełniających warunki działalności B+R alternatywą jest IP Box — 5% podatku od kwalifikowanego prawa własności intelektualnej.',
+    koszty: ['Sprzęt komputerowy', 'Licencje i subskrypcje (IDE, chmura, narzędzia)', 'Szkolenia i certyfikacje', 'Domena i hosting'],
+    uwaga: 'Przy klientach zagranicznych (szczególnie spoza UE) miejsce świadczenia usługi bywa poza Polską — może to oznaczać brak VAT w Polsce, ale konieczność rejestracji VAT-UE i innego sposobu fakturowania.'
+  },
+  marketing: {
+    title: 'Marketing i reklama',
+    forma: 'Ryczałt 15% (usługi reklamowe). Przy usługach czysto kreatywnych (grafika, copywriting bez elementu strategicznego) klasyfikacja bywa inna — warto to ustalić indywidualnie.',
+    koszty: ['Narzędzia (Canva, Adobe, planery social media)', 'Szkolenia', 'Podwykonawcy i freelancerzy', 'Sprzęt'],
+    uwaga: 'Budżety reklamowe (Meta Ads, Google Ads) płacone w imieniu klienta zwykle powinny być refakturowane, a nie księgowane jako własny koszt agencji — wpływa to na przychód, a więc i na limit zwolnienia z VAT.'
+  },
+  medyczna: {
+    title: 'Branża medyczna i zdrowotna',
+    forma: 'Zawody medyczne (lekarz, lekarz dentysta, fizjoterapeuta, psycholog) na ryczałcie — stawka 14%. Przy wysokich kosztach (sprzęt, gabinet, materiały) warto porównać ze skalą lub liniowym.',
+    koszty: ['Sprzęt i materiały medyczne', 'Obowiązkowe ubezpieczenie OC', 'Szkolenia i punkty edukacyjne', 'Najem gabinetu', 'Licencje i uprawnienia zawodowe'],
+    uwaga: 'Usługi opieki medycznej służące profilaktyce, ratowaniu i poprawie zdrowia są zwolnione z VAT niezależnie od obrotu. Usługi czysto estetyczne (np. botox bez celu leczniczego) wykonywane przez lekarza mogą już nie kwalifikować się do tego zwolnienia.'
+  },
+  szkolenia: {
+    title: 'Szkolenia i edukacja',
+    forma: 'Ryczałt 8,5% (usługi edukacyjne) zwykle najkorzystniejszy przy niskich kosztach stałych.',
+    koszty: ['Materiały szkoleniowe', 'Wynajem sal', 'Platforma e-learningowa', 'Honoraria dla współprowadzących', 'Certyfikacje'],
+    uwaga: 'Niektóre szkolenia mogą korzystać ze zwolnienia z VAT, ale nie dotyczy to automatycznie każdego szkolenia biznesowego. Jeśli szkolenie w praktyce polega na indywidualnym doradzaniu klientowi konkretnych decyzji, urząd może zakwalifikować to jako doradztwo — z inną stawką i innymi zasadami VAT.'
+  }
+};
+
+(function(){
+  var grid = document.querySelector('.branze-grid');
+  if(!grid) return;
+  var panel = document.getElementById('branzaDetails');
+  var titleEl = document.getElementById('branzaDetailsTitle');
+  var formaEl = document.getElementById('branzaDetailsForma');
+  var kosztyEl = document.getElementById('branzaDetailsKoszty');
+  var uwagaEl = document.getElementById('branzaDetailsUwaga');
+  var closeBtn = document.getElementById('branzaDetailsClose');
+  var cards = grid.querySelectorAll('.branza-card[data-key]');
+  var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var activeKey = null;
+
+  cards.forEach(function(card){
+    var hint = document.createElement('span');
+    hint.className = 'branza-hint';
+    hint.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>' + (canHover ? 'Najedź, aby zobaczyć szczegóły' : 'Dotknij, aby zobaczyć szczegóły');
+    card.appendChild(hint);
+  });
+
+  function renderPanel(key){
+    var d = BRANZE_DATA[key];
+    if(!d) return;
+    titleEl.textContent = d.title;
+    formaEl.textContent = d.forma;
+    kosztyEl.innerHTML = '';
+    d.koszty.forEach(function(k){
+      var li = document.createElement('li');
+      li.textContent = k;
+      kosztyEl.appendChild(li);
+    });
+    uwagaEl.textContent = d.uwaga;
+  }
+
+  function openPanel(key){
+    if(!BRANZE_DATA[key]) return;
+    activeKey = key;
+    renderPanel(key);
+    panel.classList.add('open');
+    cards.forEach(function(c){ c.classList.toggle('active', c.getAttribute('data-key') === key); });
+  }
+
+  function closePanel(){
+    activeKey = null;
+    panel.classList.remove('open');
+    cards.forEach(function(c){ c.classList.remove('active'); });
+  }
+
+  if(canHover){
+    cards.forEach(function(card){
+      card.addEventListener('mouseenter', function(){ openPanel(card.getAttribute('data-key')); });
+      card.addEventListener('focus', function(){ openPanel(card.getAttribute('data-key')); });
+    });
+    grid.addEventListener('mouseleave', function(){ closePanel(); });
+  } else {
+    cards.forEach(function(card){
+      card.addEventListener('click', function(){
+        var key = card.getAttribute('data-key');
+        if(activeKey === key){
+          closePanel();
+        } else {
+          openPanel(key);
+          panel.scrollIntoView({behavior:'smooth', block:'nearest'});
+        }
+      });
+    });
+  }
+
+  closeBtn.addEventListener('click', closePanel);
+})();
 </script>
 </body>
 </html>
