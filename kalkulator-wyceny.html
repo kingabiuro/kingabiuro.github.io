@@ -15,10 +15,10 @@
 <!-- Tabler Icons -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 
-<!-- Google Fonts: DM Sans + Lora (spójne z resztą kingabiuro.pl) -->
+<!-- Google Fonts: DM Sans + DM Serif Display -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
 
 <style>
 /* ─── SITE NAV (spójne z resztą kingabiuro.pl) ─── */
@@ -59,26 +59,26 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --brand:       #2daa8f;
-  --brand-dark:  #0c2a26;
-  --brand-mid:   #145a4e;
-  --brand-light: #b2e0d8;
-  --brand-pale:  #f5f2ec;
-  --text-1:      #0c2a26;
-  --text-2:      #145a4e;
-  --text-3:      #6b8f88;
-  --bg:          #fafaf8;
+  --brand:       #129E97;
+  --brand-dark:  #043536;
+  --brand-mid:   #0d7a75;
+  --brand-light: #e6f7f6;
+  --brand-pale:  #f0fbfa;
+  --text-1:      #0f1f1e;
+  --text-2:      #4a6362;
+  --text-3:      #8aacab;
+  --bg:          #f4fafa;
   --surface:     #ffffff;
-  --border:      #edeae2;
+  --border:      #d4e8e7;
   --radius-sm:   8px;
   --radius-md:   14px;
   --radius-lg:   20px;
   --radius-xl:   28px;
-  --shadow-sm:   0 1px 4px rgba(12,42,38,.07);
-  --shadow-md:   0 4px 20px rgba(12,42,38,.10);
-  --shadow-lg:   0 8px 40px rgba(12,42,38,.13);
+  --shadow-sm:   0 1px 4px rgba(4,53,54,.07);
+  --shadow-md:   0 4px 20px rgba(4,53,54,.10);
+  --shadow-lg:   0 8px 40px rgba(4,53,54,.13);
   --font-body:   'DM Sans', sans-serif;
-  --font-display:'Lora', Georgia, serif;
+  --font-display:'DM Serif Display', serif;
   --min-price:   200;
 }
 
@@ -285,7 +285,7 @@ body {
   border-radius: 20px; padding: 2px 7px;
   display: inline-block; margin-top: 4px;
 }
-.cc-badge.discount { background: var(--brand-light); color: var(--brand-dark); }
+.cc-badge.discount { background: #e6f7f6; color: var(--brand-dark); }
 
 /* ─── FIELDS ──────────────────────────────────────── */
 .field-wrap { display: flex; flex-direction: column; gap: 4px; }
@@ -505,7 +505,20 @@ body {
     <li class="nav-dropdown">
       <a href="#">Wiedza</a>
       <div class="dropdown-menu">
-        <a href="kalkulatory.html">Kalkulatory</a>
+        <div class="dropdown-section-label">Kalkulatory</div>
+        <a href="kalkulatory.html">Kalkulatory podatkowe</a>
+        <a href="kalkulator-zatrudnienia.html">Kalkulator zatrudnienia</a>
+        <a href="kalkulator-wynagrodzen.html">Kalkulator wynagrodzeń</a>
+        <a href="kalkulator-leasingowy.html">Kalkulator leasingowy</a>
+        <a href="kalkulator-vat.html">Kalkulator limitu VAT</a>
+        <a href="kalkulator-ryczaltu.html">Kalkulator ryczałtu</a>
+        <a href="kalkulator-chorobowy.html">Kalkulator zasiłku chorobowego</a>
+        <a href="kalkulator-odsetek.html">Kalkulator odsetek podatkowych</a>
+        <a href="kalkulator-kasy-fiskalnej.html">Kalkulator limitu kasy fiskalnej</a>
+        <a href="kalkulator-macierzynski.html">Kalkulator zasiłku macierzyńskiego</a>
+        <a href="kalkulator-diety.html">Kalkulator diety krajowej</a>
+        <div class="dropdown-divider"></div>
+        <div class="dropdown-section-label">Artykuły</div>
         <a href="aktualnosci.html">Aktualności podatkowe</a>
         <a href="baza-wiedzy.html">Baza wiedzy</a>
       </div>
@@ -524,10 +537,19 @@ body {
   <a href="https://kingabiuro.pl#kontakt" onclick="closeMenu()">Kontakt</a>
   <a href="dla-kogo.html" onclick="closeMenu()">Dla kogo</a>
   <a style="opacity:.5;font-size:.72rem;padding:.5rem 0;border-bottom:none;pointer-events:none">— Wiedza —</a>
-  <a href="kalkulatory.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulatory</a>
+  <a href="kalkulatory.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulatory podatkowe</a>
+  <a href="kalkulator-zatrudnienia.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulator zatrudnienia</a>
+  <a href="kalkulator-wynagrodzen.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulator wynagrodzeń</a>
+  <a href="kalkulator-leasingowy.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulator leasingowy</a>
+  <a href="kalkulator-vat.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulator VAT</a>
+  <a href="kalkulator-ryczaltu.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulator ryczałtu</a>
+  <a href="kalkulator-chorobowy.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulator chorobowego</a>
+  <a href="kalkulator-odsetek.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulator odsetek</a>
+  <a href="kalkulator-kasy-fiskalnej.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulator kasy fiskalnej</a>
+  <a href="kalkulator-macierzynski.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulator macierzyński</a>
+  <a href="kalkulator-diety.html" onclick="closeMenu()" style="padding-left:1rem">Kalkulator diety krajowej</a>
   <a href="aktualnosci.html" onclick="closeMenu()" style="padding-left:1rem">Aktualności</a>
   <a href="baza-wiedzy.html" onclick="closeMenu()" style="padding-left:1rem">Baza wiedzy</a>
-
   <a href="https://kingabiuro.pl#kontakt" onclick="closeMenu()">Umów konsultację</a>
 </div>
 
@@ -830,8 +852,9 @@ const PRICING_CONFIG = {
     'startup':    { label:'Startup – rabat na start', pct:-20 },
     'file-import':{ label:'Import plików (JPK/XML)',  pct:-10 },
   },
-  // ZUS właściciela jest już wliczony w cenę abonamentu (nie jest osobną opcją do wyboru)
+  // Obsługa deklaracji ZUS właściciela – doliczana zawsze, nie jest osobną opcją do wyboru
   ownerZusIncluded: 40,
+  ownerZusLabel: 'Obsługa deklaracji ZUS',
   oneTime: {
     'pit-owner-spouse': { label:'Roczne PIT – właściciel + małżonek',     amount:100 },
     'pit-correction':   { label:'Korekta rocznego PIT (z winy klienta)',  amount:80  },
@@ -983,6 +1006,7 @@ function calcResult() {
   const rows = [];
 
   rows.push({ label: `${cfg.label} (baza + ${billDocs} poz.)`, val: Math.round(base), type:'monthly' });
+  rows.push({ label: PRICING_CONFIG.ownerZusLabel, val: PRICING_CONFIG.ownerZusIncluded, type:'monthly' });
 
   const emp = PRICING_CONFIG.employees;
   if (state.empUop   > 0) { const c = state.empUop   * emp.uop.rate;   rows.push({ label:`${emp.uop.label} × ${state.empUop}`,   val:c, type:'monthly' }); }
