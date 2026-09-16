@@ -121,8 +121,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,42,38,0.9
 .branza-hint{display:inline-flex;align-items:center;gap:.3rem;font-size:.72rem;color:var(--teal);opacity:0;margin-top:.6rem;transition:opacity .2s;font-weight:500}
 .branza-card:hover .branza-hint,.branza-card.active .branza-hint{opacity:.9}
 .branza-hint svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2}
-.branza-details{background:#fff;border:1.5px solid rgba(20,90,78,.15);border-left:4px solid var(--teal);border-radius:6px;padding:0;max-height:0;opacity:0;overflow:hidden;margin-top:0;transition:max-height .35s ease,opacity .3s ease,margin-top .35s ease,padding .35s ease}
-.branza-details.open{max-height:900px;opacity:1;margin-top:1.5rem;padding:1.75rem 2rem}
+.branza-details{background:#fff;border:1.5px solid rgba(20,90,78,.15);border-left:4px solid var(--teal);border-radius:6px;padding:0;max-height:0;opacity:0;overflow:hidden;grid-column:1/-1;transition:max-height .35s ease,opacity .3s ease,margin .35s ease,padding .35s ease}
+.branza-details.open{max-height:900px;opacity:1;margin:-.4rem 0 .4rem;padding:1.75rem 2rem}
 .branza-details-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;padding-bottom:.85rem;border-bottom:1px solid rgba(20,90,78,.12)}
 .branza-details-title{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--dark)}
 .branza-details-close{background:none;border:none;cursor:pointer;color:var(--forest);opacity:.5;padding:.2rem;line-height:0;transition:opacity .2s}
@@ -458,6 +458,7 @@ var BRANZE_DATA = {
   var cards = grid.querySelectorAll('.branza-card[data-key]');
   var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   var activeKey = null;
+  var closeTimer = null;
 
   cards.forEach(function(card){
     var hint = document.createElement('span');
@@ -480,10 +481,12 @@ var BRANZE_DATA = {
     uwagaEl.textContent = d.uwaga;
   }
 
-  function openPanel(key){
+  function openPanel(key, card){
     if(!BRANZE_DATA[key]) return;
+    clearTimeout(closeTimer);
     activeKey = key;
     renderPanel(key);
+    card.insertAdjacentElement('afterend', panel);
     panel.classList.add('open');
     cards.forEach(function(c){ c.classList.toggle('active', c.getAttribute('data-key') === key); });
   }
@@ -494,12 +497,19 @@ var BRANZE_DATA = {
     cards.forEach(function(c){ c.classList.remove('active'); });
   }
 
+  function scheduleClose(){
+    clearTimeout(closeTimer);
+    closeTimer = setTimeout(closePanel, 180);
+  }
+
   if(canHover){
     cards.forEach(function(card){
-      card.addEventListener('mouseenter', function(){ openPanel(card.getAttribute('data-key')); });
-      card.addEventListener('focus', function(){ openPanel(card.getAttribute('data-key')); });
+      card.addEventListener('mouseenter', function(){ openPanel(card.getAttribute('data-key'), card); });
+      card.addEventListener('focus', function(){ openPanel(card.getAttribute('data-key'), card); });
+      card.addEventListener('mouseleave', scheduleClose);
     });
-    grid.addEventListener('mouseleave', function(){ closePanel(); });
+    panel.addEventListener('mouseenter', function(){ clearTimeout(closeTimer); });
+    panel.addEventListener('mouseleave', scheduleClose);
   } else {
     cards.forEach(function(card){
       card.addEventListener('click', function(){
@@ -507,8 +517,8 @@ var BRANZE_DATA = {
         if(activeKey === key){
           closePanel();
         } else {
-          openPanel(key);
-          panel.scrollIntoView({behavior:'smooth', block:'nearest'});
+          openPanel(key, card);
+          panel.scrollIntoView({behavior:'smooth', block:'center'});
         }
       });
     });
