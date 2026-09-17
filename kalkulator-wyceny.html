@@ -498,6 +498,7 @@ body {
   <ul class="nav-links">
     <li><a href="https://kingabiuro.pl#uslugi">Usługi</a></li>
     <li><a href="https://kingabiuro.pl#wspolpraca">Współpraca</a></li>
+    <li><a href="kalkulator-wyceny.html">Wycena</a></li>
     <li><a href="https://kingabiuro.pl#faq">FAQ</a></li>
     <li><a href="https://kingabiuro.pl#wyrózniki">O biurze</a></li>
     <li><a href="https://kingabiuro.pl#kontakt">Kontakt</a></li>
@@ -532,6 +533,7 @@ body {
 <div class="mobile-menu" id="mobileMenu">
   <a href="https://kingabiuro.pl#uslugi" onclick="closeMenu()">Usługi</a>
   <a href="https://kingabiuro.pl#wspolpraca" onclick="closeMenu()">Współpraca</a>
+  <a href="kalkulator-wyceny.html" onclick="closeMenu()">Wycena</a>
   <a href="https://kingabiuro.pl#faq" onclick="closeMenu()">FAQ</a>
   <a href="https://kingabiuro.pl#wyrózniki" onclick="closeMenu()">O biurze</a>
   <a href="https://kingabiuro.pl#kontakt" onclick="closeMenu()">Kontakt</a>
@@ -1240,7 +1242,7 @@ function resetAll() {
   state.quoteDate = today;
 
   document.querySelectorAll('.opt-card').forEach(c => c.classList.remove('selected'));
-  document.querySelector('[data-val="jdg-kpir"]').classList.add('selected');
+  document.querySelector('[data-val="jdg-kpir-skala"]').classList.add('selected');
   document.getElementById('form-hint').style.display = 'none';
 
   document.getElementById('doc-count').textContent = '20';
