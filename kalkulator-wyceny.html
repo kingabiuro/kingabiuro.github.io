@@ -1249,7 +1249,8 @@ function resetAll() {
   ['emp-uop','emp-zus','emp-nozus'].forEach(id => document.getElementById(id).textContent = '0');
   document.querySelectorAll('.check-card').forEach(c => {
     c.classList.remove('checked');
-    c.querySelector('input').checked = false;
+    const inp = c.querySelector('input');
+    if (inp) inp.checked = false;
   });
 
   // Reset bramki e-mail
